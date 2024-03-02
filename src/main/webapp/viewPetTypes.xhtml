@@ -23,7 +23,7 @@
             }
             .pet-item {
                 border: 1px solid black;
-                margin: 10px;
+                margin: 20px;
                 text-align: center;
                 width: 195px; /* Fixed width */
                 height: 220px;
@@ -35,10 +35,23 @@
                 display: block;
                 margin: auto;
             }
-            .pet-type-name{
+
+
+            .pet-type-button {
                 border: 1px solid black;
-                width: 100%;/* This will match the width of the .pet-item container */
-                height: 30px
+                width: 100%;
+                background-color: #ece3e3; /* A distinct green background */
+                color: #000000; /* White text for contrast */
+                transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for several properties */
+                cursor: pointer; /* Pointer cursor on hover */
+                font-weight: bold; /* Make the text bold */
+                text-transform: uppercase; /* Uppercase text for a button-like appearance */
+                letter-spacing: 1px; /* Add space between letters */
+            }
+
+            /* Change background color slightly on hover */
+            .pet-type-button:hover, .pet-type-button:active {
+                background-color: #bdb5b5;
             }
         </style>
     </h:head>
@@ -49,7 +62,8 @@
                 <div class="pet-item">
                     <h:graphicImage value="#{not empty petType.imageUrl ? petType.imageUrl : 'resources/images/dog.png'}"
                                     styleClass="pet-image"/>
-                    <h:outputText value="#{petType.typeName}" styleClass="pet-type-name"/>
+                    <h:commandButton value="#{petType.typeName}" action="#{petTypeBean.navigateToPetTypes}" styleClass="pet-type-button" />
+
                 </div>
             </ui:repeat>
         </div>

@@ -9,15 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added ability to worrk with a local h2 database">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addPetType.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added the PetType repository, a string to store image urls for pet type">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetType.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +184,7 @@
       <workItem from="1708981000198" duration="1361000" />
       <workItem from="1708983536632" duration="6040000" />
       <workItem from="1709032121471" duration="4797000" />
-      <workItem from="1709375185270" duration="10972000" />
+      <workItem from="1709375185270" duration="14286000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -212,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709032158864</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added the PetType repository, a string to store image urls for pet type">
+      <option name="closed" value="true" />
+      <created>1709389441397</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709389441397</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +239,7 @@
     <MESSAGE value="Created project" />
     <MESSAGE value="Added Pet, PetType and Produc entities" />
     <MESSAGE value="Added ability to worrk with a local h2 database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added ability to worrk with a local h2 database" />
+    <MESSAGE value="Added the PetType repository, a string to store image urls for pet type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the PetType repository, a string to store image urls for pet type" />
   </component>
 </project>
