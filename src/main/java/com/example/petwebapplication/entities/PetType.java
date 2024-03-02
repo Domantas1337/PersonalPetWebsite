@@ -27,4 +27,7 @@ public class PetType {
 
     @ManyToMany(mappedBy = "petTypes") // Referring to the 'petTypes' field in Product
     private Set<Product> products;
+
+    @Column(name = "image_url", nullable = true)
+    private String imageUrl;
 }

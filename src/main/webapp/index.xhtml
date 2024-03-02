@@ -1,11 +1,76 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Pet Form</title>
+
+    <style>
+    /* Basic reset for styling */
+        body, h1, h2, h3, h4, h5, h6, p, form, input {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styling the menu bar */
+        .menu-bar {
+            background-color: #ece3e3; /* Green background */
+            overflow: hidden;
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically */
+            padding: 10px 20px; /* Add some padding */
+        }
+
+            /* Styling each menu item */
+        .menu-item {
+            background-color: #ece3e3; /* A distinct green background */
+            color: #000000; /* White text for contrast */
+            padding: 10px 20px; /* Padding inside the buttons */
+            text-decoration: none; /* Remove underline from links */
+            border: 2px solid transparent; /* Transparent border which can change on hover */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for several properties */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-weight: bold; /* Make the text bold */
+            text-transform: uppercase; /* Uppercase text for a button-like appearance */
+            letter-spacing: 1px; /* Add space between letters */
+        }
+
+        /* Change background color slightly on hover */
+        .menu-item:hover, .menu-item:active {
+            background-color: #bdb5b5;
+        }
+
+    /* Additional styling can be added for active menu items or other states */
+    </style>
+</h:head>
+<h:body>
+
+    <h:form>
+
+        <div class="menu-bar">
+            <h:form>
+                <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}" styleClass="menu-item" />
+                <h:commandButton value="My Pets" action="#{petBean.findPets}" styleClass="menu-item"/>
+
+                <h:commandButton value="Add Pets" action="#{petBean.findPets}" styleClass="menu-item"/>
+                <!-- Add more buttons here for additional menu items -->
+            </h:form>
+        </div>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel for="name" value="Name:" />
+            <h:inputText id="name" value="#{petBean.petName}" required="true" />
+
+            <h:outputLabel for="age" value="Age:" />
+            <h:inputText id="age" value="#{petBean.age}" required="true">
+                <f:convertNumber integerOnly="true" />
+            </h:inputText>
+        </h:panelGrid>
+
+        <h:commandButton value="Submit" action="#{petBean.savePet()}" />
+        <h:button value="Go to Pet Type" outcome="addPetType" />
+
+    </h:form>
+
+</h:body>
 </html>

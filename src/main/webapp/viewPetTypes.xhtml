@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<f:view>
+    <h:head>
+        <title>Pet Form</title>
+
+        <style type="text/css">
+            .pet-item, .pet-type-name {
+                box-sizing: border-box; /* This includes padding and borders in the width and height */
+            }
+            .pet-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 195px;
+                height: 220px;
+            }
+            .pet-item {
+                border: 1px solid black;
+                margin: 10px;
+                text-align: center;
+                width: 195px; /* Fixed width */
+                height: 220px;
+            }
+            .pet-image {
+                border: 1px solid black;
+                width: 100%; /* This will make the image take full width of the containing cell */
+                height: 100%;
+                display: block;
+                margin: auto;
+            }
+            .pet-type-name{
+                border: 1px solid black;
+                width: 100%;/* This will match the width of the .pet-item container */
+                height: 30px
+            }
+        </style>
+    </h:head>
+
+    <h:body>
+        <div class="pet-container">
+            <ui:repeat value="#{petTypeBean.petTypes}" var="petType">
+                <div class="pet-item">
+                    <h:graphicImage value="#{not empty petType.imageUrl ? petType.imageUrl : 'resources/images/dog.png'}"
+                                    styleClass="pet-image"/>
+                    <h:outputText value="#{petType.typeName}" styleClass="pet-type-name"/>
+                </div>
+            </ui:repeat>
+        </div>
+    </h:body>
+</f:view>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+   <title>Pet Form</title>
+</h:head>
+<h:body>
+
+   <h:form>
+      <h:panelGrid columns="2">
+         <h:outputLabel for="petType" value="Pet type:" />
+         <h:inputText id="petType" value="#{petTypeBean.typeName}" required="true" />
+
+         <h:outputLabel for="generalCareInfo" value="General care info:" />
+         <h:inputText id="generalCareInfo" value="#{petTypeBean.generalCareInfo}" required="true"/>
+
+         <h:outputLabel for="generalCareInfo" value="Image url:" />
+         <h:inputText id="imageURL" value="#{petTypeBean.imageURL}" required="false"/>
+      </h:panelGrid>
+
+      <h:commandButton value="Submit" action="#{petTypeBean.savePetType()}" />
+      <h:button value="Back" outcome="index" />
+
+   </h:form>
+
+</h:body>
+</html>
+
