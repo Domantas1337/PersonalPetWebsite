@@ -7,13 +7,12 @@ import java.util.List;
 
 @Mapper
 public interface PetMapper {
-    Pet selectPetById(@Param("id") Long id);
-
-    List<Pet> selectAllPets();
-
-    void insertPet(Pet pet);
-
+    @Select("SELECT * FROM PET")
+    List<Pet> findAll();
+    @Select("SELECT * FROM PET WHERE id = #{id}")
+    Pet findById(@Param("id") Long id);
+    @Delete("DELETE FROM PET where id = #{id}")
+    void deletePetById(@Param(value = "id") int id);
+    @Update("UPDATE PET SET pet_name = #{petName}, age = #{age}, image_url = {imaageURL} WHERE id = #{id}")
     void updatePet(Pet pet);
-
-    void deletePet(@Param("id") Long id);
 }

@@ -1,39 +1,60 @@
 package com.example.petwebapplication.beans;
 
+import com.example.petwebapplication.dtos.PetTypeForListsDto;
 import com.example.petwebapplication.entities.*;
+import com.example.petwebapplication.mappers.PetMapper;
+import com.example.petwebapplication.repositories.PetTypeRepository;
+import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import lombok.Data;
-import jakarta.transaction.Transactional;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @Named
 @RequestScoped
 public class PetBean {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    @Inject
+    private PetTypeRepository petTypeRepository;
+
+    @Inject
+    private PetMapper petMapper; // Assume injection is configured properly
+
+
+    private List<PetTypeForListsDto> petTypeForListsDtoList;
 
     private String petName;
     private int age;
-    private Long petTypeId;
+    private Long selectedPetType;
 
     public PetBean() {
     }
+    @PostConstruct
+    public void init() {
+        loadPetTypes();
+    }
 
-    // Method to save a user to the database
-    @Transactional
+    private void loadPetTypes() {
+        List<PetType> petTypeList = petTypeRepository.findAll();
+        petTypeForListsDtoList = petTypeList.stream()
+                .map(petType -> new PetTypeForListsDto(petType.getId(), petType.getTypeName()))
+                .collect(Collectors.toList());
+    }
+
     public void savePet() {
         Pet pet = new Pet();
-        pet.setPetName(this.petName);
-        pet.setAge(this.age);
+        pet.setPetName(petName);
+        pet.setAge(age);
+        pet.setPetType(
+                petTypeRepository.findById(selectedPetType).get()
+        );
 
-        // Find the PetType by ID and set it
-        PetType petType = entityManager.find(PetType.class, this.petTypeId);
-        pet.setPetType(petType);
-
-        entityManager.persist(pet);
+        petMapper.insertPet(pet);
     }
+    // Method to save a user to the database
+
 }

@@ -3,15 +3,15 @@ package com.example.petwebapplication.dtos;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 @Data
-public class PetTypeForProductDto {
+public class PetTypeForListsDto {
 
     @EqualsAndHashCode.Include
     private Long id;
     private String typeName;
 
-    public PetTypeForProductDto() {
+    public PetTypeForListsDto() {
     }
-    public PetTypeForProductDto(Long id, String typeName) {
+    public PetTypeForListsDto(Long id, String typeName) {
         this.id = id;
         this.typeName = typeName;
     }

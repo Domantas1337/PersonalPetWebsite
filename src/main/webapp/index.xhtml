@@ -50,27 +50,18 @@
         <div class="menu-bar">
             <h:form>
                 <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}" styleClass="menu-item" />
-                <h:commandButton value="Add Product" action="#{productBean.navigateToAddProducts}" styleClass="menu-item" />
+
+                <h:button value="Add Product" outcome="/addProductPage.xhtml" styleClass="menu-item"/>
 
                 <h:commandButton value="My Pets" action="#{petBean.findPets}" styleClass="menu-item"/>
 
-                <h:commandButton value="Add Pets" action="#{petBean.findPets}" styleClass="menu-item"/>
+                <h:commandButton value="Add Pets" action="AddPetPage"" styleClass="menu-item"/>
+
+                <h:button value="Add pet type" outcome="addPetTypePage" styleClass="menu-item"/>
                 <!-- Add more buttons here for additional menu items -->
             </h:form>
         </div>
 
-        <h:panelGrid columns="2">
-            <h:outputLabel for="name" value="Name:" />
-            <h:inputText id="name" value="#{petBean.petName}" required="true" />
-
-            <h:outputLabel for="age" value="Age:" />
-            <h:inputText id="age" value="#{petBean.age}" required="true">
-                <f:convertNumber integerOnly="true" />
-            </h:inputText>
-        </h:panelGrid>
-
-        <h:commandButton value="Submit" action="#{petBean.savePet()}" />
-        <h:button value="Go to Pet Type" outcome="addPetTypePage" />
 
     </h:form>
 

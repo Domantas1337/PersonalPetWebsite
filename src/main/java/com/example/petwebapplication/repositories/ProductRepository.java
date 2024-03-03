@@ -38,6 +38,13 @@ public class ProductRepository {
         entityManager.remove(product);
     }
 
+    public Product findProductWithPetTypesById(Long productId) {
+        return entityManager.createQuery(
+                        "SELECT p FROM Product p LEFT JOIN FETCH p.petTypes WHERE p.id = :productId", Product.class)
+                .setParameter("productId", productId)
+                .getSingleResult();
+    }
+
     public Product update(Product product) {
         return entityManager.merge(product);
     }

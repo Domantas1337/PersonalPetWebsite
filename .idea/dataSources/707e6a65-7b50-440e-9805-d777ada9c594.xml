@@ -169,7 +169,7 @@
     <schema id="162" parent="2" name="INFORMATION_SCHEMA"/>
     <schema id="163" parent="2" name="PUBLIC">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-03-03.15:27:13</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-03-03.18:12:26</LastIntrospectionLocalTimestamp>
     </schema>
     <sequence id="164" parent="163" name="PETTYPE_SEQ">
       <DasType>BIGINT|0s</DasType>
@@ -183,80 +183,147 @@
     </sequence>
     <sequence id="166" parent="163" name="PRODUCT_SEQ">
       <DasType>BIGINT|0s</DasType>
-      <SequenceIdentity>1(151)+50</SequenceIdentity>
+      <SequenceIdentity>1(301)+50</SequenceIdentity>
       <StartValue>1</StartValue>
     </sequence>
     <table id="167" parent="163" name="PET"/>
     <table id="168" parent="163" name="PETTYPE"/>
-    <column id="169" parent="167" name="ID">
+    <table id="169" parent="163" name="PRODUCT"/>
+    <table id="170" parent="163" name="PRODUCT_PET_TYPES"/>
+    <column id="171" parent="167" name="ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="170" parent="167" name="AGE">
+    <column id="172" parent="167" name="AGE">
       <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="171" parent="167" name="PET_NAME">
+    <column id="173" parent="167" name="PET_NAME">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="172" parent="167" name="PETTYPE_ID">
+    <column id="174" parent="167" name="PETTYPE_ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="173" parent="167" name="FK86YWEWPRB94BRJBEWGJCTA9A4">
+    <foreign-key id="175" parent="167" name="FK86YWEWPRB94BRJBEWGJCTA9A4">
       <ColNames>PETTYPE_ID</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
       <RefKeyName>CONSTRAINT_2</RefKeyName>
       <RefTableName>PETTYPE</RefTableName>
     </foreign-key>
-    <index id="174" parent="167" name="PRIMARY_KEY_1">
+    <index id="176" parent="167" name="PRIMARY_KEY_1">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <index id="175" parent="167" name="FK86YWEWPRB94BRJBEWGJCTA9A4_INDEX_1">
+    <index id="177" parent="167" name="FK86YWEWPRB94BRJBEWGJCTA9A4_INDEX_1">
       <ColNames>PETTYPE_ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <key id="176" parent="167" name="CONSTRAINT_1">
+    <key id="178" parent="167" name="CONSTRAINT_1">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="177" parent="168" name="ID">
+    <column id="179" parent="168" name="ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="178" parent="168" name="GENERAL_CARE_INFO">
+    <column id="180" parent="168" name="GENERAL_CARE_INFO">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="179" parent="168" name="TYPE_NAME">
+    <column id="181" parent="168" name="TYPE_NAME">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="180" parent="168" name="IMAGE_URL">
+    <column id="182" parent="168" name="IMAGE_URL">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="181" parent="168" name="PRIMARY_KEY_37">
+    <index id="183" parent="168" name="PRIMARY_KEY_37">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="182" parent="168" name="CONSTRAINT_2">
+    <key id="184" parent="168" name="CONSTRAINT_2">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
+    <column id="185" parent="169" name="ID">
+      <DasType>BIGINT|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="186" parent="169" name="DESCRIPTION">
+      <DasType>CHARACTER LARGE OBJECT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="187" parent="169" name="PRICE">
+      <DasType>NUMERIC(38,2)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="188" parent="169" name="PRODUCT_NAME">
+      <DasType>CHARACTER VARYING(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="189" parent="169" name="SHORT_DESCRIPTION">
+      <DasType>CHARACTER VARYING(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <index id="190" parent="169" name="PRIMARY_KEY_E8">
+      <ColNames>ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="191" parent="169" name="CONSTRAINT_18">
+      <ColNames>ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="192" parent="170" name="PRODUCT_ID">
+      <DasType>BIGINT|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="193" parent="170" name="PET_TYPE_ID">
+      <DasType>BIGINT|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="194" parent="170" name="FK3EJWOD2UW7IIF75CW3HD196O1">
+      <ColNames>PRODUCT_ID</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_18</RefKeyName>
+      <RefTableName>PRODUCT</RefTableName>
+    </foreign-key>
+    <foreign-key id="195" parent="170" name="FKNOGUUVU4YXU5X021W0AYRSJAC">
+      <ColNames>PET_TYPE_ID</ColNames>
+      <OnDelete>restrict</OnDelete>
+      <OnUpdate>restrict</OnUpdate>
+      <RefKeyName>CONSTRAINT_2</RefKeyName>
+      <RefTableName>PETTYPE</RefTableName>
+    </foreign-key>
+    <index id="196" parent="170" name="FK3EJWOD2UW7IIF75CW3HD196O1_INDEX_3">
+      <ColNames>PRODUCT_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+    </index>
+    <index id="197" parent="170" name="FKNOGUUVU4YXU5X021W0AYRSJAC_INDEX_3">
+      <ColNames>PET_TYPE_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+    </index>
   </database-model>
 </dataSource>

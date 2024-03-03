@@ -1,6 +1,6 @@
 package com.example.petwebapplication.beans;
 
-import com.example.petwebapplication.dtos.PetTypeForProductDto;
+import com.example.petwebapplication.dtos.PetTypeForListsDto;
 import com.example.petwebapplication.entities.PetType;
 import com.example.petwebapplication.entities.Product;
 import com.example.petwebapplication.repositories.PetTypeRepository;
@@ -30,7 +30,7 @@ public class AddProductPageBean {
     private String description;
     private String shortDescription;
     private List<Long> selectedPetTypeIds;
-    private List<PetTypeForProductDto> petTypeDTOs;
+    private List<PetTypeForListsDto> petTypeDTOs;
 
     public AddProductPageBean() {
     }
@@ -43,7 +43,7 @@ public class AddProductPageBean {
     private void loadPetTypes() {
         List<PetType> petTypeList = petTypeRepository.findAll();
         petTypeDTOs = petTypeList.stream()
-                .map(petType -> new PetTypeForProductDto(petType.getId(), petType.getTypeName()))
+                .map(petType -> new PetTypeForListsDto(petType.getId(), petType.getTypeName()))
                 .collect(Collectors.toList());
     }
 

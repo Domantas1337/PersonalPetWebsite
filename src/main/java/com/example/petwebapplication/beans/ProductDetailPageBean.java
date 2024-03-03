@@ -22,11 +22,10 @@ public class ProductDetailPageBean implements Serializable {
 
     @PostConstruct
     public void init() {
-        // Fetch the product ID from request parameter
         String productIdParam = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("productId");
         if (productIdParam != null && !productIdParam.isEmpty()) {
             Long productId = Long.parseLong(productIdParam);
-            product = productRepository.findById(productId).orElse(null); // Handle the case where the product is not found appropriately
+            product = productRepository.findProductWithPetTypesById(productId);
         }
     }
 
