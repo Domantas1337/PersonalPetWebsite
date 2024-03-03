@@ -18,43 +18,4 @@ import java.util.stream.Collectors;
 @RequestScoped
 public class PetBean {
 
-    @Inject
-    private PetTypeRepository petTypeRepository;
-
-    @Inject
-    private PetMapper petMapper; // Assume injection is configured properly
-
-
-    private List<PetTypeForListsDto> petTypeForListsDtoList;
-
-    private String petName;
-    private int age;
-    private Long selectedPetType;
-
-    public PetBean() {
-    }
-    @PostConstruct
-    public void init() {
-        loadPetTypes();
-    }
-
-    private void loadPetTypes() {
-        List<PetType> petTypeList = petTypeRepository.findAll();
-        petTypeForListsDtoList = petTypeList.stream()
-                .map(petType -> new PetTypeForListsDto(petType.getId(), petType.getTypeName()))
-                .collect(Collectors.toList());
-    }
-
-    public void savePet() {
-        Pet pet = new Pet();
-        pet.setPetName(petName);
-        pet.setAge(age);
-        pet.setPetType(
-                petTypeRepository.findById(selectedPetType).get()
-        );
-
-        petMapper.insertPet(pet);
-    }
-    // Method to save a user to the database
-
 }
