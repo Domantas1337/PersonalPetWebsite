@@ -57,16 +57,19 @@
     </h:head>
 
     <h:body>
-        <div class="pet-container">
-            <ui:repeat value="#{petTypeBean.petTypes}" var="petType">
-                <div class="pet-item">
-                    <h:graphicImage value="#{not empty petType.imageUrl ? petType.imageUrl : 'resources/images/dog.png'}"
-                                    styleClass="pet-image"/>
-                    <h:commandButton value="#{petType.typeName}" action="#{petTypeBean.navigateToPetTypes}" styleClass="pet-type-button" />
+        <h:form>
+            <div class="pet-container">
+                <ui:repeat value="#{petTypeBean.petTypes}" var="petType">
+                    <div class="pet-item">
 
-                </div>
-            </ui:repeat>
-        </div>
+                        <h:graphicImage value="#{not empty petType.imageUrl ? petType.imageUrl : 'resources/images/dog.png'}"
+                                        styleClass="pet-image"/>
+                        <h:commandButton value="#{petType.typeName}" action="#{petTypeBean.navigateToPetTypeDetails(petType.id)}" styleClass="pet-type-button" />
+
+                    </div>
+                </ui:repeat>
+            </div>
+        </h:form>
     </h:body>
 </f:view>
 </html>

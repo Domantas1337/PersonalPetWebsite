@@ -26,7 +26,11 @@ public class PetTypeRepository {
     }
 
     public Optional<PetType> findById(Long id) {
-        return Optional.ofNullable(entityManager.find(PetType.class, id));
+        PetType petType = entityManager.find(PetType.class, id);
+        System.out.println("size " + petType.getProducts().size());
+        System.out.println("id " + id);
+
+        return Optional.ofNullable(petType);
     }
 
     public void delete(Long id) {

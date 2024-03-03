@@ -1,0 +1,107 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+   <title>Pet Type Details</title>
+   <style>
+      .card-container {
+         display: flex;
+         flex-direction: column;
+         border: 1px solid #ddd;
+         margin: 10px;
+         padding: 15px;
+         border-radius: 8px;
+         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+         width: 200px; /* Adjust width as necessary */
+         text-align: center; /* Center text for all elements in the container */
+
+      }
+
+      .card-title {
+         font-weight: bold;
+         font-size: 1.2em;
+         margin-bottom: 15px;
+      }
+
+      .card-description {
+         flex-grow: 1;
+         margin-bottom: 15px;
+      }
+
+      .card-button {
+         text-align: center;
+      }
+         /* CSS */
+      .button-3 {
+         appearance: none;
+         background-color: #2ea44f;
+         border: 1px solid rgba(27, 31, 35, .15);
+         border-radius: 6px;
+         box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+         box-sizing: border-box;
+         color: #fff;
+         cursor: pointer;
+         display: inline-block;
+         font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+         font-size: 14px;
+         font-weight: 600;
+         line-height: 20px;
+         padding: 6px 16px;
+         position: relative;
+         text-align: center;
+         text-decoration: none;
+         user-select: none;
+         -webkit-user-select: none;
+         touch-action: manipulation;
+         vertical-align: middle;
+         white-space: nowrap;
+      }
+
+      .button-3:focus:not(:focus-visible):not(.focus-visible) {
+         box-shadow: none;
+         outline: none;
+      }
+
+      .button-3:hover {
+         background-color: #2c974b;
+      }
+
+      .button-3:focus {
+         box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+         outline: none;
+      }
+
+      .button-3:disabled {
+         background-color: #94d3a2;
+         border-color: rgba(27, 31, 35, .1);
+         color: rgba(255, 255, 255, .8);
+         cursor: default;
+      }
+
+      .button-3:active {
+         background-color: #298e46;
+         box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+      }
+
+   </style>
+</h:head>
+<h:body>
+   <h2>#{petTypeBean.selectedPetType.typeName} Details</h2>
+   <h3>Products Suitable for #{petTypeBean.selectedPetType.typeName}</h3>
+   <h:form>
+      <div class="product-container">
+         <ui:repeat value="#{petTypeBean.selectedPetType.products}" var="product">
+            <div class="card-container">
+               <div class="card-title">#{product.productName}</div>
+               <div class="card-description">#{product.shortDescription}</div>
+               <div class="card-button">
+                  <h:commandButton styleClass="button-3" value="View" action="#{productBean.navigateToProductDetails(product.id)}" />
+                  <!-- Replace 'yourBean.yourActionMethod(product)' with your actual method -->
+               </div>
+            </div>
+         </ui:repeat>
+      </div>
+   </h:form>
+</h:body>
+</html>

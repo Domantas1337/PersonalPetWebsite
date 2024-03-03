@@ -30,6 +30,7 @@
     <h:body>
 
         <h:form>
+            <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}"/>
 
 
             <h:panelGrid columns="2">
@@ -40,6 +41,9 @@
                 <h:inputText id="price" value="#{productBean.price}" required="true">
                     <f:convertNumber type="number" minFractionDigits="2" />
                 </h:inputText>
+
+                <h:outputLabel for="short-description" value="Product description:" />
+                <h:inputText id="short-description" value="#{productBean.short_description}" required="true"/>
 
                 <h:outputLabel for="description" value="Product description:" />
                 <h:inputText id="description" value="#{productBean.description}" required="true"/>

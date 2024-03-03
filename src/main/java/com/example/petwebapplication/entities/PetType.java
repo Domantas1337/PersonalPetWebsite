@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.EqualsAndHashCode;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -27,8 +28,8 @@ public class PetType {
     @OneToMany(mappedBy = "petType")
     private Set<Pet> pets;
 
-    @ManyToMany(mappedBy = "petTypes") // Referring to the 'petTypes' field in Product
-    private Set<Product> products;
+    @ManyToMany(mappedBy = "petTypes", fetch = FetchType.EAGER) // Referring to the 'petTypes' field in Product
+    private List<Product> products;
 
     @Column(name = "image_url", nullable = true)
     private String imageUrl;

@@ -32,7 +32,6 @@ public class ProductBean implements Serializable {
     @PersistenceContext
     private transient EntityManager entityManager; // Mark non-serializable fields as transient
 
-    private static final transient Logger LOGGER = Logger.getLogger(ProductBean.class.getName());
 
     @Inject
     private transient PetTypeRepository petTypeRepository;
@@ -48,7 +47,11 @@ public class ProductBean implements Serializable {
     private String productName;
     private BigDecimal price;
     private String description;
-    private Set<PetType> productPetTypes; // Ensure PetType is Serializable
+    private String short_description;
+
+    private List<PetType> productPetTypes; // Ensure PetType is Serializable
+
+    private Product selectedProduct;
 
     private List<Long> selectedPetTypeIds;
     public ProductBean() {
@@ -56,6 +59,7 @@ public class ProductBean implements Serializable {
     public String navigateToAddProducts() {
         return "addProductPage";
     }
+
 
     private void loadPetTypes() {
         List<PetType> petTypeList = petTypeRepository.findAll();
@@ -69,6 +73,11 @@ public class ProductBean implements Serializable {
         products = new ArrayList<>();
     }
 
+    public String navigateToProductDetails(Long productId) {
+        // Instead of setting a field, pass the ID as a parameter
+        return "viewProductDetails?faces-redirect=true&productId=" + productId;
+    }
+
     public void findProducts() {
         products = entityManager.createQuery("SELECT p FROM Product p", Product.class).getResultList();
     }
@@ -77,13 +86,13 @@ public class ProductBean implements Serializable {
         Product product = new Product();
         product.setProductName(this.productName);
         product.setPrice(this.price);
+        product.setShortDescription(this.short_description);
         product.setDescription(this.description);
 
-        System.out.println("kaaa");
 
-        Set<PetType> selectedPetTypes = selectedPetTypeIds.stream()
+        List<PetType> selectedPetTypes = selectedPetTypeIds.stream()
                 .map(id -> entityManager.find(PetType.class, id))
-                .collect(Collectors.toSet());
+                .collect(Collectors.toList());
         product.setPetTypes(selectedPetTypes);
 
         productRepository.create(product);

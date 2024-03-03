@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.Set;
 import java.math.BigDecimal;
 
@@ -25,6 +26,10 @@ public class Product {
     @Column(name = "price", nullable = false)
     private BigDecimal price;
 
+    @Column(name = "short_description", nullable = true)
+    private String shortDescription;
+
+    @Lob
     @Column(name = "description", nullable = true)
     private String description;
 
@@ -34,6 +39,6 @@ public class Product {
             joinColumns = @JoinColumn(name = "product_id"), // Column for the join table corresponding to this entity
             inverseJoinColumns = @JoinColumn(name = "pet_type_id") // Column for the join table corresponding to the PetType entity
     )
-    private Set<PetType> petTypes;
+    private List<PetType> petTypes;
 }
 

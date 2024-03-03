@@ -6,7 +6,10 @@
 </h:head>
 <h:body>
 
+   <h:commandButton value="Add Product" action="#{productBean.navigateToAddProducts}" />
+
    <h:form>
+
       <h:panelGrid columns="2">
          <h:outputLabel for="petType" value="Pet type:" />
          <h:inputText id="petType" value="#{petTypeBean.typeName}" required="true" />
