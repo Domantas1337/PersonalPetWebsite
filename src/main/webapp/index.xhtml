@@ -50,6 +50,8 @@
         <div class="menu-bar">
             <h:form>
                 <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}" styleClass="menu-item" />
+                <h:commandButton value="Add Product" action="#{productBean.navigateToAddProducts}" styleClass="menu-item" />
+
                 <h:commandButton value="My Pets" action="#{petBean.findPets}" styleClass="menu-item"/>
 
                 <h:commandButton value="Add Pets" action="#{petBean.findPets}" styleClass="menu-item"/>
@@ -68,7 +70,7 @@
         </h:panelGrid>
 
         <h:commandButton value="Submit" action="#{petBean.savePet()}" />
-        <h:button value="Go to Pet Type" outcome="addPetType" />
+        <h:button value="Go to Pet Type" outcome="addPetTypePage" />
 
     </h:form>
 

@@ -20,7 +20,7 @@ public class Pet {
     @Column(name = "age", nullable = false)
     private int age;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     private PetType petType;
 
 

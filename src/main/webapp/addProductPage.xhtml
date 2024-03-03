@@ -7,7 +7,25 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <h:head>
+        <style type="text/css">
+            .select-menu {
+                height: 75px;
+                width: 100%; /* Set the width to 100% of the parent container */
+                padding: 8px; /* Add some padding for better touch */
+                border: 1px solid #ccc; /* Add a border */
+                border-radius: 4px; /* Optional: round the corners */
+                background-color: #fff; /* Set the background color */
+                font-size: 16px; /* Increase the font size */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+            }
 
+            /* Style for the label */
+            .label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+        </style>
     </h:head>
     <h:body>
 
@@ -15,16 +33,25 @@
 
 
             <h:panelGrid columns="2">
-                <h:outputLabel for="name" value="Name:" />
-                <h:inputText id="name" value="#{petBean.petName}" required="true" />
+                <h:outputLabel for="name" value="Product name:" />
+                <h:inputText id="name" value="#{productBean.productName}" required="true" />
 
-                <h:outputLabel for="age" value="Age:" />
-                <h:inputText id="age" value="#{petBean.age}" required="true">
-                    <f:convertNumber integerOnly="true" />
+                <h:outputLabel for="price" value="Product price:" />
+                <h:inputText id="price" value="#{productBean.price}" required="true">
+                    <f:convertNumber type="number" minFractionDigits="2" />
                 </h:inputText>
+
+                <h:outputLabel for="description" value="Product description:" />
+                <h:inputText id="description" value="#{productBean.description}" required="true"/>
+
+                <h:outputLabel for="brr" value="Select Pet Types:" />
+                <h:selectManyMenu id="brr" value="#{productBean.selectedPetTypeIds}" styleClass="select-menu">
+                    <f:selectItems value="#{productBean.petTypeDTOs}" var="type"
+                                   itemValue="#{type.id}" itemLabel="#{type.typeName}" />
+                </h:selectManyMenu>
             </h:panelGrid>
 
-            <h:commandButton value="Submit" action="#{petBean.savePet()}" />
+            <h:commandButton value="Submit" action="#{productBean.saveProduct()}"  />
             <h:button value="Go to Pet Type" outcome="addPetType" />
 
         </h:form>
