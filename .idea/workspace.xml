@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Created PetMapper for the Pet entity">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Fixed index.xhtml to test the application">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/SqlSessionFactoryProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/PetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/beans-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +88,7 @@
       <recent name="com.example.petwebapplication.entities" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp" />
     </key>
   </component>
@@ -189,7 +194,10 @@
       <workItem from="1709032121471" duration="4797000" />
       <workItem from="1709375185270" duration="33908000" />
       <workItem from="1709418318783" duration="2039000" />
-      <workItem from="1709457446313" duration="32198000" />
+      <workItem from="1709457446313" duration="35564000" />
+      <workItem from="1709568793369" duration="368000" />
+      <workItem from="1709579658711" duration="2712000" />
+      <workItem from="1709582709312" duration="780000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -255,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709505460270</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed index.xhtml to test the application">
+      <option name="closed" value="true" />
+      <created>1709506057195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709506057195</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +297,7 @@
     <MESSAGE value="Fixed problems with the addProduct page and added a pet IBatis DataMapper" />
     <MESSAGE value="Started the product detail page" />
     <MESSAGE value="Created PetMapper for the Pet entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created PetMapper for the Pet entity" />
+    <MESSAGE value="Fixed index.xhtml to test the application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed index.xhtml to test the application" />
   </component>
 </project>

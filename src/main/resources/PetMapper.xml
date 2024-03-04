@@ -1,0 +1,34 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.petwebapplication.mappers.PetMapper">
+
+    <!-- Result map to define how the columns map to the Pet object properties -->
+    <resultMap id="petResult" type="com.example.petwebapplication.entities.Pet">
+        <id property="id" column="id" />
+        <result property="petName" column="pet_name" />
+        <result property="age" column="age" />
+        <result property="imageUrl" column="image_url" />
+    </resultMap>
+
+    <!-- Select all pets -->
+    <select id="findAll" resultType="com.example.petwebapplication.entities.Pet">
+        SELECT * FROM PET
+    </select>
+
+    <!-- Select a pet by id -->
+    <select id="findById" parameterType="long" resultMap="petResult">
+        SELECT * FROM PET WHERE id = #{id}
+    </select>
+
+    <!-- Delete a pet by id -->
+    <delete id="deletePetById" parameterType="int">
+        DELETE FROM PET WHERE id = #{id}
+    </delete>
+
+    <!-- Update a pet -->
+    <update id="updatePet" parameterType="com.example.petwebapplication.entities.Pet">
+        UPDATE PET SET pet_name = #{petName}, age = #{age}, image_url = #{imageUrl} WHERE id = #{id}
+    </update>
+
+</mapper>
