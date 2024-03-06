@@ -3,32 +3,43 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.petwebapplication.mappers.PetMapper">
 
-    <!-- Define the result map for Pet entity -->
-    <resultMap id="petResultMap" type="com.example.petwebapplication.entities.Pet">
-        <id column="id" property="id" />
-        <result column="pet_name" property="petName" />
-        <result column="image_url" property="imageURL" />
-        <result column="age" property="age" />
+    <resultMap id="BaseResultMap" type="com.example.petwebapplication.entities.Pet">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="pet_name" jdbcType="VARCHAR" property="petName"/>
+        <result column="image_url" jdbcType="VARCHAR" property="imageURL"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <collection property="petServiceRecords" javaType="List" ofType="com.example.petwebapplication.entities.PetServiceRecord"
+                    column="id" select="selectPetServiceRecordsForPet"/>
     </resultMap>
 
-    <!-- Select all pets -->
-    <select id="findAll" resultMap="petResultMap">
-        SELECT * FROM PET
-    </select>
+    <!-- Other CRUD operations here -->
 
-    <!-- Select a pet by id -->
-    <select id="findById" parameterType="long" resultMap="petResultMap">
-        SELECT * FROM PET WHERE id = #{id}
-    </select>
-
-    <!-- Delete a pet by id -->
-    <delete id="deletePetById" parameterType="long">
-        DELETE FROM PET WHERE id = #{id}
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        DELETE FROM public.student
+        WHERE id = #{id, jdbcType=LONG}
     </delete>
 
-    <!-- Update a pet's information -->
-    <update id="updatePet" parameterType="com.example.petwebapplication.entities.Pet">
-        UPDATE PET SET pet_name = #{petName}, age = #{age}, image_url = #{imageURL} WHERE id = #{id}
-    </update>
+    <delete id="deletePetServiceRecordsByPetId" parameterType="java.lang.Long">
+        DELETE FROM pet_service_record WHERE pet_id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        DELETE FROM pet WHERE id = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <select id="selectPetServiceRecordsForPet" parameterType="java.lang.Long" resultType="com.example.petwebapplication.entities.PetServiceRecord">
+        SELECT id, pet_id, service_name, date, details
+        FROM pet_service_record
+        WHERE pet_id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <insert id="insertPet" keyColumn="id" keyProperty="id" parameterType="com.example.petwebapplication.entities.Pet" useGeneratedKeys="true">
+        INSERT INTO pet (pet_name, image_url, age)
+        VALUES (#{petName,jdbcType=VARCHAR}, #{imageURL,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
+    </insert>
+
+
+
+    <!-- Insert, Update, Delete, Select operations for Pet -->
 
 </mapper>

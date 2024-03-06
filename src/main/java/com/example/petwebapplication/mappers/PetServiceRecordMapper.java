@@ -1,5 +1,4 @@
 package com.example.petwebapplication.mappers;
-package com.example.petwebapplication.mappers;
 
 import com.example.petwebapplication.entities.Pet;
 import org.apache.ibatis.annotations.Delete;

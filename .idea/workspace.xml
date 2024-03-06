@@ -10,10 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="MyBatis now works (PetMapper)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/PetServiceRecordMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +37,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -201,6 +202,8 @@
       <workItem from="1709457446313" duration="32198000" />
       <workItem from="1709633243643" duration="5668000" />
       <workItem from="1709729968809" duration="506000" />
+      <workItem from="1709735642711" duration="123000" />
+      <workItem from="1709754217023" duration="4074000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
