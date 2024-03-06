@@ -19,10 +19,18 @@
         WHERE id = #{id, jdbcType=LONG}
     </delete>
 
+    <update id="updatePet" parameterType="com.example.petwebapplication.entities.Pet">
+        UPDATE pet
+        SET pet_name = #{petName,jdbcType=VARCHAR},
+            image_url = #{imageURL,jdbcType=VARCHAR},
+            age = #{age,jdbcType=INTEGER}
+        WHERE id = #{id,jdbcType=BIGINT}
+    </update>
+
     <delete id="deletePetServiceRecordsByPetId" parameterType="java.lang.Long">
         DELETE FROM pet_service_record WHERE pet_id = #{id,jdbcType=BIGINT}
     </delete>
-
+a
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         DELETE FROM pet WHERE id = #{id,jdbcType=BIGINT}
     </delete>
