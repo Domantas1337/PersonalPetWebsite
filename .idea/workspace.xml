@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/PetServiceRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetServiceRecordMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +203,7 @@
       <workItem from="1709729968809" duration="506000" />
       <workItem from="1709735642711" duration="123000" />
       <workItem from="1709754217023" duration="4289000" />
+      <workItem from="1710274959997" duration="5699000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />

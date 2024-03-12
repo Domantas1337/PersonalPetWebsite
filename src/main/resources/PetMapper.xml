@@ -14,10 +14,6 @@
 
     <!-- Other CRUD operations here -->
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-        DELETE FROM public.student
-        WHERE id = #{id, jdbcType=LONG}
-    </delete>
 
     <update id="updatePet" parameterType="com.example.petwebapplication.entities.Pet">
         UPDATE pet
@@ -30,7 +26,7 @@
     <delete id="deletePetServiceRecordsByPetId" parameterType="java.lang.Long">
         DELETE FROM pet_service_record WHERE pet_id = #{id,jdbcType=BIGINT}
     </delete>
-a
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
         DELETE FROM pet WHERE id = #{id,jdbcType=BIGINT}
     </delete>
@@ -46,7 +42,9 @@ a
         VALUES (#{petName,jdbcType=VARCHAR}, #{imageURL,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
     </insert>
 
-
+    <select id="findAll" resultType="com.example.petwebapplication.entities.Pet">
+        SELECT id, pet_name, image_url, age FROM pet
+    </select>
 
     <!-- Insert, Update, Delete, Select operations for Pet -->
 

@@ -15,7 +15,7 @@ public interface PetServiceRecordMapper {
 
     PetServiceRecordMapper findById(@Param("id") Long id);
 
-    void deletePetById(@Param("id") Long id);
+    void deleteRecordById(@Param("id") Long id);
 
-    void updatePet(PetServiceRecordMapper petServiceRecordMapper);
+    void updateRecord(PetServiceRecordMapper petServiceRecordMapper);
 }
