@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Completed PetMappe.xml PerServiceRecordMapper.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PetServiceRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetServiceRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +204,7 @@
       <workItem from="1709729968809" duration="506000" />
       <workItem from="1709735642711" duration="123000" />
       <workItem from="1709754217023" duration="4289000" />
-      <workItem from="1710274959997" duration="5699000" />
+      <workItem from="1710274959997" duration="8002000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -285,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709762607796</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Completed PetMappe.xml PerServiceRecordMapper.xml">
+      <option name="closed" value="true" />
+      <created>1710282903270</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710282903270</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +323,7 @@
     <MESSAGE value="Created PetMapper for the Pet entity" />
     <MESSAGE value="MyBatis now works (PetMapper)" />
     <MESSAGE value="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord" />
-    <option name="LAST_COMMIT_MESSAGE" value="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord" />
+    <MESSAGE value="Completed PetMappe.xml PerServiceRecordMapper.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed PetMappe.xml PerServiceRecordMapper.xml" />
   </component>
 </project>

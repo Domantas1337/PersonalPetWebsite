@@ -12,10 +12,8 @@ import java.util.List;
 @Mapper
 public interface PetMapper {
     List<Pet> findAll();
-
     Pet findById(@Param("id") Long id);
-
     void deletePetById(@Param("id") Long id);
-
+    void insertPet(Pet pet);
     void updatePet(Pet pet);
 }

@@ -78,7 +78,7 @@ public class PetTypeBean implements Serializable {
         petType.setGeneralCareInfo(this.generalCareInfo);
         petType.setImageUrl(this.imageURL);
 
-        entityManager.persist(petType);
+        petTypeRepository.create(petType);
     }
 }
 

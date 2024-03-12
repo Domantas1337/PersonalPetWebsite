@@ -1,36 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Pet Form</title>
+</h:head>
+<h:body>
 
-    <h:head>
+    <h:commandButton value="Add Product" action="#{productBean.navigateToAddProducts}" />
 
-    </h:head>
-    <h:body>
-        <h:form>
-            <h:panelGrid columns="2">
-                <h:outputLabel for="name" value="Name:" />
-                <h:inputText id="name" value="#{petBean.petName}" required="true" />
+    <h:form>
 
-                <h:outputLabel for="age" value="Age:" />
-                <h:inputText id="age" value="#{petBean.age}" required="true">
-                    <f:convertNumber integerOnly="true" />
-                </h:inputText>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="petNmae" value="Pet name:" />
+            <h:inputText id="petNmae" value="#{petBean.name}" required="true" />
 
-                <h:selectOneMenu id="petType" value="#{petBean.selectedPetType}" required="true">
-                    <f:selectItem itemValue="" itemLabel="Select One..." noSelectionOption="true" />
-                    <f:selectItems value="#{petBean.petTypeForListsDtoList}" var="type"
-                                   itemValue="#{type.id}" itemLabel="#{type.typeName}" />
-                </h:selectOneMenu>
-            </h:panelGrid>
+            <h:outputLabel for="age" value="Age:" />
+            <h:inputText id="age" value="#{petBean.age}" required="true"/>
 
-            <h:commandButton value="Submit" action="#{petBean.savePet()}" />
-        </h:form>
-    </h:body>
+            <h:outputLabel for="imageURL" value="Image url:" />
+            <h:inputText id="imageURL" value="#{petBean.imageURL}" required="false"/>
+        </h:panelGrid>
 
-</f:view>
+        <h:commandButton value="Submit" action="#{petBean.addPet()}" />
+        <h:button value="Back" outcome="index" />
+
+    </h:form>
+
+</h:body>
 </html>
+
