@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+
+    <h:form>
+
+        <h:panelGrid columns="2">
+            <h:outputLabel for="petType" value="Pet type:" />
+            <h:inputText id="petType" value="#{petTypeBean.typeName}" required="true" />
+
+            <h:outputLabel for="generalCareInfo" value="General care info:" />
+            <h:inputText id="generalCareInfo" value="#{petTypeBean.generalCareInfo}" required="true"/>
+
+            <h:outputLabel for="generalCareInfo" value="Image url:" />
+            <h:inputText id="imageURL" value="#{petTypeBean.imageURL}" required="false"/>
+        </h:panelGrid>
+
+        <h:commandButton value="Submit" action="#{petTypeBean.savePetType()}" />
+        <h:button value="Back" outcome="index" />
+
+    </h:form>
+
+</h:body>
+</html>

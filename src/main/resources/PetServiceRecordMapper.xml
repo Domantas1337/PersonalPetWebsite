@@ -5,7 +5,7 @@
 
     <resultMap id="BaseResultMap" type="com.example.petwebapplication.entities.PetServiceRecord">
         <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="service_name" jdbcType="VARCHAR" property="serviceType"/>
+        <result column="service_name" jdbcType="VARCHAR" property="serviceName"/>
         <result column="service_date" jdbcType="TIMESTAMP" property="serviceDate"/>
         <result column="provider_name" jdbcType="VARCHAR" property="providerName"/>
         <result column="details" jdbcType="VARCHAR" property="details"/>
