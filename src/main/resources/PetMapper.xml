@@ -44,7 +44,7 @@
         VALUES (#{petName,jdbcType=VARCHAR}, #{imageURL,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER})
     </insert>
 
-    <select id="findAll" resultType="com.example.petwebapplication.entities.Pet">
+    <select id="findAll" resultType="com.example.petwebapplication.entities.Pet" resultMap="BaseResultMap">
         SELECT id, pet_name, image_url, age FROM pet
     </select>
 
