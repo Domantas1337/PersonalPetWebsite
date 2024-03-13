@@ -5,23 +5,33 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <link rel="stylesheet" href="style.css"/>
+</h:head>
 <h:body>
 
     <h:form>
 
         <h:panelGrid columns="2">
-            <h:outputLabel for="petType" value="Pet type:" />
-            <h:inputText id="petType" value="#{petTypeBean.typeName}" required="true" />
+            <h:outputLabel for="serviceName" value="Name of the service:" />
+            <h:inputText id="serviceName" value="#{petServiceBean.serviceName}" required="true" />
 
-            <h:outputLabel for="generalCareInfo" value="General care info:" />
-            <h:inputText id="generalCareInfo" value="#{petTypeBean.generalCareInfo}" required="true"/>
+            <h:outputLabel for="serviceDate" value="Date when acquired:" />
+            <h:inputText id="serviceDate" value="#{petServiceBean.serviceDate}" type="date" required="false"/>
 
-            <h:outputLabel for="generalCareInfo" value="Image url:" />
-            <h:inputText id="imageURL" value="#{petTypeBean.imageURL}" required="false"/>
+            <h:outputLabel for="providerName" value="Name of the provider:" />
+            <h:inputText id="providerName" value="#{petServiceBean.providerName}" required="true"/>
+
+            <h:outputLabel for="cost" value="Service cost:" />
+            <h:inputText id="cost" value="#{petServiceBean.cost}" required="true"/>
+
+            <h:outputLabel for="details" value="Additional details:" />
+            <h:inputText id="details" value="#{petServiceBean.details}" required="false"/>
+
         </h:panelGrid>
 
-        <h:commandButton value="Submit" action="#{petTypeBean.savePetType()}" />
-        <h:button value="Back" outcome="index" />
+        <h:commandButton value="Add Record" styleClass="add-button" action="#{petServiceBean.addPetServiceRecord()}" />
 
     </h:form>
 

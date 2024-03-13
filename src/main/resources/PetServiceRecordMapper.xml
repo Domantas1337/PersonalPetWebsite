@@ -20,14 +20,14 @@
 
     <insert id="insertRecord" parameterType="com.example.petwebapplication.entities.PetServiceRecord" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO pet_service_record (pet_id, service_name, service_date, provider_name, details, cost)
-        VALUES (#{pet.id,jdbcType=BIGINT}, #{serviceType,jdbcType=VARCHAR}, #{serviceDate,jdbcType=TIMESTAMP},
+        VALUES (#{pet.id,jdbcType=BIGINT}, #{serviceName,jdbcType=VARCHAR}, #{serviceDate,jdbcType=TIMESTAMP},
                 #{providerName,jdbcType=VARCHAR}, #{details,jdbcType=VARCHAR}, #{cost,jdbcType=DECIMAL})
     </insert>
 
     <update id="updateRecord" parameterType="com.example.petwebapplication.entities.PetServiceRecord">
         UPDATE pet_service_record
         SET pet_id = #{pet.id,jdbcType=BIGINT},
-            service_name = #{serviceType,jdbcType=VARCHAR},
+            service_name = #{serviceName,jdbcType=VARCHAR},
             service_date = #{serviceDate,jdbcType=TIMESTAMP},
             provider_name = #{providerName,jdbcType=VARCHAR},
             details = #{details,jdbcType=VARCHAR},

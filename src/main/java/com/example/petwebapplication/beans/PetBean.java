@@ -40,7 +40,6 @@ public class PetBean {
         pet.setAge(this.age);
         pet.setImageURL(this.imageURL);
 
-        System.out.println(pet.getPetName());
         petMapper.insertPet(pet);
 
         var petss = petMapper.findAll();
