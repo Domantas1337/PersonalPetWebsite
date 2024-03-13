@@ -11,64 +11,52 @@
         <title>Pet Form</title>
 
         <style type="text/css">
-            .pet-item, .pet-type-name {
-                box-sizing: border-box; /* This includes padding and borders in the width and height */
-            }
-            .pet-container {
+            .pet-card {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                width: 195px;
-                height: 220px;
-            }
-            .pet-item {
+                align-items: center; /* Align items vertically in the center */
                 border: 1px solid black;
-                margin: 20px;
-                text-align: center;
-                width: 195px; /* Fixed width */
-                height: 220px;
+                margin: 10px 0; /* Margin top and bottom */
+                padding: 10px; /* Padding around the content */
+                width: 100%; /* Full width */
             }
             .pet-image {
-                border: 1px solid black;
-                width: 100%; /* This will make the image take full width of the containing cell */
-                height: 100%;
-                display: block;
-                margin: auto;
+                width: 150px; /* Fixed width for the image */
+                height: 150px; /* Fixed height for the image */
+                margin-right: 20px; /* Space between the image and the text */
             }
-
-
-            .pet-type-button {
-                border: 1px solid black;
-                width: 100%;
+            .pet-info {
+                flex-grow: 1; /* Allow the pet info to take up remaining space */
+            }
+            .pet-button {
+                padding: 10px 20px; /* Padding inside the button */
                 background-color: #dee984; /* A distinct green background */
-                color: #000000; /* White text for contrast */
-                transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for several properties */
+                color: #000000; /* Black text for contrast */
+                border: 1px solid black; /* Border for the button */
                 cursor: pointer; /* Pointer cursor on hover */
-                font-weight: bold; /* Make the text bold */
-                text-transform: uppercase; /* Uppercase text for a button-like appearance */
-                letter-spacing: 1px; /* Add space between letters */
+                text-transform: uppercase; /* Uppercase text */
+                letter-spacing: 1px; /* Space between letters */
             }
-
-            /* Change background color slightly on hover */
-            .pet-type-button:hover, .pet-type-button:active {
-                background-color: #9eed4f;
+            .pet-button:hover {
+                background-color: #9eed4f; /* Change background on hover */
             }
         </style>
     </h:head>
 
     <h:body>
         <h:form>
-            <div class="pet-container">
-                <ui:repeat value="#{petBean.pets}" var="pet">
-                    <div class="pet-item">
-
-                        <h:graphicImage value="#{not empty pet.imageURL ? pet.imageURL : 'resources/images/dog.png'}"
-                                        styleClass="pet-image"/>
-                        <h:commandButton value="#{pet.petName}" action="#{petBean.navigateToPetServiceRecords(pets.id)}" styleClass="pet-type-button" />
-
+            <ui:repeat value="#{petBean.pets}" var="pet">
+                <div class="pet-card">
+                    <h:graphicImage value="#{not empty pet.imageURL ? pet.imageURL : 'resources/images/dog.png'}"
+                                    styleClass="pet-image"/>
+                    <div class="pet-info">
+                        <h:outputText value="#{pet.petName}" /><br/>
+                        <h:outputText value="Age: #{pet.age}" />
                     </div>
-                </ui:repeat>
-            </div>
+                    <h:commandButton value="Go to service records" action="#{petBean.navigateToPersonalPetServiceRecords(pet.id)}"
+                                     styleClass="pet-button" />
+
+                </div>
+            </ui:repeat>
         </h:form>
     </h:body>
 </f:view>

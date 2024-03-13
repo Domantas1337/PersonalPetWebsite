@@ -29,6 +29,10 @@ public class PetBean {
         loadPets();
     }
 
+    public String navigateToPersonalPetServiceRecords(Long petId) {
+        return "personalPetServicesPage?faces-redirect=true&productId=" + petId;
+    }
+
     @Transactional
     public void addPet(){
         Pet pet = new Pet();
@@ -46,21 +50,10 @@ public class PetBean {
     }
 
     public void loadPets() {
-        // Use the mapper to get all pets from the database
         pets = petMapper.findAll();
-
-        Pet testing = petMapper.findPetById(33L);
-        System.out.println(testing.getPetName());
-        System.out.println(testing.getPetName());
-        System.out.println(testing.getPetName());
-        System.out.println(testing.getPetName());
-
     }
 
     public void deletePet(Long id) {
-        // Use the mapper to delete a pet by its ID
         petMapper.deletePetById(id);
-        // Reload the list to reflect the changes
-        loadPets();
     }
 }
