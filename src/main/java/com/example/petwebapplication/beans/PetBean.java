@@ -9,7 +9,6 @@ import jakarta.inject.Named;
 import jakarta.transaction.Transactional;
 import lombok.Data;
 import java.util.List;
-
 @Data
 @Named
 @RequestScoped
@@ -24,7 +23,6 @@ public class PetBean {
     private String imageURL;
     private int age;
 
-
     @PostConstruct
     public void init() {
         // Load pets when bean is created
@@ -38,13 +36,25 @@ public class PetBean {
         pet.setAge(this.age);
         pet.setImageURL(this.imageURL);
 
+        System.out.println(pet.getPetName());
         petMapper.insertPet(pet);
+
+        var petss = petMapper.findAll();
+        for (Pet pett : petss) {
+            System.out.println(pett.getPetName());
+        }
     }
 
     public void loadPets() {
         // Use the mapper to get all pets from the database
         pets = petMapper.findAll();
-        System.out.println(pets.size());
+
+        Pet testing = petMapper.findPetById(33L);
+        System.out.println(testing.getPetName());
+        System.out.println(testing.getPetName());
+        System.out.println(testing.getPetName());
+        System.out.println(testing.getPetName());
+
     }
 
     public void deletePet(Long id) {

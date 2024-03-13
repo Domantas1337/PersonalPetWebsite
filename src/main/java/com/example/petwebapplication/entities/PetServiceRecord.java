@@ -13,5 +13,4 @@ public class PetServiceRecord {
     private String providerName; // Name of the service provider
     private String details; // Additional details or notes about the service
     private Double cost; // The cost of the service
-
 }

@@ -12,6 +12,8 @@
                     column="id" select="selectPetServiceRecordsForPet"/>
     </resultMap>
 
+
+
     <!-- Other CRUD operations here -->
 
 
@@ -32,7 +34,7 @@
     </delete>
 
     <select id="selectPetServiceRecordsForPet" parameterType="java.lang.Long" resultType="com.example.petwebapplication.entities.PetServiceRecord">
-        SELECT id, pet_id, service_name, date, details
+        SELECT id, pet_id, service_name, service_date, details
         FROM pet_service_record
         WHERE pet_id = #{id,jdbcType=BIGINT}
     </select>
@@ -46,6 +48,9 @@
         SELECT id, pet_name, image_url, age FROM pet
     </select>
 
+    <select id="findPetById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT id, pet_name, image_url, age FROM pet WHERE id = #{id,jdbcType=BIGINT}
+    </select>
     <!-- Insert, Update, Delete, Select operations for Pet -->
 
 </mapper>
