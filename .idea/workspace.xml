@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Fixed inconsistent naming">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="My Pets page now works" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +27,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Domantas1337"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5ead121f-ed9f-4320-91f0-fd88f115dc6c" />
+        <option name="url" value="https://github.com/Domantas1337/PersonalPetWebsite.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" root0="SKIP_INSPECTION" />
@@ -203,7 +214,7 @@
       <workItem from="1709754217023" duration="4289000" />
       <workItem from="1710274959997" duration="8002000" />
       <workItem from="1710327748217" duration="5031000" />
-      <workItem from="1710354401022" duration="1544000" />
+      <workItem from="1710354401022" duration="2037000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -301,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710355738907</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="My Pets page now works">
+      <option name="closed" value="true" />
+      <created>1710356060645</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710356060645</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,6 +351,7 @@
     <MESSAGE value="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord" />
     <MESSAGE value="Completed PetMappe.xml PerServiceRecordMapper.xml" />
     <MESSAGE value="Fixed inconsistent naming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed inconsistent naming" />
+    <MESSAGE value="My Pets page now works" />
+    <option name="LAST_COMMIT_MESSAGE" value="My Pets page now works" />
   </component>
 </project>
