@@ -14,6 +14,8 @@
                      select="com.example.petwebapplication.mappers.PetMapper.selectPetById" column="pet_id"/>
     </resultMap>
 
+
+
     <select id="selectPetById" resultMap="BaseResultMap" parameterType="java.lang.Long">
         SELECT * FROM pet WHERE id = #{id,jdbcType=BIGINT}
     </select>
@@ -48,7 +50,7 @@
     </select>
 
     <select id="selectPetServiceRecordsByPetId" parameterType="java.lang.Long" resultMap="BaseResultMap">
-        SELECT * FROM pet_service_record WHERE pet_id = #{pet.id,jdbcType=BIGINT}
+        SELECT * FROM pet_service_record WHERE pet_id = #{id,jdbcType=BIGINT}
     </select>
 
 </mapper>

@@ -15,7 +15,7 @@ public interface PetMapper {
 
     List<PetServiceRecord> selectPetServiceRecordsForPet(@Param("id") Long id);
     List<Pet> findAll();
-    Pet findPetById(@Param("id") Long id);
+    Pet selectPetById(@Param("id") Long id);
     void deletePetById(@Param("id") Long id);
     void insertPet(Pet pet);
     void updatePet(Pet pet);

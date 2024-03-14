@@ -10,6 +10,7 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.transaction.SystemException;
 import jakarta.transaction.Transactional;
 import lombok.Data;
 
@@ -32,6 +33,7 @@ public class PetServiceBean implements Serializable {
     private Long petId;
     private String serviceName;
     private String serviceDate;
+    private Date serviceDateNotString;
     private String providerName;
     private String details;
     private Double cost;
@@ -40,9 +42,11 @@ public class PetServiceBean implements Serializable {
     @PostConstruct
     public void init() {
         String petIdParameter = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("petId");
+        System.out.println("petIdParameter " + petIdParameter);
         if (petIdParameter != null && !petIdParameter.isEmpty()) {
             petId = Long.parseLong(petIdParameter);
         }
+        loadServiceRecordsById();
     }
 
     public String navigateToAddPetServiceRecord() {
@@ -51,17 +55,24 @@ public class PetServiceBean implements Serializable {
     }
 
     public void loadServiceRecordsById(){
-        petServiceRecordsForOnePet = petMapper.selectPetServiceRecordsForPet(petId);
+        System.out.println("petId " + petId);
+        petServiceRecordsForOnePet = petServiceRecordMapper.selectPetServiceRecordsByPetId(petId);
+        System.out.println("petServiceRecordsForOnePet" + petServiceRecordsForOnePet);
     }
 
     @Transactional
     public void addPetServiceRecord(){
         PetServiceRecord petServiceRecord = new PetServiceRecord();
 
-        petServiceRecord.setPet(petMapper.findPetById(petId));
+        Pet petForPetServiceRecord = petMapper.selectPetById(petId);
+        petServiceRecord.setPet(petForPetServiceRecord);
+
         petServiceRecord.setServiceName(this.serviceName);
+        System.out.println(this.cost);
         petServiceRecord.setCost(this.cost);
+        System.out.println(this.details);
         petServiceRecord.setDetails(this.details);
+        System.out.println(this.providerName);
         petServiceRecord.setProviderName(this.providerName);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

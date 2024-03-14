@@ -31,7 +31,8 @@ public class PetBean {
     }
 
     public String navigateToPersonalPetServiceRecords(Long petId) {
-        return "personalPetServicesPage?faces-redirect=true&productId=" + petId;
+        System.out.println("navigation " + petId);
+        return "personalPetServicesPage?faces-redirect=true&petId=" + petId;
     }
 
     @Transactional

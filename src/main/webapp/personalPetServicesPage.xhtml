@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
 <h:head>
-    <title>Pet Form</title>
+    <title>Pet Service Records</title>
     <link rel="stylesheet" href="style.css"/>
 
 </h:head>
@@ -10,11 +12,22 @@
 
 
     <h:form>
-
         <h:commandButton value="Add a service" outcome="index" styleClass="add-button" action="#{petServiceBean.navigateToAddPetServiceRecord()}"/>
-
     </h:form>
 
+    <h:form>
+        <div class="service-container">
+            <ui:repeat value="#{petServiceBean.petServiceRecordsForOnePet}" var="serviceRecord">
+                <div class="service-item">
+                    <h2>#{serviceRecord.serviceName}</h2>
+                    <p><strong>Date:</strong> #{serviceRecord.serviceDate}</p>
+                    <p><strong>Provider:</strong> #{serviceRecord.providerName}</p>
+                    <p><strong>Details:</strong> #{serviceRecord.details}</p>
+                    <p><strong>Cost:</strong> $#{serviceRecord.cost}</p>
+                </div>
+            </ui:repeat>
+        </div>
+    </h:form>
 </h:body>
 </html>
         <!-- HTML !-->

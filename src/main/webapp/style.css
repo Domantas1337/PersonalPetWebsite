@@ -1,4 +1,28 @@
 
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.service-item p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
 .add-button {
     background-color: #13aa52;
     border: 1px solid #13aa52;
