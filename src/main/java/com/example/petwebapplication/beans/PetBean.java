@@ -1,6 +1,7 @@
 package com.example.petwebapplication.beans;
 
 import com.example.petwebapplication.entities.Pet;
+import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.mappers.PetMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
@@ -47,6 +48,7 @@ public class PetBean {
             System.out.println(pett.getPetName());
         }
     }
+
 
     public void loadPets() {
         pets = petMapper.findAll();

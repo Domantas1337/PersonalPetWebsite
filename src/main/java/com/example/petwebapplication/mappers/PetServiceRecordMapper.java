@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface PetServiceRecordMapper {
     List<PetServiceRecordMapper> findAll();
-
+    List<PetServiceRecord> selectPetServiceRecordsByPetId(@Param("id") Long id);
     PetServiceRecordMapper findById(@Param("id") Long id);
     void deleteRecordById(@Param("id") Long id);
     void updateRecord(PetServiceRecordMapper petServiceRecordMapper);

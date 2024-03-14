@@ -16,6 +16,7 @@ import lombok.Data;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Named
@@ -34,6 +35,7 @@ public class PetServiceBean implements Serializable {
     private String providerName;
     private String details;
     private Double cost;
+    private List<PetServiceRecord> petServiceRecordsForOnePet;
 
     @PostConstruct
     public void init() {
@@ -46,6 +48,10 @@ public class PetServiceBean implements Serializable {
     public String navigateToAddPetServiceRecord() {
         // Instead of setting a field, pass the ID as a parameter
         return "addPetServiceRecordPage";
+    }
+
+    public void loadServiceRecordsById(){
+        petServiceRecordsForOnePet = petMapper.selectPetServiceRecordsForPet(petId);
     }
 
     @Transactional
