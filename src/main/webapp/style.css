@@ -1,8 +1,47 @@
 
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Use full height of the viewport */
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 3px; /* Space between groups */
+    flex-direction: column; /* Stack the label and input */
+}
+
+
 .service-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: right /* This will push the button to the right */
+}
+
+.output-label {
+    font-size: 12px;
+    display: block; /* Ensures the label takes up the full width */
+    margin-bottom: 1px; /* Adds some space between the label and the input box */
+    font-weight: bold; /* Makes the label text bold */
+    color: #333; /* Sets the text color of the label */
+}
+
+
+.input-box {
+    display: block; /* Ensures the label takes up the full width */
+    width: 100%; /* Takes up all available width */
+    border: 2px solid #008000; /* A nice shade of green */
+    border-radius: 4px; /* Optional: Rounds the corners of the input box */
+    padding: 5px 10px; /* Optional: Adds some space inside the input box */
+    margin-bottom: 10px; /* Optional: Adds some space below each input box */
 }
 
 .service-item {
@@ -23,7 +62,11 @@
     line-height: 1.5;
 }
 
+
+
 .add-button {
+    margin-left: auto; /* Pushes the button to the right */
+
     background-color: #13aa52;
     border: 1px solid #13aa52;
     border-radius: 4px;
@@ -55,3 +98,4 @@
         padding: 10px 30px;
     }
 }
+
