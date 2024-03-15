@@ -1,5 +1,7 @@
 package com.example.petwebapplication.beans;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.example.petwebapplication.dtos.PetTypeForListsDto;
 import com.example.petwebapplication.entities.PetType;
 import com.example.petwebapplication.entities.Product;
@@ -9,16 +11,21 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.transaction.Transactional;
 import lombok.Data;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Data
 @Named
 @RequestScoped
 public class AddProductPageBean {
+    private final Logger logger = LoggerFactory.getLogger(AddProductPageBean.class);
+
     @Inject
     private PetTypeRepository petTypeRepository;
 
@@ -46,20 +53,28 @@ public class AddProductPageBean {
                 .map(petType -> new PetTypeForListsDto(petType.getId(), petType.getTypeName()))
                 .collect(Collectors.toList());
     }
-
+    @Transactional
     public String saveProduct() {
-        Product product = new Product();
-        product.setProductName(this.productName);
-        product.setPrice(this.price);
-        product.setDescription(this.description);
-        product.setShortDescription(this.shortDescription);
+        try {
 
-        List<PetType> selectedPetTypes = selectedPetTypeIds.stream()
-                .map(id -> petTypeRepository.findById(id).orElse(null))
-                .collect(Collectors.toList());
-        product.setPetTypes(selectedPetTypes);
+            Product product = new Product();
+            product.setProductName(this.productName);
+            product.setPrice(this.price);
+            product.setDescription(this.description);
+            product.setShortDescription(this.shortDescription);
 
-        productRepository.create(product); // Assuming the method to persist a product is named save
-        return "successPage?faces-redirect=true"; // Navigate to a success page or listing page after saving
+            List<PetType> selectedPetTypes = selectedPetTypeIds.stream()
+                    .map(id -> petTypeRepository.findById(id).orElse(null))
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+
+            product.setPetTypes(selectedPetTypes);
+
+            productRepository.create(product);
+            return "Success";
+        }catch (Exception e) {
+            logger.error("An error occurred: {}", e.getMessage());
+            return "Error";
+        }
     }
 }
