@@ -29,7 +29,7 @@
         DELETE FROM pet_service_record WHERE pet_id = #{id,jdbcType=BIGINT}
     </delete>
 
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <delete id="deletePetById" parameterType="java.lang.Long">
         DELETE FROM pet WHERE id = #{id,jdbcType=BIGINT}
     </delete>
 

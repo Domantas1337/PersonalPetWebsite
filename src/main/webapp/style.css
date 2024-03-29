@@ -23,7 +23,8 @@
 .button-container {
     width: 100%;
     display: flex;
-    justify-content: right /* This will push the button to the right */
+    justify-content: right; /* This will push the button to the right */
+    gap: 10px; /* Adjust the value as needed */
 }
 
 .output-label {
@@ -64,11 +65,9 @@
 
 
 
-.add-button {
+.button {
     margin-left: auto; /* Pushes the button to the right */
 
-    background-color: #13aa52;
-    border: 1px solid #13aa52;
     border-radius: 4px;
     box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
     box-sizing: border-box;
@@ -88,10 +87,21 @@
     touch-action: manipulation;
 }
 
-.add-button:hover {
+.button:hover {
     box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
     transform: translateY(-2px);
 }
+
+.add-button {
+    background-color: #13aa52;
+    border: 1px solid #13aa52;
+}
+
+.delete-button {
+    background-color: #e64540;
+    border: 1px solid #e64540;
+}
+
 
 @media (min-width: 768px) {
     .add-button {

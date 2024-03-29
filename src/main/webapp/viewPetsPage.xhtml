@@ -10,6 +10,9 @@
     <h:head>
         <title>Pet Form</title>
 
+        <link rel="stylesheet" href="style.css"/>
+
+
         <style type="text/css">
             .pet-card {
                 display: flex;
@@ -27,36 +30,34 @@
             .pet-info {
                 flex-grow: 1; /* Allow the pet info to take up remaining space */
             }
-            .pet-button {
-                padding: 10px 20px; /* Padding inside the button */
-                background-color: #dee984; /* A distinct green background */
-                color: #000000; /* Black text for contrast */
-                border: 1px solid black; /* Border for the button */
-                cursor: pointer; /* Pointer cursor on hover */
-                text-transform: uppercase; /* Uppercase text */
-                letter-spacing: 1px; /* Space between letters */
-            }
-            .pet-button:hover {
-                background-color: #9eed4f; /* Change background on hover */
-            }
+
         </style>
     </h:head>
 
     <h:body>
         <h:form>
+            <h:panelGroup id="petList">
             <ui:repeat value="#{petBean.pets}" var="pet">
                 <div class="pet-card">
                     <h:graphicImage value="#{not empty pet.imageURL ? pet.imageURL : 'resources/images/dog.png'}"
                                     styleClass="pet-image"/>
-                    <div class="pet-info">
+                    <div class="pet-info" id="pet_#{pet.id}">
                         <h:outputText value="#{pet.petName}" /><br/>
                         <h:outputText value="Age: #{pet.age}" />
                     </div>
-                    <h:commandButton value="Go to service records" action="#{petBean.navigateToPersonalPetServiceRecords(pet.id)}"
-                                     styleClass="pet-button" />
+                    <div class="button-container">
 
+                        <h:commandButton value="View service records" styleClass="button add-button" action="#{petBean.navigateToPersonalPetServiceRecords(pet.id)}" />
+
+
+                        <h:commandButton value="Remove pet" action="#{petBean.deletePet(pet.id)}"
+                                         styleClass="button delete-button">
+                            <f:ajax render=":petList" />
+                        </h:commandButton>
+                    </div>
                 </div>
             </ui:repeat>
+            </h:panelGroup>
         </h:form>
     </h:body>
 </f:view>

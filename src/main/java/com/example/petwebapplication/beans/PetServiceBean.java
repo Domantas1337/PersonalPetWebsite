@@ -24,7 +24,7 @@ import java.util.List;
 
 @Data
 @Named
-@RequestScoped
+@ViewScoped
 public class PetServiceBean implements Serializable {
     private final Logger logger = LoggerFactory.getLogger(PetServiceBean.class);
 

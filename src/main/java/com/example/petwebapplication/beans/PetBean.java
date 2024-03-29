@@ -61,5 +61,6 @@ public class PetBean {
 
     public void deletePet(Long id) {
         petMapper.deletePetById(id);
+        loadPets();
     }
 }
