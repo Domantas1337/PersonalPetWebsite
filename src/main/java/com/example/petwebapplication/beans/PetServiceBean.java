@@ -5,6 +5,7 @@ import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.mappers.PetMapper;
 import com.example.petwebapplication.mappers.PetServiceRecordMapper;
 import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
@@ -13,6 +14,8 @@ import jakarta.inject.Named;
 import jakarta.transaction.SystemException;
 import jakarta.transaction.Transactional;
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
@@ -21,8 +24,9 @@ import java.util.List;
 
 @Data
 @Named
-@SessionScoped
+@RequestScoped
 public class PetServiceBean implements Serializable {
+    private final Logger logger = LoggerFactory.getLogger(PetServiceBean.class);
 
     @Inject
     PetServiceRecordMapper petServiceRecordMapper;
@@ -51,7 +55,7 @@ public class PetServiceBean implements Serializable {
 
     public String navigateToAddPetServiceRecord() {
         // Instead of setting a field, pass the ID as a parameter
-        return "addPetServiceRecordPage";
+        return "addPetServiceRecordPage?faces-redirect=true&petId=" + petId;
     }
 
     public void loadServiceRecordsById(){
@@ -66,13 +70,9 @@ public class PetServiceBean implements Serializable {
 
         Pet petForPetServiceRecord = petMapper.selectPetById(petId);
         petServiceRecord.setPet(petForPetServiceRecord);
-
         petServiceRecord.setServiceName(this.serviceName);
-        System.out.println(this.cost);
         petServiceRecord.setCost(this.cost);
-        System.out.println(this.details);
         petServiceRecord.setDetails(this.details);
-        System.out.println(this.providerName);
         petServiceRecord.setProviderName(this.providerName);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -83,7 +83,7 @@ public class PetServiceBean implements Serializable {
             // Handle the error appropriately
         }
         petServiceRecordMapper.insertRecord(petServiceRecord);
-
+        loadServiceRecordsById();
     }
 
 }

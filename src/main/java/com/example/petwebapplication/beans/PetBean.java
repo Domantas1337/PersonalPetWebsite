@@ -9,11 +9,15 @@ import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.transaction.Transactional;
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 @Data
 @Named
 @RequestScoped
 public class PetBean {
+    private final Logger logger = LoggerFactory.getLogger(PetBean.class);
 
     @Inject
     private PetMapper petMapper;
@@ -26,27 +30,27 @@ public class PetBean {
 
     @PostConstruct
     public void init() {
-        // Load pets when bean is created
         loadPets();
     }
 
     public String navigateToPersonalPetServiceRecords(Long petId) {
-        System.out.println("navigation " + petId);
+        System.out.println(petId);
         return "personalPetServicesPage?faces-redirect=true&petId=" + petId;
     }
 
     @Transactional
-    public void addPet(){
-        Pet pet = new Pet();
-        pet.setPetName(this.name);
-        pet.setAge(this.age);
-        pet.setImageURL(this.imageURL);
+    public String addPet(){
+        try {
+            Pet pet = new Pet();
+            pet.setPetName(this.name);
+            pet.setAge(this.age);
+            pet.setImageURL(this.imageURL);
 
-        petMapper.insertPet(pet);
-
-        var petss = petMapper.findAll();
-        for (Pet pett : petss) {
-            System.out.println(pett.getPetName());
+            petMapper.insertPet(pet);
+            return "Success";
+        }catch (Exception e) {
+            logger.error("An error occurred: {}", e.getMessage());
+            return "Error";
         }
     }
 

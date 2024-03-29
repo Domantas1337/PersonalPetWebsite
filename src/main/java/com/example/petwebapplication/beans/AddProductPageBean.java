@@ -53,6 +53,7 @@ public class AddProductPageBean {
                 .map(petType -> new PetTypeForListsDto(petType.getId(), petType.getTypeName()))
                 .collect(Collectors.toList());
     }
+
     @Transactional
     public String saveProduct() {
         try {
