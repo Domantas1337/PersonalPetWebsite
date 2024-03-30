@@ -21,10 +21,10 @@
 }
 
 .button-container {
-    width: 100%;
+
     display: flex;
-    justify-content: right; /* This will push the button to the right */
-    gap: 10px; /* Adjust the value as needed */
+    justify-content: flex-end; /* This will push the button to the right */
+    gap: 20px; /* Adjust the value as needed */
 }
 
 .output-label {
@@ -45,7 +45,9 @@
     margin-bottom: 10px; /* Optional: Adds some space below each input box */
 }
 
+
 .service-item {
+    position: relative;
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -62,7 +64,6 @@
     margin: 10px 0;
     line-height: 1.5;
 }
-
 
 
 .button {
@@ -92,13 +93,24 @@
     transform: translateY(-2px);
 }
 
+.delete-button {
+    background-color: #e64540;
+    border: 1px solid #e64540;
+}
+
+
 .add-button {
     background-color: #13aa52;
     border: 1px solid #13aa52;
 }
 
-.delete-button {
-    background-color: #e64540;
+
+.delete-button-card{
+
+    position: absolute;
+    right: 20px;/* Distance from the right edge of the service-item container */
+    bottom: 20px; /* Distance from the bottom edge of the service-item container */
+    background-color: #e64540;  /* Your desired color */
     border: 1px solid #e64540;
 }
 

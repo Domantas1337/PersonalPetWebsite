@@ -24,6 +24,8 @@
                     <p><strong>Provider:</strong> #{serviceRecord.providerName}</p>
                     <p><strong>Details:</strong> #{serviceRecord.details}</p>
                     <p><strong>Cost:</strong> $#{serviceRecord.cost}</p>
+                    <h:commandButton value="Delete" styleClass="button delete-button-card" action="#{petServiceBean.deletePetServiceById(serviceRecord.id)}"  />
+
                 </div>
             </ui:repeat>
         </div>

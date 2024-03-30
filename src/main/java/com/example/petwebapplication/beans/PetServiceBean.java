@@ -58,6 +58,11 @@ public class PetServiceBean implements Serializable {
         return "addPetServiceRecordPage?faces-redirect=true&petId=" + petId;
     }
 
+    public void deletePetServiceById(Long recordId){
+        petServiceRecordMapper.deleteRecordById(recordId);
+        loadServiceRecordsById();
+    }
+
     public void loadServiceRecordsById(){
         System.out.println("petId " + petId);
         petServiceRecordsForOnePet = petServiceRecordMapper.selectPetServiceRecordsByPetId(petId);

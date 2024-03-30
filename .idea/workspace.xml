@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Fixed an issue where pet service records did not uodate after addition and switching between pets">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Fixed adding pet service records, removing a pet will remove all of its pet records">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" afterDir="false" />
@@ -266,7 +264,8 @@
       <workItem from="1710413623300" duration="16833000" />
       <workItem from="1710499317628" duration="6942000" />
       <workItem from="1710702906467" duration="917000" />
-      <workItem from="1711731426339" duration="15138000" />
+      <workItem from="1711731426339" duration="15286000" />
+      <workItem from="1711789812570" duration="7727000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -444,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711739922581</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed adding pet service records, removing a pet will remove all of its pet records">
+      <option name="closed" value="true" />
+      <created>1711750361087</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1711750361087</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,6 +491,7 @@
     <MESSAGE value="Added styling to a form" />
     <MESSAGE value="Error handling" />
     <MESSAGE value="Fixed an issue where pet service records did not uodate after addition and switching between pets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed an issue where pet service records did not uodate after addition and switching between pets" />
+    <MESSAGE value="Fixed adding pet service records, removing a pet will remove all of its pet records" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed adding pet service records, removing a pet will remove all of its pet records" />
   </component>
 </project>
