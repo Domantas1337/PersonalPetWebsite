@@ -7,57 +7,42 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <h:head>
-        <style type="text/css">
-            .select-menu {
-                height: 75px;
-                width: 100%; /* Set the width to 100% of the parent container */
-                padding: 8px; /* Add some padding for better touch */
-                border: 1px solid #ccc; /* Add a border */
-                border-radius: 4px; /* Optional: round the corners */
-                background-color: #fff; /* Set the background color */
-                font-size: 16px; /* Increase the font size */
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
-            }
-
-            /* Style for the label */
-            .label {
-                display: block;
-                margin-bottom: 5px;
-                font-weight: bold;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css"/>
     </h:head>
     <h:body>
+        <div class="center-container">
+            <div class="form-container">
+                <h:form>
 
-        <h:form>
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="name" styleClass="output-label" value="Product name:" />
+                        <h:inputText id="name" styleClass="input-box" value="#{addProductPageBean.productName}" required="true" />
 
-            <h:panelGrid columns="2">
-                <h:outputLabel for="name" value="Product name:" />
-                <h:inputText id="name" value="#{addProductPageBean.productName}" required="true" />
+                        <h:outputLabel for="price" styleClass="output-label" value="Product price:" />
+                        <h:inputText id="price" styleClass="input-box" value="#{addProductPageBean.price}" required="true">
+                            <f:convertNumber type="number" minFractionDigits="2" />
+                        </h:inputText>
 
-                <h:outputLabel for="price" value="Product price:" />
-                <h:inputText id="price" value="#{addProductPageBean.price}" required="true">
-                    <f:convertNumber type="number" minFractionDigits="2" />
-                </h:inputText>
+                        <h:outputLabel for="short-description" styleClass="output-label" value="Product description:" />
+                        <h:inputText id="short-description" styleClass="input-box" value="#{addProductPageBean.shortDescription}" required="true"/>
 
-                <h:outputLabel for="short-description" value="Product description:" />
-                <h:inputText id="short-description" value="#{addProductPageBean.shortDescription}" required="true"/>
+                        <h:outputLabel for="description" styleClass="output-label" value="Product description:" />
+                        <h:inputText id="description" styleClass="input-box" value="#{addProductPageBean.description}" required="true"/>
 
-                <h:outputLabel for="description" value="Product description:" />
-                <h:inputText id="description" value="#{addProductPageBean.description}" required="true"/>
+                        <h:outputLabel for="brr" styleClass="output-label" value="Select Pet Types:" />
+                        <h:selectManyMenu id="brr"  value="#{addProductPageBean.selectedPetTypeIds}" styleClass="select-menu">
+                            <f:selectItems value="#{addProductPageBean.petTypeDTOs}" var="type"
+                                           itemValue="#{type.id}" itemLabel="#{type.typeName}" />
+                        </h:selectManyMenu>
+                    </h:panelGrid>
 
-                <h:outputLabel for="brr" value="Select Pet Types:" />
-                <h:selectManyMenu id="brr" value="#{addProductPageBean.selectedPetTypeIds}" styleClass="select-menu">
-                    <f:selectItems value="#{addProductPageBean.petTypeDTOs}" var="type"
-                                   itemValue="#{type.id}" itemLabel="#{type.typeName}" />
-                </h:selectManyMenu>
-            </h:panelGrid>
-
-            <h:commandButton value="Submit" action="#{addProductPageBean.saveProduct()}"  />
-            <h:button value="Go to Pet Type" outcome="addPetType" />
-
-        </h:form>
-
+                    <div class="button-container">
+                        <h:commandButton value="Submit" styleClass="button add-button" action="#{addProductPageBean.saveProduct()}"  />
+                        <h:button value="Back" styleClass="button back-button" outcome="index" />
+                    </div>
+                </h:form>
+            </div>
+        </div>
     </h:body>
 </f:view>
 </html>

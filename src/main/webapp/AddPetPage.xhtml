@@ -3,27 +3,31 @@
       xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
     <title>Pet Form</title>
+    <link rel="stylesheet" href="style.css"/>
+
 </h:head>
 <h:body>
 
-    <h:commandButton value="Add Product" action="#{productBean.navigateToAddProducts}" />
 
     <h:form>
+        <div class="center-container">
+            <div class="form-container">
+                <h:panelGrid columns="2">
+                    <h:outputLabel for="petNmae" styleClass="output-label" value="Pet name:" />
+                    <h:inputText id="petNmae" styleClass="input-box" value="#{petBean.name}" required="true" />
 
-        <h:panelGrid columns="2">
-            <h:outputLabel for="petNmae" value="Pet name:" />
-            <h:inputText id="petNmae" value="#{petBean.name}" required="true" />
+                    <h:outputLabel for="age" styleClass="output-label" value="Age:" />
+                    <h:inputText id="age" styleClass="input-box" value="#{petBean.age}" required="true"/>
 
-            <h:outputLabel for="age" value="Age:" />
-            <h:inputText id="age" value="#{petBean.age}" required="true"/>
-
-            <h:outputLabel for="imageURL" value="Image url:" />
-            <h:inputText id="imageURL" value="#{petBean.imageURL}" required="false"/>
-        </h:panelGrid>
-
-        <h:commandButton value="Submit" action="#{petBean.addPet()}" />
-        <h:button value="Back" outcome="index" />
-
+                    <h:outputLabel for="imageURL" styleClass="output-label"  value="Image url:" />
+                    <h:inputText id="imageURL" styleClass="input-box" value="#{petBean.imageURL}" required="false"/>
+                </h:panelGrid>
+                <div class="button-container">
+                <h:commandButton value="Submit" styleClass="button add-button" action="#{petBean.addPet()}" />
+                <h:button value="Back" styleClass="button back-button" outcome="index" />
+                </div>
+            </div>
+        </div>
     </h:form>
 
 </h:body>

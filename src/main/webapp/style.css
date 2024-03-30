@@ -21,10 +21,9 @@
 }
 
 .button-container {
-
     display: flex;
     justify-content: flex-end; /* This will push the button to the right */
-    gap: 20px; /* Adjust the value as needed */
+    gap: 5px; /* Adjust the value as needed */
 }
 
 .output-label {
@@ -67,15 +66,14 @@
 
 
 .button {
-    margin-left: auto; /* Pushes the button to the right */
 
-    border-radius: 4px;
+    border-radius: 2px;
     box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
     box-sizing: border-box;
     color: #fff;
     cursor: pointer;
     font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     outline: none;
     outline: 0;
@@ -98,6 +96,11 @@
     border: 1px solid #e64540;
 }
 
+.back-button {
+    background-color: #e0cbd6;
+    border: #CBD5E0;
+    color: black !important;
+}
 
 .add-button {
     background-color: #13aa52;
@@ -121,3 +124,23 @@
     }
 }
 
+.select-menu {
+    appearance: none; /* Remove default arrow */
+
+    height: 50px;
+    /* styling */
+    background-color: white;
+    border: thin solid blue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+
+    /* reset */
+
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

@@ -3,27 +3,33 @@
       xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
    <title>Pet Form</title>
+   <link rel="stylesheet" href="style.css"/>
+
 </h:head>
 <h:body>
+   <div class="center-container">
+      <div class="form-container">
+         <h:form>
 
-   <h:form>
+            <h:panelGrid columns="2">
+               <h:outputLabel for="petType" styleClass="output-label" value="Pet type:" />
+               <h:inputText id="petType" styleClass="input-box" value="#{petTypeBean.typeName}" required="true" />
 
-      <h:panelGrid columns="2">
-         <h:outputLabel for="petType" value="Pet type:" />
-         <h:inputText id="petType" value="#{petTypeBean.typeName}" required="true" />
+               <h:outputLabel for="generalCareInfo" styleClass="output-label" value="General care info:" />
+               <h:inputText id="generalCareInfo" styleClass="input-box" value="#{petTypeBean.generalCareInfo}" required="true"/>
 
-         <h:outputLabel for="generalCareInfo" value="General care info:" />
-         <h:inputText id="generalCareInfo" value="#{petTypeBean.generalCareInfo}" required="true"/>
+               <h:outputLabel for="generalCareInfo" styleClass="output-label" value="Image url:" />
+               <h:inputText id="imageURL" styleClass="input-box" value="#{petTypeBean.imageURL}" required="false"/>
+            </h:panelGrid>
 
-         <h:outputLabel for="generalCareInfo" value="Image url:" />
-         <h:inputText id="imageURL" value="#{petTypeBean.imageURL}" required="false"/>
-      </h:panelGrid>
+            <div class="button-container">
+               <h:commandButton value="Submit" styleClass="button add-button" action="#{petTypeBean.savePetType()}" />
+               <h:button value="Back" styleClass="button back-button" outcome="index" />
+            </div>
 
-      <h:commandButton value="Submit" action="#{petTypeBean.savePetType()}" />
-      <h:button value="Back" outcome="index" />
-
-   </h:form>
-
+         </h:form>
+      </div>
+   </div>
 </h:body>
 </html>
 

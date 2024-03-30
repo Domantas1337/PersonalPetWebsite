@@ -17,6 +17,7 @@
 
     <h:form>
         <div class="service-container">
+            <h:panelGroup id="serviceRecordsList">
             <ui:repeat value="#{petServiceBean.petServiceRecordsForOnePet}" var="serviceRecord">
                 <div class="service-item">
                     <h2>#{serviceRecord.serviceName}</h2>
@@ -24,10 +25,12 @@
                     <p><strong>Provider:</strong> #{serviceRecord.providerName}</p>
                     <p><strong>Details:</strong> #{serviceRecord.details}</p>
                     <p><strong>Cost:</strong> $#{serviceRecord.cost}</p>
-                    <h:commandButton value="Delete" styleClass="button delete-button-card" action="#{petServiceBean.deletePetServiceById(serviceRecord.id)}"  />
-
+                    <h:commandButton value="Delete" styleClass="button delete-button-card" action="#{petServiceBean.deletePetServiceById(serviceRecord.id)}" >
+                        <f:ajax render=":j_idt7:serviceRecordsList" />
+                    </h:commandButton>
                 </div>
             </ui:repeat>
+            </h:panelGroup>
         </div>
     </h:form>
 </h:body>

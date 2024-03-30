@@ -11,7 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Fixed adding pet service records, removing a pet will remove all of its pet records">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" afterDir="false" />
@@ -266,6 +268,7 @@
       <workItem from="1710702906467" duration="917000" />
       <workItem from="1711731426339" duration="15286000" />
       <workItem from="1711789812570" duration="7727000" />
+      <workItem from="1711810163859" duration="5470000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
