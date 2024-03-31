@@ -9,19 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Changed styles of multiple pages">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/basicPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layoutCSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Chen the look of Find pet and added an ability to add descriptions to a PetType">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/petTypeDetails.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/petTypeDetails.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewProductDetails.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewProductDetails.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +268,7 @@
       <workItem from="1711810163859" duration="8490000" />
       <workItem from="1711827702726" duration="376000" />
       <workItem from="1711879694430" duration="71000" />
-      <workItem from="1711894981676" duration="2376000" />
+      <workItem from="1711894981676" duration="5415000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -470,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711816769343</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Chen the look of Find pet and added an ability to add descriptions to a PetType">
+      <option name="closed" value="true" />
+      <created>1711897405431</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1711897405431</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,6 +512,7 @@
     <MESSAGE value="Fixed an issue where pet service records did not uodate after addition and switching between pets" />
     <MESSAGE value="Fixed adding pet service records, removing a pet will remove all of its pet records" />
     <MESSAGE value="Changed styles of multiple pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed styles of multiple pages" />
+    <MESSAGE value="Chen the look of Find pet and added an ability to add descriptions to a PetType" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chen the look of Find pet and added an ability to add descriptions to a PetType" />
   </component>
 </project>

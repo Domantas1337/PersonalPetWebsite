@@ -43,6 +43,8 @@
 
                 <div class="button-container">
                     <h:commandButton value="Add Record" styleClass="button add-button" action="#{petServiceBean.addPetServiceRecord()}" />
+                    <h:commandButton value="Back" immediate="true" styleClass="button back-button" action="#{petServiceBean.navigateFromAddPetServiceRecordsToServiceRecords(petServiceBean.petId)}" />
+
                 </div>
 
             </h:form>
