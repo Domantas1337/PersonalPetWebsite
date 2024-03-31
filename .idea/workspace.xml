@@ -9,11 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Chen the look of Find pet and added an ability to add descriptions to a PetType">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added a back button from the addPetServiceRecordPage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/serviceRecords/VetVisit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/enums/VetVisitType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +25,7 @@
         <option value="Jsp File" />
         <option value="jsf" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -268,7 +268,7 @@
       <workItem from="1711810163859" duration="8490000" />
       <workItem from="1711827702726" duration="376000" />
       <workItem from="1711879694430" duration="71000" />
-      <workItem from="1711894981676" duration="5415000" />
+      <workItem from="1711894981676" duration="7965000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -470,7 +470,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711897405431</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added a back button from the addPetServiceRecordPage">
+      <option name="closed" value="true" />
+      <created>1711900430926</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1711900430926</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +496,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created project" />
     <MESSAGE value="Added Pet, PetType and Produc entities" />
     <MESSAGE value="Added ability to worrk with a local h2 database" />
     <MESSAGE value="Added the PetType repository, a string to store image urls for pet type" />
@@ -513,6 +520,7 @@
     <MESSAGE value="Fixed adding pet service records, removing a pet will remove all of its pet records" />
     <MESSAGE value="Changed styles of multiple pages" />
     <MESSAGE value="Chen the look of Find pet and added an ability to add descriptions to a PetType" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chen the look of Find pet and added an ability to add descriptions to a PetType" />
+    <MESSAGE value="Added a back button from the addPetServiceRecordPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a back button from the addPetServiceRecordPage" />
   </component>
 </project>
