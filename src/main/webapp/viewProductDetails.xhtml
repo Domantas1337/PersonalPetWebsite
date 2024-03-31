@@ -7,6 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
     <h:head>
+        <link rel="stylesheet" href="basicPage.css.css"/>
+
         <style type="text/css">
             .petType-container {
                 background-color: #f7f7f7; /* Light grey background */
@@ -43,7 +45,7 @@
 
     <h:body>
         <!-- Update the bean name and property access according to the new bean -->
-        <h2>#{productDetailPageBean.product.productName} Product Details</h2>
+        <h1>#{productDetailPageBean.product.productName} Product </h1>
         <!-- You can add more details here, following the same pattern -->
         <p>Price: #{productDetailPageBean.product.price}</p>
         <p>Description: #{productDetailPageBean.product.description}</p>

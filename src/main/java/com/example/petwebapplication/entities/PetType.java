@@ -25,6 +25,9 @@ public class PetType {
     @Column(name = "general_care_info", nullable = false)
     private String generalCareInfo;
 
+    @Column(name = "description", nullable = true)
+    private String description;
+
     @ManyToMany(mappedBy = "petTypes", fetch = FetchType.EAGER) // Referring to the 'petTypes' field in Product
     private List<Product> products;
 

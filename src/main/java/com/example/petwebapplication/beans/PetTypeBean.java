@@ -35,6 +35,7 @@ public class PetTypeBean implements Serializable {
     private transient PetTypeRepository petTypeRepository;
 
     private String typeName;
+    private String description;
     private String generalCareInfo;
     private String imageURL;
 
@@ -77,6 +78,7 @@ public class PetTypeBean implements Serializable {
         petType.setTypeName(this.typeName);
         petType.setGeneralCareInfo(this.generalCareInfo);
         petType.setImageUrl(this.imageURL);
+        petType.setDescription(this.description);
 
         petTypeRepository.create(petType);
     }

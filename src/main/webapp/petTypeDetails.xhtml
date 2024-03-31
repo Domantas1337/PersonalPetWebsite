@@ -4,9 +4,18 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
    <title>Pet Type Details</title>
+   <link rel="stylesheet" href="basicPage.css"/>
+
    <style>
+
+      .product-container{
+         display: flex;
+         justify-content: flex-start;
+      }
+
       .card-container {
          display: flex;
+         justify-content: flex-end;
          flex-direction: column;
          border: 1px solid #ddd;
          margin: 10px;
@@ -87,9 +96,11 @@
    </style>
 </h:head>
 <h:body>
-   <h2>#{petTypeBean.selectedPetType.typeName} Details</h2>
-   <h3>Products Suitable for #{petTypeBean.selectedPetType.typeName}</h3>
+   <h1>#{petTypeBean.selectedPetType.typeName} </h1>
+   <p>#{petTypeBean.selectedPetType.description}</p>
+   <p>Products Suitable for #{petTypeBean.selectedPetType.typeName}</p>
    <h:form>
+
       <div class="product-container">
          <ui:repeat value="#{petTypeBean.selectedPetType.products}" var="product">
             <div class="card-container">

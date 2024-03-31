@@ -18,6 +18,10 @@
                <h:outputLabel for="generalCareInfo" styleClass="output-label" value="General care info:" />
                <h:inputText id="generalCareInfo" styleClass="input-box" value="#{petTypeBean.generalCareInfo}" required="true"/>
 
+               <h:outputLabel for="description" styleClass="output-label" value="Description:" />
+               <h:inputText id="description" styleClass="input-box" value="#{petTypeBean.description}" required="false"/>
+
+
                <h:outputLabel for="generalCareInfo" styleClass="output-label" value="Image url:" />
                <h:inputText id="imageURL" styleClass="input-box" value="#{petTypeBean.imageURL}" required="false"/>
             </h:panelGrid>
