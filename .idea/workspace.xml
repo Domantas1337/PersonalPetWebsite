@@ -9,9 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added a separate entity for vet visits">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Saving for file reorganization">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/VetVisitBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +28,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Enum" />
         <option value="jsf" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -106,8 +112,11 @@
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\resources\META-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp\petTypePages" />
+      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp\petPagse" />
+      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp\petProductPages" />
+      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp\petServiceRecordPages" />
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\resources" />
-      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final">
@@ -267,7 +276,7 @@
       <workItem from="1711810163859" duration="8490000" />
       <workItem from="1711827702726" duration="376000" />
       <workItem from="1711879694430" duration="71000" />
-      <workItem from="1711894981676" duration="9991000" />
+      <workItem from="1711894981676" duration="23367000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -485,7 +494,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711907620833</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Saving for file reorganization">
+      <option name="closed" value="true" />
+      <created>1711966067104</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1711966067104</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +520,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added ability to worrk with a local h2 database" />
     <MESSAGE value="Added the PetType repository, a string to store image urls for pet type" />
     <MESSAGE value="Added ProductRepository and ProductBean" />
     <MESSAGE value="Fixed problems with the addProduct page and added a pet IBatis DataMapper" />
@@ -528,6 +544,7 @@
     <MESSAGE value="Chen the look of Find pet and added an ability to add descriptions to a PetType" />
     <MESSAGE value="Added a back button from the addPetServiceRecordPage" />
     <MESSAGE value="Added a separate entity for vet visits" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a separate entity for vet visits" />
+    <MESSAGE value="Saving for file reorganization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving for file reorganization" />
   </component>
 </project>

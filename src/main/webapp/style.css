@@ -104,6 +104,12 @@
     color: black !important;
 }
 
+.common-button {
+    background-color: #0095ff;;
+    border: #0095ff;
+    color: white !important;
+}
+
 .add-button {
     background-color: #13aa52;
     border: 1px solid #13aa52;
@@ -146,3 +152,5 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 }
+
+
