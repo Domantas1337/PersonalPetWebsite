@@ -7,6 +7,7 @@ import com.example.petwebapplication.repositories.PetTypeRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -23,7 +24,7 @@ import java.util.logging.Logger;
 
 @Data
 @Named
-@SessionScoped
+@ViewScoped
 public class PetTypeBean implements Serializable {
     private static final long serialVersionUID = 1L; // Add a serialVersionUID
     private static final transient Logger LOGGER = Logger.getLogger(ProductBean.class.getName());
@@ -54,7 +55,7 @@ public class PetTypeBean implements Serializable {
 
     public String navigateToPetTypeDetails(Long typeId) {
         selectedPetType = petTypeRepository.findById(typeId).orElse(null);
-        return "petTypeDetails?faces-redirect=true";
+        return "petTypeDetails?faces-redirect=true&typeId=" + typeId ;
     }
 
     private void loadPetTypes() {
@@ -62,7 +63,16 @@ public class PetTypeBean implements Serializable {
     }
     @PostConstruct
     public void init() {
-        petTypes = new ArrayList<>();
+        String typeIdParameter = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("typeId");
+
+        if (typeIdParameter != null && !typeIdParameter.isEmpty()) {
+            Long typeId = Long.parseLong(typeIdParameter);
+            selectedPetType = petTypeRepository.findById(typeId).orElse(null);
+        }else{
+            petTypes = new ArrayList<>();
+            loadPetTypes();
+        }
+
     }
 
     public void findPets() {

@@ -9,14 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added a page for adding vet records">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Minimal changes to code, does not change the behaviour, no new types.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/serviceRecords/VetVisit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/serviceRecords/VetVisit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +273,7 @@
       <workItem from="1711879694430" duration="71000" />
       <workItem from="1711894981676" duration="24246000" />
       <workItem from="1712472329716" duration="1503000" />
-      <workItem from="1712474318948" duration="7939000" />
+      <workItem from="1712474318948" duration="10068000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -511,7 +507,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711997232251</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Minimal changes to code, does not change the behaviour, no new types.">
+      <option name="closed" value="true" />
+      <created>1712490617043</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1712490617043</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added ProductRepository and ProductBean" />
     <MESSAGE value="Fixed problems with the addProduct page and added a pet IBatis DataMapper" />
     <MESSAGE value="Started the product detail page" />
     <MESSAGE value="Fixed index.xhtml to test the application" />
@@ -554,6 +557,7 @@
     <MESSAGE value="Added a separate entity for vet visits" />
     <MESSAGE value="Saving for file reorganization" />
     <MESSAGE value="Added a page for adding vet records" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a page for adding vet records" />
+    <MESSAGE value="Minimal changes to code, does not change the behaviour, no new types." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minimal changes to code, does not change the behaviour, no new types." />
   </component>
 </project>

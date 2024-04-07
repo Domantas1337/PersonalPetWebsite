@@ -46,7 +46,6 @@ public class PetServiceBean implements Serializable {
     @PostConstruct
     public void init() {
         String petIdParameter = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("petId");
-        System.out.println("petIdParameter " + petIdParameter);
         if (petIdParameter != null && !petIdParameter.isEmpty()) {
             petId = Long.parseLong(petIdParameter);
         }
@@ -54,7 +53,6 @@ public class PetServiceBean implements Serializable {
     }
 
     public String navigateToAddPetServiceRecord() {
-        // Instead of setting a field, pass the ID as a parameter
         return "addPetServiceRecordPage?faces-redirect=true&petId=" + petId;
     }
 
@@ -70,9 +68,7 @@ public class PetServiceBean implements Serializable {
     }
 
     public void loadServiceRecordsById(){
-        System.out.println("petId " + petId);
         petServiceRecordsForOnePet = petServiceRecordMapper.selectPetServiceRecordsByPetId(petId);
-        System.out.println("petServiceRecordsForOnePet" + petServiceRecordsForOnePet);
     }
 
     @Transactional
@@ -91,7 +87,6 @@ public class PetServiceBean implements Serializable {
             petServiceRecord.setServiceDate(sdf.parse(this.serviceDate));
         } catch (Exception e) {
             e.printStackTrace();
-            // Handle the error appropriately
         }
         petServiceRecordMapper.insertRecord(petServiceRecord);
         loadServiceRecordsById();
