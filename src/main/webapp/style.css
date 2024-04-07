@@ -104,6 +104,11 @@
     color: black !important;
 }
 
+.error-message {
+    color: red;
+    font-size: 0.8em; /* Smaller text for error messages */
+}
+
 .common-button {
     background-color: #0095ff;;
     border: #0095ff;

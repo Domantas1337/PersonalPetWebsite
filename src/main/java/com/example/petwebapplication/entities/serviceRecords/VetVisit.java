@@ -3,14 +3,16 @@ package com.example.petwebapplication.entities.serviceRecords;
 import com.example.petwebapplication.entities.Product;
 import com.example.petwebapplication.enums.VetVisitType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
 
+@Entity
 @Data
-
 public class VetVisit {
     @Id
     @GeneratedValue

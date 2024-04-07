@@ -12,12 +12,16 @@
     <h:form>
         <div class="center-container">
             <div class="form-container">
-                <h:panelGrid columns="2">
-                    <h:outputLabel for="petNmae" styleClass="output-label" value="Pet name:" />
-                    <h:inputText id="petNmae" styleClass="input-box" value="#{petBean.name}" required="true" />
+                <h:panelGrid columns="3" >
+                    <h:outputLabel for="petName" styleClass="output-label" value="Pet name:" />
+                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.name}" required="true" />
+                    <h:message for="petName" styleClass="error-message"/>
+
 
                     <h:outputLabel for="age" styleClass="output-label" value="Age:" />
                     <h:inputText id="age" styleClass="input-box" value="#{petBean.age}" required="true"/>
+                    <h:message for="age" styleClass="error-message" />
+
 
                     <h:outputLabel for="imageURL" styleClass="output-label"  value="Image url:" />
                     <h:inputText id="imageURL" styleClass="input-box" value="#{petBean.imageURL}" required="false"/>
