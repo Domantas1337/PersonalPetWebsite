@@ -9,18 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Minimal changes to code, does not change the behaviour, no new types.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/constants/InputFields.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added minimal form validation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/AddProductPageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/AddProductPageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" afterDir="false" />
     </list>
@@ -295,7 +286,7 @@
       <workItem from="1713020963583" duration="24000" />
       <workItem from="1713093320812" duration="1460000" />
       <workItem from="1713115291407" duration="6812000" />
-      <workItem from="1713164079094" duration="4506000" />
+      <workItem from="1713164079094" duration="5265000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -537,7 +528,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712490617043</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added minimal form validation">
+      <option name="closed" value="true" />
+      <created>1713169166521</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713169166521</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed problems with the addProduct page and added a pet IBatis DataMapper" />
     <MESSAGE value="Started the product detail page" />
     <MESSAGE value="Fixed index.xhtml to test the application" />
     <MESSAGE value="Created PetMapper for the Pet entity" />
@@ -580,6 +578,7 @@
     <MESSAGE value="Saving for file reorganization" />
     <MESSAGE value="Added a page for adding vet records" />
     <MESSAGE value="Minimal changes to code, does not change the behaviour, no new types." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minimal changes to code, does not change the behaviour, no new types." />
+    <MESSAGE value="Added minimal form validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added minimal form validation" />
   </component>
 </project>

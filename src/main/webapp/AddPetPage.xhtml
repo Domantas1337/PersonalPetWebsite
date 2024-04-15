@@ -16,17 +16,17 @@
             <div class="form-container">
                 <h:panelGrid columns="3" >
                     <h:outputLabel for="petName" styleClass="output-label" value="Pet name:" />
-                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.name}" required="true"/>
+                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.name}" />
                     <h:message for="petName" styleClass="error-message"/>
 
 
                     <h:outputLabel for="age" styleClass="output-label" value="Age:" />
-                    <h:inputText id="age" styleClass="input-box" value="#{petBean.age}" required="true"/>
+                    <h:inputText id="age" styleClass="input-box" value="#{petBean.age}" />
                     <h:message for="age" styleClass="error-message" />
 
 
                     <h:outputLabel for="imageURL" styleClass="output-label"  value="Image url:" />
-                    <h:inputText id="imageURL" styleClass="input-box" value="#{petBean.imageURL}" required="false"/>
+                    <h:inputText id="imageURL" styleClass="input-box" value="#{petBean.imageURL}" />
                 </h:panelGrid>
                 <div class="button-container">
                 <h:commandButton value="Submit" styleClass="button add-button" action="#{petBean.addPet()}" />

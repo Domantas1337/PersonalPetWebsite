@@ -16,21 +16,18 @@
 
                     <h:panelGrid columns="2">
                         <h:outputLabel for="name" styleClass="output-label" value="Product name:" />
-                        <h:inputText id="name" styleClass="input-box" value="#{addProductPageBean.productName}" required="true" />
-                        <h:message for="name" styleClass="error-message"/>
-
+                        <h:inputText id="name" styleClass="input-box" value="#{addProductPageBean.productName}" />
 
                         <h:outputLabel for="price" styleClass="output-label" value="Product price:" />
-                        <h:inputText id="price" styleClass="input-box" value="#{addProductPageBean.price}" required="true">
+                        <h:inputText id="price" styleClass="input-box" value="#{addProductPageBean.price}">
                             <f:convertNumber type="number" minFractionDigits="2" />
                         </h:inputText>
-                        <h:message for="price" styleClass="error-message"/>
 
                         <h:outputLabel for="short-description" styleClass="output-label" value="Short product description:" />
-                        <h:inputText id="short-description" styleClass="input-box" value="#{addProductPageBean.shortDescription}" required="false"/>
+                        <h:inputText id="short-description" styleClass="input-box" value="#{addProductPageBean.shortDescription}"/>
 
                         <h:outputLabel for="description" styleClass="output-label" value="Product description:" />
-                        <h:inputText id="description" styleClass="input-box" value="#{addProductPageBean.description}" required="false"/>
+                        <h:inputText id="description" styleClass="input-box" value="#{addProductPageBean.description}" />
 
                         <h:outputLabel for="brr" styleClass="output-label" value="Select Pet Types:" />
                         <h:selectManyMenu id="brr"  value="#{addProductPageBean.selectedPetTypeIds}" styleClass="select-menu">

@@ -13,20 +13,17 @@
 
             <h:panelGrid columns="2">
                <h:outputLabel for="petType" styleClass="output-label" value="Pet type:" />
-               <h:inputText id="petType" styleClass="input-box" value="#{petTypeBean.typeName}" required="true" />
-               <h:message for="petType" styleClass="error-message"/>
+               <h:inputText id="petType" styleClass="input-box" value="#{petTypeBean.typeName}"  />
 
                <h:outputLabel for="generalCareInfo" styleClass="output-label" value="General care info:" />
-               <h:inputText id="generalCareInfo" styleClass="input-box" value="#{petTypeBean.generalCareInfo}" required="true"/>
-               <h:message for="generalCareInfo" styleClass="error-message"/>
-
+               <h:inputText id="generalCareInfo" styleClass="input-box" value="#{petTypeBean.generalCareInfo}" />
 
                <h:outputLabel for="description" styleClass="output-label" value="Description:" />
-               <h:inputText id="description" styleClass="input-box" value="#{petTypeBean.description}" required="false"/>
+               <h:inputText id="description" styleClass="input-box" value="#{petTypeBean.description}" />
 
 
                <h:outputLabel for="generalCareInfo" styleClass="output-label" value="Image url:" />
-               <h:inputText id="imageURL" styleClass="input-box" value="#{petTypeBean.imageURL}" required="false"/>
+               <h:inputText id="imageURL" styleClass="input-box" value="#{petTypeBean.imageURL}" />
             </h:panelGrid>
 
             <div class="button-container">
