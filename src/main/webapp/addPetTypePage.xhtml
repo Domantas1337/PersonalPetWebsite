@@ -14,9 +14,12 @@
             <h:panelGrid columns="2">
                <h:outputLabel for="petType" styleClass="output-label" value="Pet type:" />
                <h:inputText id="petType" styleClass="input-box" value="#{petTypeBean.typeName}" required="true" />
+               <h:message for="petType" styleClass="error-message"/>
 
                <h:outputLabel for="generalCareInfo" styleClass="output-label" value="General care info:" />
                <h:inputText id="generalCareInfo" styleClass="input-box" value="#{petTypeBean.generalCareInfo}" required="true"/>
+               <h:message for="generalCareInfo" styleClass="error-message"/>
+
 
                <h:outputLabel for="description" styleClass="output-label" value="Description:" />
                <h:inputText id="description" styleClass="input-box" value="#{petTypeBean.description}" required="false"/>
@@ -30,6 +33,7 @@
                <h:commandButton value="Submit" styleClass="button add-button" action="#{petTypeBean.savePetType()}" />
                <h:button value="Back" styleClass="button back-button" outcome="index" />
             </div>
+            <h:outputText value="#{petTypeBean.statusMessage}" style="color:red" />
 
          </h:form>
       </div>

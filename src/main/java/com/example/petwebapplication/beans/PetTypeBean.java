@@ -22,12 +22,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Logger;
 
+import static com.example.petwebapplication.constants.InputFields.MORETHANZERO;
+import static com.example.petwebapplication.constants.InputFields.VALUEISREQUIRED;
+
 @Data
 @Named
 @ViewScoped
 public class PetTypeBean implements Serializable {
     private static final long serialVersionUID = 1L; // Add a serialVersionUID
     private static final transient Logger LOGGER = Logger.getLogger(ProductBean.class.getName());
+    private String statusMessage = "";
 
     @PersistenceContext
     private transient EntityManager entityManager;
@@ -83,6 +87,14 @@ public class PetTypeBean implements Serializable {
     // Method to save a pet type to the database
     @Transactional
     public void savePetType() {
+
+        if(this.typeName.isEmpty()){
+            statusMessage = "Type name" + VALUEISREQUIRED;
+            return;
+        } else if (this.generalCareInfo.isEmpty()) {
+            statusMessage = "General care info" + MORETHANZERO;
+            return;
+        }
 
         PetType petType = new PetType();
         petType.setTypeName(this.typeName);

@@ -23,34 +23,44 @@
                     <div class="form-group">
                         <h:outputLabel for="serviceName"  styleClass="output-label" value="Name of the service:" />
                         <h:inputText id="serviceName" styleClass="input-box" value="#{petServiceBean.serviceName}" required="true" />
+                        <h:message for="serviceName" styleClass="error-message"/>
+
                     </div>
 
                     <div class="form-group">
                         <h:outputLabel for="serviceDate" styleClass="output-label" value="Date when acquired:" />
-                        <h:inputText id="serviceDate" styleClass="input-box" value="#{petServiceBean.serviceDate}" type="date" required="false"/>
+                        <h:inputText id="serviceDate" styleClass="input-box" value="#{petServiceBean.serviceDate}" type="date" required="true"/>
+                        <h:message for="serviceDate" styleClass="error-message"/>
+
                     </div>
 
                     <div class="form-group">
                         <h:outputLabel for="providerName" styleClass="output-label" value="Name of the provider:" />
                         <h:inputText id="providerName" styleClass="input-box" value="#{petServiceBean.providerName}" required="true"/>
+                        <h:message for="providerName" styleClass="error-message"/>
+
                     </div>
 
                     <div class="form-group">
                         <h:outputLabel for="cost" styleClass="output-label" value="Service cost:" />
-                        <h:inputText id="cost" styleClass="input-box" value="#{petServiceBean.cost}" required="true"/>
+                        <h:inputText id="cost" styleClass="input-box" value="#{petServiceBean.cost}" required="false"/>
+                        <h:message for="cost" styleClass="error-message"/>
+
                     </div>
 
                     <div class="form-group">
                         <h:outputLabel for="details" styleClass="output-label" value="Additional details:" />
                         <h:inputText id="details" styleClass="input-box" value="#{petServiceBean.details}" required="false"/>
+                        <h:message for="details" styleClass="error-message"/>
+
                     </div>
                 </h:panelGrid>
 
                 <div class="button-container">
                     <h:commandButton value="Add Record" styleClass="button add-button" action="#{petServiceBean.addPetServiceRecord()}" />
                     <h:commandButton value="Back" immediate="true" styleClass="button back-button" action="#{petServiceBean.navigateFromAddPetServiceRecordsToServiceRecords(petServiceBean.petId)}" />
-
                 </div>
+                <h:outputText value="#{petServiceBean.statusMessage}" style="color:red" />
 
             </h:form>
         </div>

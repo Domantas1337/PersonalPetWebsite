@@ -169,276 +169,284 @@
     <schema id="162" parent="2" name="INFORMATION_SCHEMA"/>
     <schema id="163" parent="2" name="PUBLIC">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-04-07.08:24:39</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-04-10.20:52:10</LastIntrospectionLocalTimestamp>
     </schema>
     <sequence id="164" parent="163" name="PETTYPE_SEQ">
       <DasType>BIGINT|0s</DasType>
-      <SequenceIdentity>1(151)+50</SequenceIdentity>
+      <SequenceIdentity>1(1)+50</SequenceIdentity>
       <StartValue>1</StartValue>
     </sequence>
-    <sequence id="165" parent="163" name="PET_SEQ">
+    <sequence id="165" parent="163" name="PRODUCT_SEQ">
       <DasType>BIGINT|0s</DasType>
       <SequenceIdentity>1(1)+50</SequenceIdentity>
       <StartValue>1</StartValue>
     </sequence>
-    <sequence id="166" parent="163" name="PRODUCT_SEQ">
-      <DasType>BIGINT|0s</DasType>
-      <SequenceIdentity>1(1751)+50</SequenceIdentity>
-      <StartValue>1</StartValue>
-    </sequence>
-    <sequence id="167" parent="163" name="VETVISIT_SEQ">
+    <sequence id="166" parent="163" name="VETVISIT_SEQ">
       <DasType>BIGINT|0s</DasType>
       <SequenceIdentity>1(1)+50</SequenceIdentity>
       <StartValue>1</StartValue>
     </sequence>
-    <table id="168" parent="163" name="PET"/>
-    <table id="169" parent="163" name="PETTYPE"/>
-    <table id="170" parent="163" name="PET_SERVICE_RECORD"/>
-    <table id="171" parent="163" name="PRODUCT"/>
-    <table id="172" parent="163" name="PRODUCT_PET_TYPES"/>
-    <table id="173" parent="163" name="VETVISIT"/>
-    <column id="174" parent="168" name="ID">
-      <ColumnKind>generated-stored</ColumnKind>
-      <DasType>BIGINT|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-      <SequenceInline>1</SequenceInline>
-      <SequenceDasType>BIGINT|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(69)</SequenceSequenceIdentity>
-      <SequenceStartValue>1</SequenceStartValue>
-    </column>
-    <column id="175" parent="168" name="PET_NAME">
+    <table id="167" parent="163" name="PET"/>
+    <table id="168" parent="163" name="PETTYPE"/>
+    <table id="169" parent="163" name="PET_SERVICE_RECORD"/>
+    <table id="170" parent="163" name="PRODUCT"/>
+    <table id="171" parent="163" name="PRODUCT_PET_TYPES"/>
+    <table id="172" parent="163" name="VETVISIT"/>
+    <column id="173" parent="167" name="PET_NAME">
       <DasType>CHARACTER VARYING|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="174" parent="167" name="IMAGE_URL">
+      <DasType>CHARACTER VARYING|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="176" parent="168" name="AGE">
+    <column id="175" parent="167" name="AGE">
       <DasType>INTEGER|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="177" parent="168" name="IMAGE_URL">
-      <DasType>CHARACTER VARYING|0s</DasType>
+    <column id="176" parent="167" name="ID">
+      <ColumnKind>generated-stored</ColumnKind>
+      <DasType>INTEGER|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
+      <SequenceInline>1</SequenceInline>
+      <SequenceDasType>INTEGER|0s</SequenceDasType>
+      <SequenceSequenceIdentity>1(2)</SequenceSequenceIdentity>
+      <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <index id="178" parent="168" name="PRIMARY_KEY_C">
+    <index id="177" parent="167" name="PRIMARY_KEY_13">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="179" parent="168" name="PET_PK">
+    <key id="178" parent="167" name="PET_ID">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="180" parent="169" name="ID">
+    <column id="179" parent="168" name="ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="181" parent="169" name="GENERAL_CARE_INFO">
+    <column id="180" parent="168" name="DESCRIPTION">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
-      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="182" parent="169" name="TYPE_NAME">
+    <column id="181" parent="168" name="GENERAL_CARE_INFO">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="183" parent="169" name="IMAGE_URL">
+    <column id="182" parent="168" name="IMAGE_URL">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="184" parent="169" name="DESCRIPTION">
+    <column id="183" parent="168" name="TYPE_NAME">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="185" parent="169" name="PRIMARY_KEY_3">
+    <index id="184" parent="168" name="PRIMARY_KEY_2">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="186" parent="169" name="CONSTRAINT_2">
+    <key id="185" parent="168" name="CONSTRAINT_2">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="187" parent="170" name="SERVICE_NAME">
-      <DasType>CHARACTER VARYING|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="188" parent="170" name="SERVICE_DATE">
-      <DasType>TIMESTAMP|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="189" parent="170" name="PROVIDER_NAME">
-      <DasType>CHARACTER VARYING|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="190" parent="170" name="DETAILS">
-      <DasType>CHARACTER VARYING|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="191" parent="170" name="COST">
-      <DasType>NUMERIC|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <column id="192" parent="170" name="PET_ID">
-      <DasType>BIGINT|0s</DasType>
-      <Position>6</Position>
-    </column>
-    <column id="193" parent="170" name="ID">
+    <column id="186" parent="169" name="ID">
       <ColumnKind>generated-stored</ColumnKind>
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
-      <Position>7</Position>
+      <Position>1</Position>
       <SequenceInline>1</SequenceInline>
       <SequenceDasType>BIGINT|0s</SequenceDasType>
-      <SequenceSequenceIdentity>1(48)</SequenceSequenceIdentity>
+      <SequenceSequenceIdentity>1(1)</SequenceSequenceIdentity>
       <SequenceStartValue>1</SequenceStartValue>
     </column>
-    <foreign-key id="194" parent="170" name="PET_SERVICE_RECORD_PET_FK">
+    <column id="187" parent="169" name="PET_ID">
+      <DasType>BIGINT|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="188" parent="169" name="SERVICE_NAME">
+      <DasType>CHARACTER VARYING(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="189" parent="169" name="SERVICE_DATE">
+      <DasType>DATE|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <column id="190" parent="169" name="PROVIDER_NAME">
+      <DasType>CHARACTER VARYING(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="191" parent="169" name="DETAILS">
+      <DasType>CHARACTER VARYING|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="192" parent="169" name="COST">
+      <DasType>DOUBLE PRECISION|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <foreign-key id="193" parent="169" name="CONSTRAINT_BEC">
       <ColNames>PET_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>restrict</OnUpdate>
-      <RefKeyName>PET_PK</RefKeyName>
+      <RefKeyName>PET_ID</RefKeyName>
       <RefTableName>PET</RefTableName>
     </foreign-key>
-    <index id="195" parent="170" name="PET_SERVICE_RECORD_PET_FK_INDEX_2">
+    <index id="194" parent="169" name="PRIMARY_KEY_BE">
+      <ColNames>ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <index id="195" parent="169" name="CONSTRAINT_INDEX_B">
       <ColNames>PET_ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <column id="196" parent="171" name="ID">
+    <key id="196" parent="169" name="CONSTRAINT_BE">
+      <ColNames>ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="197" parent="170" name="ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="197" parent="171" name="DESCRIPTION">
+    <column id="198" parent="170" name="DESCRIPTION">
       <DasType>CHARACTER LARGE OBJECT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="198" parent="171" name="PRICE">
+    <column id="199" parent="170" name="PRICE">
       <DasType>NUMERIC(38,2)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="199" parent="171" name="PRODUCT_NAME">
+    <column id="200" parent="170" name="PRODUCT_NAME">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="200" parent="171" name="SHORT_DESCRIPTION">
+    <column id="201" parent="170" name="SHORT_DESCRIPTION">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <index id="201" parent="171" name="PRIMARY_KEY_E8">
+    <index id="202" parent="170" name="PRIMARY_KEY_1">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="202" parent="171" name="CONSTRAINT_18">
+    <key id="203" parent="170" name="CONSTRAINT_1">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="203" parent="172" name="PRODUCT_ID">
+    <column id="204" parent="171" name="PRODUCT_ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="204" parent="172" name="PET_TYPE_ID">
+    <column id="205" parent="171" name="PET_TYPE_ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <foreign-key id="205" parent="172" name="FK3EJWOD2UW7IIF75CW3HD196O1">
+    <foreign-key id="206" parent="171" name="FK3EJWOD2UW7IIF75CW3HD196O1">
       <ColNames>PRODUCT_ID</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
-      <RefKeyName>CONSTRAINT_18</RefKeyName>
+      <RefKeyName>CONSTRAINT_1</RefKeyName>
       <RefTableName>PRODUCT</RefTableName>
     </foreign-key>
-    <foreign-key id="206" parent="172" name="FKNOGUUVU4YXU5X021W0AYRSJAC">
+    <foreign-key id="207" parent="171" name="FKNOGUUVU4YXU5X021W0AYRSJAC">
       <ColNames>PET_TYPE_ID</ColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
       <RefKeyName>CONSTRAINT_2</RefKeyName>
       <RefTableName>PETTYPE</RefTableName>
     </foreign-key>
-    <index id="207" parent="172" name="FK3EJWOD2UW7IIF75CW3HD196O1_INDEX_3">
+    <index id="208" parent="171" name="FK3EJWOD2UW7IIF75CW3HD196O1_INDEX_3">
       <ColNames>PRODUCT_ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <index id="208" parent="172" name="FKNOGUUVU4YXU5X021W0AYRSJAC_INDEX_3">
+    <index id="209" parent="171" name="FKNOGUUVU4YXU5X021W0AYRSJAC_INDEX_3">
       <ColNames>PET_TYPE_ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
     </index>
-    <check id="209" parent="173" name="CONSTRAINT_B">
+    <check id="210" parent="172" name="CONSTRAINT_B">
       <NameSurrogate>1</NameSurrogate>
       <Predicate>&quot;NEXT_SCHEDULED_VISIT_TYPE&quot; BETWEEN 0 AND 6</Predicate>
     </check>
-    <check id="210" parent="173" name="CONSTRAINT_BB">
+    <check id="211" parent="172" name="CONSTRAINT_BB">
       <NameSurrogate>1</NameSurrogate>
       <Predicate>&quot;VISIT_TYPE&quot; BETWEEN 0 AND 6</Predicate>
     </check>
-    <column id="211" parent="173" name="ID">
+    <column id="212" parent="172" name="ID">
       <DasType>BIGINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="212" parent="173" name="CARE_RECOMMENDATIONS">
+    <column id="213" parent="172" name="CARE_RECOMMENDATIONS">
       <DasType>CHARACTER VARYING(1000)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="213" parent="173" name="COST">
+    <column id="214" parent="172" name="COST">
       <DasType>REAL|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="214" parent="173" name="DIAGNOSIS">
+    <column id="215" parent="172" name="DIAGNOSIS">
       <DasType>CHARACTER VARYING(1000)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="215" parent="173" name="NEXT_SCHEDULED_VISIT">
+    <column id="216" parent="172" name="NEXT_SCHEDULED_VISIT">
       <DasType>TIMESTAMP|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="216" parent="173" name="NEXT_SCHEDULED_VISIT_TYPE">
+    <column id="217" parent="172" name="NEXT_SCHEDULED_VISIT_TYPE">
       <DasType>TINYINT|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="217" parent="173" name="NOTES_ON_DIAGNOSIS">
+    <column id="218" parent="172" name="NOTES_ON_DIAGNOSIS">
       <DasType>CHARACTER VARYING(1000)|0s</DasType>
       <Position>7</Position>
     </column>
-    <column id="218" parent="173" name="REASON_FOR_VISIT">
+    <column id="219" parent="172" name="REASON_FOR_VISIT">
       <DasType>CHARACTER VARYING(1000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="219" parent="173" name="VETERINARIAN_NAME">
+    <column id="220" parent="172" name="VETERINARIAN_NAME">
       <DasType>CHARACTER VARYING(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
-    <column id="220" parent="173" name="VISIT_DATE">
+    <column id="221" parent="172" name="VISIT_DATE">
       <DasType>TIMESTAMP|0s</DasType>
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <column id="221" parent="173" name="VISIT_TYPE">
+    <column id="222" parent="172" name="VISIT_TYPE">
       <DasType>TINYINT|0s</DasType>
       <NotNull>1</NotNull>
       <Position>11</Position>
     </column>
-    <index id="222" parent="173" name="PRIMARY_KEY_B">
+    <index id="223" parent="172" name="PRIMARY_KEY_B">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="223" parent="173" name="CONSTRAINT_BBE">
+    <key id="224" parent="172" name="CONSTRAINT_BBE">
       <ColNames>ID</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>

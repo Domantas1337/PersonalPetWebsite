@@ -10,11 +10,13 @@
 
 
     <h:form>
+        <h:messages globalOnly="true" styleClass="global-messages" />
+
         <div class="center-container">
             <div class="form-container">
                 <h:panelGrid columns="3" >
                     <h:outputLabel for="petName" styleClass="output-label" value="Pet name:" />
-                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.name}" required="true" />
+                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.name}" required="true"/>
                     <h:message for="petName" styleClass="error-message"/>
 
 
@@ -30,8 +32,11 @@
                 <h:commandButton value="Submit" styleClass="button add-button" action="#{petBean.addPet()}" />
                 <h:button value="Back" styleClass="button back-button" outcome="index" />
                 </div>
+
+                <h:outputText value="#{petBean.statusMessage}" style="color:red" />
             </div>
         </div>
+
     </h:form>
 
 </h:body>

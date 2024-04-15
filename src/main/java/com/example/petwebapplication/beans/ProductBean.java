@@ -22,6 +22,7 @@ import java.io.Serializable;
 @ViewScoped
 public class ProductBean implements Serializable {
     private static final long serialVersionUID = 1L; // Add a serialVersionUID
+    private String statusMessage = "";
 
     @PersistenceContext
     private transient EntityManager entityManager; // Mark non-serializable fields as transient

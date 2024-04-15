@@ -20,11 +20,15 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static com.example.petwebapplication.constants.InputFields.MORETHANZERO;
+import static com.example.petwebapplication.constants.InputFields.VALUEISREQUIRED;
+
 @Data
 @Named
 @RequestScoped
 public class AddProductPageBean {
     private final Logger logger = LoggerFactory.getLogger(AddProductPageBean.class);
+    private String statusMessage = "";
 
     @Inject
     private PetTypeRepository petTypeRepository;
@@ -59,6 +63,15 @@ public class AddProductPageBean {
         try {
 
             Product product = new Product();
+
+            if(this.productName.isEmpty()){
+                statusMessage = "Name" + VALUEISREQUIRED;
+                return "Nothing";
+            } else if (this.price.intValue() < 0) {
+                statusMessage = "Price" + MORETHANZERO;
+                return "Nothing";
+            }
+
             product.setProductName(this.productName);
             product.setPrice(this.price);
             product.setDescription(this.description);

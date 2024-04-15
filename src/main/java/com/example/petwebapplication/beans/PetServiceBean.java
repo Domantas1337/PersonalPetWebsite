@@ -22,11 +22,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import static com.example.petwebapplication.constants.InputFields.VALUEISREQUIRED;
+
 @Data
 @Named
 @ViewScoped
 public class PetServiceBean implements Serializable {
     private final Logger logger = LoggerFactory.getLogger(PetServiceBean.class);
+    private String statusMessage = "";
+
 
     @Inject
     PetServiceRecordMapper petServiceRecordMapper;
@@ -77,6 +81,21 @@ public class PetServiceBean implements Serializable {
 
         Pet petForPetServiceRecord = petMapper.selectPetById(petId);
         petServiceRecord.setPet(petForPetServiceRecord);
+
+        if(this.serviceName.isEmpty()){
+            statusMessage = "Name" + VALUEISREQUIRED;
+            return;
+        } else if(this.serviceName.isEmpty()){
+            statusMessage = "Service name" + VALUEISREQUIRED;
+            return;
+        } else if(this.providerName.isEmpty()) {
+            statusMessage = "Provider name" + VALUEISREQUIRED;
+            return;
+        } else if(this.serviceDate.isEmpty()) {
+            statusMessage = "Service date" + VALUEISREQUIRED;
+            return;
+        }
+
         petServiceRecord.setServiceName(this.serviceName);
         petServiceRecord.setCost(this.cost);
         petServiceRecord.setDetails(this.details);

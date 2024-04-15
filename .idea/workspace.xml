@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="petWebApplication:war exploded" />
+      <artifact name="petWebApplication:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,9 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Minimal changes to code, does not change the behaviour, no new types.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/constants/InputFields.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/AddProductPageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/AddProductPageBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +94,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/resources/META-INF&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp/index.xhtml&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,10 +125,11 @@
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final">
-    <configuration name="JBoss/WildFly 31.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 31.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="JBoss/WildFly 31.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 31.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/petWebApplication-1.0-SNAPSHOT" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="petWebApplication:war exploded">
+        <artifact name="petWebApplication:war">
           <settings />
         </artifact>
       </deployment>
@@ -132,7 +143,7 @@
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50120" />
+        <option name="DEBUG_PORT" value="50823" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -182,7 +193,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="petWebApplication:war exploded" />
+          <artifact name="petWebApplication:war" />
         </option>
       </method>
     </configuration>
@@ -218,6 +229,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final" />
+      <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductErrorMessage" />
+      <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging" />
@@ -274,6 +290,12 @@
       <workItem from="1711894981676" duration="24246000" />
       <workItem from="1712472329716" duration="1503000" />
       <workItem from="1712474318948" duration="10068000" />
+      <workItem from="1712776290540" duration="94000" />
+      <workItem from="1712776434381" duration="4154000" />
+      <workItem from="1713020963583" duration="24000" />
+      <workItem from="1713093320812" duration="1460000" />
+      <workItem from="1713115291407" duration="6812000" />
+      <workItem from="1713164079094" duration="4506000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />

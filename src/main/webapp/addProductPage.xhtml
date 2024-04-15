@@ -17,17 +17,20 @@
                     <h:panelGrid columns="2">
                         <h:outputLabel for="name" styleClass="output-label" value="Product name:" />
                         <h:inputText id="name" styleClass="input-box" value="#{addProductPageBean.productName}" required="true" />
+                        <h:message for="name" styleClass="error-message"/>
+
 
                         <h:outputLabel for="price" styleClass="output-label" value="Product price:" />
                         <h:inputText id="price" styleClass="input-box" value="#{addProductPageBean.price}" required="true">
                             <f:convertNumber type="number" minFractionDigits="2" />
                         </h:inputText>
+                        <h:message for="price" styleClass="error-message"/>
 
-                        <h:outputLabel for="short-description" styleClass="output-label" value="Product description:" />
-                        <h:inputText id="short-description" styleClass="input-box" value="#{addProductPageBean.shortDescription}" required="true"/>
+                        <h:outputLabel for="short-description" styleClass="output-label" value="Short product description:" />
+                        <h:inputText id="short-description" styleClass="input-box" value="#{addProductPageBean.shortDescription}" required="false"/>
 
                         <h:outputLabel for="description" styleClass="output-label" value="Product description:" />
-                        <h:inputText id="description" styleClass="input-box" value="#{addProductPageBean.description}" required="true"/>
+                        <h:inputText id="description" styleClass="input-box" value="#{addProductPageBean.description}" required="false"/>
 
                         <h:outputLabel for="brr" styleClass="output-label" value="Select Pet Types:" />
                         <h:selectManyMenu id="brr"  value="#{addProductPageBean.selectedPetTypeIds}" styleClass="select-menu">
@@ -40,6 +43,7 @@
                         <h:commandButton value="Submit" styleClass="button add-button" action="#{addProductPageBean.saveProduct()}"  />
                         <h:button value="Back" styleClass="button back-button" outcome="index" />
                     </div>
+                    <h:outputText value="#{addProductPageBean.statusMessage}" style="color:red" />
                 </h:form>
             </div>
         </div>
