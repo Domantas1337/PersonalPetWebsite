@@ -3,6 +3,7 @@ import com.example.petwebapplication.entities.Product;
 import com.example.petwebapplication.repositories.ProductRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.faces.context.FacesContext;
@@ -11,7 +12,7 @@ import lombok.Data;
 
 @Data
 @Named
-@RequestScoped
+@ViewScoped
 public class ProductDetailPageBean implements Serializable {
     private static final long serialVersionUID = 1L;
 

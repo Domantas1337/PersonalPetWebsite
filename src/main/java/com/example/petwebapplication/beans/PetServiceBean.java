@@ -2,18 +2,20 @@ package com.example.petwebapplication.beans;
 
 import com.example.petwebapplication.entities.Pet;
 import com.example.petwebapplication.entities.PetServiceRecord;
-import com.example.petwebapplication.mappers.PetMapper;
-import com.example.petwebapplication.mappers.PetServiceRecordMapper;
+import com.example.petwebapplication.repositories.PetRepository;
+import com.example.petwebapplication.repositories.PetServiceRecordRepository;
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.RequestScoped;
-import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.OptimisticLockException;
+import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.SystemException;
 import jakarta.transaction.Transactional;
 import lombok.Data;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,11 +34,16 @@ public class PetServiceBean implements Serializable {
     private String statusMessage = "";
 
 
-    @Inject
-    PetServiceRecordMapper petServiceRecordMapper;
+    @PersistenceContext
+    private transient EntityManager entityManager;
+
 
     @Inject
-    PetMapper petMapper;
+    private transient PetRepository petRepository;
+
+    @Inject
+    private transient PetServiceRecordRepository petServiceRecordRepository; // Mark non-serializable fields as transient
+
 
     private Long petId;
     private String serviceName;
@@ -56,6 +63,32 @@ public class PetServiceBean implements Serializable {
         loadServiceRecordsById();
     }
 
+    @Transactional
+    public void updatePetServiceRecord(PetServiceRecord record) throws OptimisticLockException{
+        try {
+            PetServiceRecord existingRecord = petServiceRecordRepository.findById(record.getId()).orElse(null);;
+
+            if (existingRecord == null) {
+                throw new IllegalArgumentException("Record not found");
+            }
+
+            if (!existingRecord.getVersion().equals(record.getVersion())) {
+                throw new OptimisticLockException("Attempted to update stale data");
+            }
+
+            existingRecord.setServiceName(record.getServiceName());
+            existingRecord.setCost(record.getCost());
+            existingRecord.setDetails(record.getDetails());
+            existingRecord.setProviderName(record.getProviderName());
+            existingRecord.setServiceDate(record.getServiceDate());
+            petServiceRecordRepository.update(existingRecord);
+        } catch (PersistenceException e) {
+            logger.error("Error updating record", e);
+            throw e;
+        }
+    }
+
+
     public String navigateToAddPetServiceRecord() {
         return "addPetServiceRecordPage?faces-redirect=true&petId=" + petId;
     }
@@ -67,28 +100,27 @@ public class PetServiceBean implements Serializable {
         return "addVetVisitPage?faces-redirect=true&petId=" + id;
     }
     public void deletePetServiceById(Long recordId){
-        petServiceRecordMapper.deleteRecordById(recordId);
+        petServiceRecordRepository.delete(recordId);
         loadServiceRecordsById();
     }
 
     public void loadServiceRecordsById(){
-        petServiceRecordsForOnePet = petServiceRecordMapper.selectPetServiceRecordsByPetId(petId);
+        petServiceRecordsForOnePet = petServiceRecordRepository.selectPetServiceRecordsByPetId(petId);
     }
 
     @Transactional
     public void addPetServiceRecord(){
         PetServiceRecord petServiceRecord = new PetServiceRecord();
 
-        Pet petForPetServiceRecord = petMapper.selectPetById(petId);
+        Pet petForPetServiceRecord = petRepository.findById(petId).orElse(null);
+
         petServiceRecord.setPet(petForPetServiceRecord);
 
         if(this.serviceName.isEmpty()){
             statusMessage = "Name" + VALUEISREQUIRED;
             return;
-        } else if(this.serviceName.isEmpty()){
-            statusMessage = "Service name" + VALUEISREQUIRED;
-            return;
-        } else if(this.providerName.isEmpty()) {
+        }
+         else if(this.providerName.isEmpty()) {
             statusMessage = "Provider name" + VALUEISREQUIRED;
             return;
         } else if(this.serviceDate.isEmpty()) {
@@ -100,6 +132,7 @@ public class PetServiceBean implements Serializable {
         petServiceRecord.setCost(this.cost);
         petServiceRecord.setDetails(this.details);
         petServiceRecord.setProviderName(this.providerName);
+        petServiceRecord.setVersion(1);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -107,7 +140,7 @@ public class PetServiceBean implements Serializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        petServiceRecordMapper.insertRecord(petServiceRecord);
+        petServiceRecordRepository.create(petServiceRecord);
         loadServiceRecordsById();
     }
 

@@ -25,15 +25,12 @@ public class ProductBean implements Serializable {
     private String statusMessage = "";
 
     @PersistenceContext
-    private transient EntityManager entityManager; // Mark non-serializable fields as transient
-
+    private transient EntityManager entityManager;
 
     @Inject
     private transient PetTypeRepository petTypeRepository;
 
-    // Ensure all other fields are Serializable. Basic types and collections of serializable types are fine.
-
-    private List<PetTypeForListsDto> petTypeDTOs; // Ensure PetTypeForProductDto is Serializable
+    private List<PetTypeForListsDto> petTypeDTOs;
 
     @Inject
     private transient ProductRepository productRepository;

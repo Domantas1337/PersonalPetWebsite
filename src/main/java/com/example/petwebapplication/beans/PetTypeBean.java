@@ -27,7 +27,7 @@ import static com.example.petwebapplication.constants.InputFields.VALUEISREQUIRE
 
 @Data
 @Named
-@ViewScoped
+@SessionScoped
 public class PetTypeBean implements Serializable {
     private static final long serialVersionUID = 1L; // Add a serialVersionUID
     private static final transient Logger LOGGER = Logger.getLogger(ProductBean.class.getName());

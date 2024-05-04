@@ -6,11 +6,12 @@ import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
 @Stateless
-public class PetTypeRepository {
+public class PetTypeRepository implements Serializable {
 
     @PersistenceContext
     private EntityManager entityManager;

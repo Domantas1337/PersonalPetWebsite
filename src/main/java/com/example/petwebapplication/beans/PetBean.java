@@ -1,15 +1,17 @@
 package com.example.petwebapplication.beans;
 
 import com.example.petwebapplication.entities.Pet;
-import com.example.petwebapplication.constants.*;
 import com.example.petwebapplication.entities.PetServiceRecord;
-import com.example.petwebapplication.mappers.PetMapper;
+import com.example.petwebapplication.repositories.PetRepository;
+import com.example.petwebapplication.repositories.PetServiceRecordRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
@@ -31,18 +33,28 @@ public class PetBean {
 
     private String statusMessage = "";
 
+    @PersistenceContext
+    private transient EntityManager entityManager; // Mark non-serializable fields as transient
+
     @Inject
-    private PetMapper petMapper;
+    private transient PetRepository petRepository;
+
+    @Inject
+    private transient PetServiceRecordRepository petServiceRecordRepository; // Mark non-serializable fields as transient
+
 
     private List<Pet> pets;
     private Pet selectedPet;
     private String name;
     private String imageURL;
     private Integer age;
+    private List<PetServiceRecord> petServiceRecords;
+    private int petServiceRecordNumber;
 
     @PostConstruct
     public void init() {
         loadPets();
+
     }
 
     public String navigateToPersonalPetServiceRecords(Long petId) {
@@ -77,7 +89,7 @@ public class PetBean {
             pet.setImageURL(this.imageURL);
 
             validatePet(pet);
-            petMapper.insertPet(pet);
+            petRepository.create(pet);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Pet added successfully"));
             return "Success";
         } catch (ConstraintViolationException e) {
@@ -95,11 +107,11 @@ public class PetBean {
     }
 
     public void loadPets() {
-        pets = petMapper.findAll();
+        pets = petRepository.findAll();
     }
 
     public void deletePet(Long id) {
-        petMapper.deletePetById(id);
+        petRepository.delete(id);
         loadPets();
     }
 }

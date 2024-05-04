@@ -1,16 +1,40 @@
 package com.example.petwebapplication.entities;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data
+@Entity
+@Data // Generates getters, setters, equals(), hashCode(), and toString() methods.
+@NoArgsConstructor // Generates a no-args constructor.
+@AllArgsConstructor
 public class PetServiceRecord {
-    private Long id; // Unique identifier for the service record
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id", nullable = false)
     private Pet pet;
-    private String serviceName; // Type of service provided (e.g., grooming, vet visit)
-    private Date serviceDate; // Date when the service was provided
-    private String providerName; // Name of the service provider
-    private String details; // Additional details or notes about the service
-    private Double cost; // The cost of the service
+
+    @Column(name = "service_name", nullable = false)
+    private String serviceName;
+
+    @Column(name = "service_date", nullable = false)
+    private Date serviceDate;
+
+    @Column(name = "provider_name", nullable = false)
+    private String providerName;
+
+    @Column(name = "details")
+    private String details;
+
+    @Column(name = "cost")
+    private Double cost;
+
+    @Column(name = "version", nullable = false)
+    private Integer version;
 }

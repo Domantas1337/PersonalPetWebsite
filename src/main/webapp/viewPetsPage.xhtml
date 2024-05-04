@@ -43,7 +43,9 @@
                                     styleClass="pet-image"/>
                     <div class="pet-info" id="pet_#{pet.id}">
                         <h:outputText value="#{pet.petName}" /><br/>
-                        <h:outputText value="Age: #{pet.age}" />
+                        <h:outputText value="Age: #{pet.age}" /><br/>
+                        <h:outputText value="Pet service records: #{pet.petServiceRecords.size()}" />
+
                     </div>
                     <div class="button-container">
 
