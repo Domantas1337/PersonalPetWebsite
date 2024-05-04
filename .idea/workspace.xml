@@ -9,29 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Cleaned up code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/dtos/PetWithPetServiceRecordDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetServiceRecordRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/707e6a65-7b50-440e-9805-d777ada9c594.xml" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Switched from MyBatis to JPA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductDetailPageBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/ProductDetailPageBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/MyBatisResources.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/PetServiceRecordMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/mappers/SqlSessionFactoryProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PetMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/PetServiceRecordMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,31 +74,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp/index.xhtml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor": "Run",
+    "JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor": "Run",
+    "JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor": "Run",
+    "JUnit.PetServiceBeanTest.executor": "Run",
+    "JUnit.PetServiceBeanTest.testOptimisticLockException.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp/index.xhtml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.petwebapplication.entities" />
@@ -133,7 +116,7 @@
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final">
+  <component name="RunManager" selected="JUnit.PetServiceBeanTest.testOptimisticLockException">
     <configuration name="JBoss/WildFly 31.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 31.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/petWebApplication-1.0-SNAPSHOT" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -238,13 +221,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PetServiceBeanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="petWebApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="beans" />
+      <option name="MAIN_CLASS_NAME" value="beans.PetServiceBeanTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PetServiceBeanTest.testOptimisticLockException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="petWebApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="beans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="beans" />
+      <option name="MAIN_CLASS_NAME" value="beans.PetServiceBeanTest" />
+      <option name="METHOD_NAME" value="testOptimisticLockException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final" />
+      <item itemvalue="JUnit.PetServiceBeanTest" />
+      <item itemvalue="JUnit.PetServiceBeanTest.testOptimisticLockException" />
       <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductErrorMessage" />
       <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PetServiceBeanTest.testOptimisticLockException" />
+        <item itemvalue="JUnit.PetServiceBeanTest" />
         <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging" />
         <item itemvalue="JUnit.AddProductPageBeanTest.testSaveProductErrorMessage" />
       </list>
@@ -308,7 +326,7 @@
       <workItem from="1713248125277" duration="2112000" />
       <workItem from="1713257776792" duration="1401000" />
       <workItem from="1713272361186" duration="15000" />
-      <workItem from="1714834392799" duration="9735000" />
+      <workItem from="1714834392799" duration="11967000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -566,7 +584,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713169743648</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Switched from MyBatis to JPA">
+      <option name="closed" value="true" />
+      <created>1714851284637</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1714851284637</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +610,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed index.xhtml to test the application" />
     <MESSAGE value="Created PetMapper for the Pet entity" />
     <MESSAGE value="MyBatis now works (PetMapper)" />
     <MESSAGE value="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord" />
@@ -609,6 +634,7 @@
     <MESSAGE value="Minimal changes to code, does not change the behaviour, no new types." />
     <MESSAGE value="Added minimal form validation" />
     <MESSAGE value="Cleaned up code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up code" />
+    <MESSAGE value="Switched from MyBatis to JPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched from MyBatis to JPA" />
   </component>
 </project>

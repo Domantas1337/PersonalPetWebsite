@@ -35,6 +35,7 @@ public class PetServiceRecord {
     @Column(name = "cost")
     private Double cost;
 
+    @Version
     @Column(name = "version", nullable = false)
     private Integer version;
 }
