@@ -24,11 +24,14 @@ import java.util.concurrent.Future;
 public class FileProcessingService {
 
     public VetVisit processScannedDocument(BufferedImage bufferedImage){
+
+        System.out.println("Processing");
         try{
             Thread.sleep(5000);
         }catch(InterruptedException e){
 
         }
+        System.out.println("Finished processing");
 
         LocalDate todaysDate = LocalDate.now();
         VetVisit scannedVetVisit = new VetVisit(){

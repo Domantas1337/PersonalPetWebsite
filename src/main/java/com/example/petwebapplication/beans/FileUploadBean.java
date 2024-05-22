@@ -26,18 +26,20 @@ public class FileUploadBean {
 
     private CompletableFuture<VetVisit> vetVisitProcessingTask = null;
 
-    private Part uploadFile;
+    private Part uploadedFile;
     public void uploadFile() {
-        try (InputStream input = uploadFile.getInputStream()) {
-
+        try (InputStream input = uploadedFile.getInputStream()) {
+            System.out.println("File uploaded!");
             BufferedImage bufferedImage = ImageIO.read(input);
             if (bufferedImage != null) {
                 vetVisitProcessingTask = CompletableFuture.supplyAsync(() -> fileProcessingService.processScannedDocument(bufferedImage));
             } else {
                 throw new RuntimeException("Failed to decode the uploaded image");
             }
+        } catch (NullPointerException e) {
+            System.out.println("Probably null");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Something with input/output");
         }
     }
 

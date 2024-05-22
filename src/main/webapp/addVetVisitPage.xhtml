@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
     <title>Pet Form</title>
     <link rel="stylesheet" href="style.css"/>
@@ -11,21 +11,17 @@
 
         <div class="form-container">
 
-            <h:form>
+            <h:form enctype="multipart/form-data">
                 <div class="button-container">
-
-                    <input type="file" id="fileUpload" style="display: none" onchange="submitForm()"/>
-                    <h:commandButton value="Upload File" styleClass="button file-button" onclick="document.getElementById('fileUpload').click(); return false;" />
-                    <h:commandButton value="Verify upload" styleClass="button common-button" action="#{fileUploadBean.uploadFile}" />
+                    <!-- Remove onclick from h:inputFile -->
+                    <h:inputFile id="fileUpload" value="#{fileUploadBean.uploadedFile}" style="display: none" />
+                    <!-- Ensure this button does not submit the form -->
+                    <h:commandButton value="Upload File" type="button" styleClass="button file-button"
+                                     onclick="document.getElementById('j_idt6:fileUpload').click(); return false;" />
+                    <!-- Use this button to submit the form -->
+                    <h:commandButton value="Verify upload" type="submit" styleClass="button common-button" action="#{fileUploadBean.uploadFile}" />
                 </div>
             </h:form>
-
-            <script>
-                function submitForm() {
-                    document.forms[0].submit();
-                }
-            </script>
-
             <h:form>
 
                 <h:panelGrid columns="2">
