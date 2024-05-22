@@ -8,8 +8,25 @@
 </h:head>
 <h:body>
     <div class="center-container">
+
         <div class="form-container">
+
+            <h:form enctype="multipart/form-data">
+                <input type="file" id="fileUpload" style="display:none;" onchange="submitForm()"/>
+                <h:commandButton value="Upload File" onclick="document.getElementById('fileUpload').click(); return false;" />
+                <h:commandButton value="Submit" style="display:none;" action="#{fileUploadBean.uploadFile}" />
+            </h:form>
+
+            <script>
+                function submitForm() {
+                    document.forms[0].submit();
+                }
+            </script>
+
             <h:form>
+                <div class="button-container">
+                    <h:commandButton value="Upload scanned version" styleClass="button common-button"}" />
+                </div>
 
                 <h:panelGrid columns="2">
                     <h:outputLabel for="reasonForVisit" styleClass="output-label" value="Reason for pet visit:" />

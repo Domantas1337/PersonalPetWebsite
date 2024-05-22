@@ -11,14 +11,19 @@
 </h:head>
 <h:body>
     <div class="center-container">
+        <h:form>
+            <div class="button-container">
+                <h:commandButton value="We visited the vet" styleClass="button common-button" action="#{petServiceBean.navigateToAddVetVisit()}" />
+            </div>
+        </h:form>
+
         <div class="form-container">
+
+
             <h:form>
 
                 <h:panelGrid columns="1">
 
-                    <div class="button-container">
-                        <h:commandButton value="We visited the vet" styleClass="button common-button" action="#{petServiceBean.navigateToAddVetVisit(petServiceBean.petId)}" />
-                    </div>
 
                     <div class="form-group">
                         <h:outputLabel for="serviceName"  styleClass="output-label" value="Name of the service:" />

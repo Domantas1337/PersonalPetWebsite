@@ -96,8 +96,9 @@ public class PetServiceBean implements Serializable {
     public String navigateFromAddPetServiceRecordsToServiceRecords(Long id){
         return "personalPetServicesPage?faces-redirect=true&petId=" + id;
     }
-    public String navigateToAddVetVisit(Long id){
-        return "addVetVisitPage?faces-redirect=true&petId=" + id;
+    public String navigateToAddVetVisit(){
+        System.out.println(petId);
+        return "addVetVisitPage?faces-redirect=true&petId=" + petId;
     }
     public void deletePetServiceById(Long recordId){
         petServiceRecordRepository.delete(recordId);

@@ -10,9 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Switched from MyBatis to JPA">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/Services/FileProcessingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/serviceRecords/VetVisit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/serviceRecords/VetVisit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,33 +79,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor": "Run",
-    "JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor": "Run",
-    "JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor": "Run",
-    "JUnit.PetServiceBeanTest.executor": "Run",
-    "JUnit.PetServiceBeanTest.testOptimisticLockException.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp/index.xhtml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "Errors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetServiceBeanTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PetServiceBeanTest.testOptimisticLockException.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp/index.xhtml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "h2"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;h2&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.petwebapplication.entities" />
@@ -115,8 +120,11 @@
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp\petServiceRecordPages" />
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.petwebapplication.Services" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.PetServiceBeanTest.testOptimisticLockException">
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final">
     <configuration name="JBoss/WildFly 31.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 31.0.0.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/petWebApplication-1.0-SNAPSHOT" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -327,6 +335,9 @@
       <workItem from="1713257776792" duration="1401000" />
       <workItem from="1713272361186" duration="15000" />
       <workItem from="1714834392799" duration="11967000" />
+      <workItem from="1715196690704" duration="4644000" />
+      <workItem from="1716213396860" duration="7262000" />
+      <workItem from="1716368090263" duration="2348000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />

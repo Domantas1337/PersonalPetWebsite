@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class VetVisit {
     private String reasonForVisit;
 
     @Column(name = "visit_date", nullable = false)
-    private Date visitDate;
+    private LocalDate visitDate;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "visit_type", nullable = false)
@@ -42,10 +43,10 @@ public class VetVisit {
     private String careRecommendations;
 
     @Column(name = "cost", nullable = false)
-    private float cost;
+    private double cost;
 
     @Column(name = "next_scheduled_visit", nullable = true)
-    private Date nextScheduledVisit;
+    private LocalDate nextScheduledVisit;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "next_scheduled_visit_type", nullable = true)
