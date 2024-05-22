@@ -26,9 +26,9 @@ public class FileUploadBean {
 
     private CompletableFuture<VetVisit> vetVisitProcessingTask = null;
 
-    private Part uploadedFile;
+    private Part uploadFile;
     public void uploadFile() {
-        try (InputStream input = uploadedFile.getInputStream()) {
+        try (InputStream input = uploadFile.getInputStream()) {
 
             BufferedImage bufferedImage = ImageIO.read(input);
             if (bufferedImage != null) {

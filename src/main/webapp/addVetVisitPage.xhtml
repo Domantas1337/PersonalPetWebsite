@@ -11,10 +11,13 @@
 
         <div class="form-container">
 
-            <h:form enctype="multipart/form-data">
-                <input type="file" id="fileUpload" style="display:none;" onchange="submitForm()"/>
-                <h:commandButton value="Upload File" onclick="document.getElementById('fileUpload').click(); return false;" />
-                <h:commandButton value="Submit" style="display:none;" action="#{fileUploadBean.uploadFile}" />
+            <h:form>
+                <div class="button-container">
+
+                    <input type="file" id="fileUpload" style="display: none" onchange="submitForm()"/>
+                    <h:commandButton value="Upload File" styleClass="button file-button" onclick="document.getElementById('fileUpload').click(); return false;" />
+                    <h:commandButton value="Verify upload" styleClass="button common-button" action="#{fileUploadBean.uploadFile}" />
+                </div>
             </h:form>
 
             <script>
@@ -24,9 +27,6 @@
             </script>
 
             <h:form>
-                <div class="button-container">
-                    <h:commandButton value="Upload scanned version" styleClass="button common-button"}" />
-                </div>
 
                 <h:panelGrid columns="2">
                     <h:outputLabel for="reasonForVisit" styleClass="output-label" value="Reason for pet visit:" />

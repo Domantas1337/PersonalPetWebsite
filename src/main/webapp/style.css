@@ -98,6 +98,11 @@
     border: 1px solid #e64540;
 }
 
+.file-button {
+    background-color: #058000;
+    border: 1px solid #058000;
+}
+
 .back-button {
     background-color: #e0cbd6;
     border: #CBD5E0;
