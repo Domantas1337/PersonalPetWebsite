@@ -1,98 +1,72 @@
 package com.example.petwebapplication.beans;
 
-import com.example.petwebapplication.entities.Pet;
 import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.interfaces.PetService;
-import com.example.petwebapplication.repositories.PetRepository;
-import com.example.petwebapplication.repositories.PetServiceRecordRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.OptimisticLockException;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.SystemException;
-import jakarta.transaction.Transactional;
+import jakarta.validation.ValidationException;
 import lombok.Data;
-import org.apache.ibatis.exceptions.PersistenceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-
-import static com.example.petwebapplication.constants.InputFields.VALUEISREQUIRED;
 
 @Data
 @Named
 @ViewScoped
-public class PetServiceBean implements Serializable, PetService {
+public class PetServiceBean implements Serializable {
     private final Logger logger = LoggerFactory.getLogger(PetServiceBean.class);
-    private String statusMessage = "";
-
-
-    @PersistenceContext
-    private transient EntityManager entityManager;
-
 
     @Inject
-    private transient PetRepository petRepository;
+    private PetService petService;
 
-    @Inject
-    private transient PetServiceRecordRepository petServiceRecordRepository; // Mark non-serializable fields as transient
-
+    private PetServiceRecord petServiceRecord;
+    private List<PetServiceRecord> petServiceRecords;
 
     private Long petId;
-    private String serviceName;
+
     private String serviceDate;
-    private Date serviceDateNotString;
-    private String providerName;
-    private String details;
-    private Double cost;
-    private List<PetServiceRecord> petServiceRecordsForOnePet;
-    private Date next_scheduled_visit;
-    private String next_scheduled_visit_reason;
-    private String next_scheduled_visit_location;
 
     @PostConstruct
     public void init() {
+        petServiceRecord = new PetServiceRecord();
         String petIdParameter = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("petId");
         if (petIdParameter != null && !petIdParameter.isEmpty()) {
             petId = Long.parseLong(petIdParameter);
         }
         loadServiceRecordsById();
     }
-
-    @Transactional
-    public void updatePetServiceRecord(PetServiceRecord record) throws OptimisticLockException{
+    public void addPetServiceRecord() {
         try {
-            PetServiceRecord existingRecord = petServiceRecordRepository.findById(record.getId()).orElse(null);;
-
-            if (existingRecord == null) {
-                throw new IllegalArgumentException("Record not found");
-            }
-
-            if (!existingRecord.getVersion().equals(record.getVersion())) {
-                throw new OptimisticLockException("Attempted to update stale data");
-            }
-
-            existingRecord.setServiceName(record.getServiceName());
-            existingRecord.setCost(record.getCost());
-            existingRecord.setDetails(record.getDetails());
-            existingRecord.setProviderName(record.getProviderName());
-            existingRecord.setServiceDate(record.getServiceDate());
-            petServiceRecordRepository.update(existingRecord);
-        } catch (PersistenceException e) {
-            logger.error("Error updating record", e);
-            throw e;
+            petService.addPetServiceRecord(petServiceRecord);
+        } catch (ValidationException e) {
+            // Handle user feedback
         }
     }
 
+    public void updatePetServiceRecord() {
+        try {
+            petService.updatePetServiceRecord(petServiceRecord);
+        } catch (OptimisticLockException e) {
+            // Handle user feedback
+        }
+    }
+    public void deletePetServiceRecord(Long id) {
+        petService.deletePetServiceRecord(id);
+    }
 
+    public void loadServiceRecords() {
+        petServiceRecords = petService.getPetServiceRecordsByPetId(petServiceRecord.getPet().getId());
+    }
+
+    public void loadServiceRecordsById(){
+        petServiceRecords = petService.getPetServiceRecordsByPetId(petId);
+    }
     public String navigateToAddPetServiceRecord() {
         return "addPetServiceRecordPage?faces-redirect=true&petId=" + petId;
     }
@@ -104,54 +78,6 @@ public class PetServiceBean implements Serializable, PetService {
         System.out.println(petId);
         return "addVetVisitPage?faces-redirect=true&petId=" + petId;
     }
-    public void deletePetServiceById(Long recordId){
-        petServiceRecordRepository.delete(recordId);
-        loadServiceRecordsById();
-    }
 
-    public void loadServiceRecordsById(){
-        petServiceRecordsForOnePet = petServiceRecordRepository.selectPetServiceRecordsByPetId(petId);
-    }
-
-    @Transactional
-    public void addPetServiceRecord(){
-        PetServiceRecord petServiceRecord = new PetServiceRecord();
-
-        Pet petForPetServiceRecord = petRepository.findById(petId).orElse(null);
-
-        petServiceRecord.setPet(petForPetServiceRecord);
-
-        if(this.serviceName.isEmpty()){
-            statusMessage = "Name" + VALUEISREQUIRED;
-            return;
-        }
-         else if(this.providerName.isEmpty()) {
-            statusMessage = "Provider name" + VALUEISREQUIRED;
-            return;
-        } else if(this.serviceDate.isEmpty()) {
-            statusMessage = "Service date" + VALUEISREQUIRED;
-            return;
-        }
-
-        petServiceRecord.setServiceName(this.serviceName);
-        petServiceRecord.setCost(this.cost);
-        petServiceRecord.setDetails(this.details);
-        petServiceRecord.setProviderName(this.providerName);
-        petServiceRecord.setNext_scheduled_visit(this.next_scheduled_visit);
-        petServiceRecord.setNext_scheduled_visit_reason(this.next_scheduled_visit_reason);
-        petServiceRecord.setNext_scheduled_visit_location(this.next_scheduled_visit_location);
-
-        petServiceRecord.setVersion(1);
-
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            petServiceRecord.setServiceDate(sdf.parse(this.serviceDate));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        petServiceRecordRepository.create(petServiceRecord);
-        loadServiceRecordsById();
-    }
 
 }

@@ -1,14 +1,13 @@
 package com.example.petwebapplication.interfaces;
 
-import com.example.petwebapplication.entities.PetServiceRecord;
-import jakarta.persistence.OptimisticLockException;
-import org.apache.ibatis.exceptions.PersistenceException;
-
 import java.util.List;
+import jakarta.ejb.Local;
+import com.example.petwebapplication.entities.PetServiceRecord;
 
 public interface PetService {
-    void addPetServiceRecord();
-    void updatePetServiceRecord(PetServiceRecord record) throws OptimisticLockException, PersistenceException;
-    void deletePetServiceById(Long recordId);
-    void loadServiceRecordsById();
+    void addPetServiceRecord(PetServiceRecord record);
+    void updatePetServiceRecord(PetServiceRecord record);
+    void deletePetServiceRecord(Long recordId);
+    List<PetServiceRecord> getPetServiceRecordsByPetId(Long petId);
+    PetServiceRecord findPetServiceRecordById(Long recordId);
 }

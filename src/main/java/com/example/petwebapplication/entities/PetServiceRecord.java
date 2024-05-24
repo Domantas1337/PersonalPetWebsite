@@ -41,10 +41,23 @@ public class PetServiceRecord {
     @Column(name = "next_scheduled_visit_reason")
     private String next_scheduled_visit_reason;
 
-    @Column(name = "next_scheduled_visit_reason")
+    @Column(name = "next_scheduled_visit_location")
     private String next_scheduled_visit_location;
 
     @Version
     @Column(name = "version", nullable = false)
     private Integer version;
+
+    public void updateFrom(PetServiceRecord source) {
+        if (source != null) {
+            this.serviceName = source.serviceName;
+            this.serviceDate = source.serviceDate;
+            this.providerName = source.providerName;
+            this.cost = source.cost;
+            this.details = source.details;
+            this.next_scheduled_visit = source.next_scheduled_visit;
+            this.next_scheduled_visit_location = source.next_scheduled_visit_location;
+            this.next_scheduled_visit_reason = source.next_scheduled_visit_reason;
+        }
+    }
 }

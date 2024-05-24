@@ -9,17 +9,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added a function to replicate file processing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interceptors/LoggedInvocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interceptors/PetTypeVisitationLogger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added an interface and fields to implement a decorator">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/converters/DateConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/decorators/PetServiceDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/PetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/Services/FileProcessingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/FileProcessingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/beans/PetServiceBeanTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +34,8 @@
         <option value="Jsp File" />
         <option value="Enum" />
         <option value="jsf" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -343,7 +345,7 @@
       <workItem from="1716368090263" duration="12718000" />
       <workItem from="1716405965135" duration="1380000" />
       <workItem from="1716441888641" duration="2327000" />
-      <workItem from="1716550136814" duration="2157000" />
+      <workItem from="1716550136814" duration="14615000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -633,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716382552417</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added an interface and fields to implement a decorator">
+      <option name="closed" value="true" />
+      <created>1716564018409</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1716564018409</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +661,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Completed PetMappe.xml PerServiceRecordMapper.xml" />
     <MESSAGE value="Fixed inconsistent naming" />
     <MESSAGE value="My Pets page now works" />
     <MESSAGE value="Added navigation to the pet service page" />
@@ -676,6 +685,7 @@
     <MESSAGE value="Added asynchronous capabilities" />
     <MESSAGE value="Added buttons to upload images" />
     <MESSAGE value="Added a function to replicate file processing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a function to replicate file processing" />
+    <MESSAGE value="Added an interface and fields to implement a decorator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an interface and fields to implement a decorator" />
   </component>
 </project>
