@@ -35,6 +35,15 @@ public class PetServiceRecord {
     @Column(name = "cost")
     private Double cost;
 
+    @Column(name = "next_scheduled_visit_date")
+    private Date next_scheduled_visit;
+
+    @Column(name = "next_scheduled_visit_reason")
+    private String next_scheduled_visit_reason;
+
+    @Column(name = "next_scheduled_visit_reason")
+    private String next_scheduled_visit_location;
+
     @Version
     @Column(name = "version", nullable = false)
     private Integer version;

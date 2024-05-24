@@ -9,11 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added buttons to upload images">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added a function to replicate file processing">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interceptors/LoggedInvocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interceptors/PetTypeVisitationLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/Services/FileProcessingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/Services/FileProcessingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/Services/FileProcessingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/FileProcessingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetTypeBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +33,7 @@
         <option value="Enum" />
         <option value="jsf" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -333,7 +340,10 @@
       <workItem from="1714834392799" duration="11967000" />
       <workItem from="1715196690704" duration="4644000" />
       <workItem from="1716213396860" duration="7262000" />
-      <workItem from="1716368090263" duration="11438000" />
+      <workItem from="1716368090263" duration="12718000" />
+      <workItem from="1716405965135" duration="1380000" />
+      <workItem from="1716441888641" duration="2327000" />
+      <workItem from="1716550136814" duration="2157000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -615,7 +625,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716375926626</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Added a function to replicate file processing">
+      <option name="closed" value="true" />
+      <created>1716382552417</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1716382552417</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -633,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Altered the PetMapper.xml to better fit its relationship with PetServiceRecord" />
     <MESSAGE value="Completed PetMappe.xml PerServiceRecordMapper.xml" />
     <MESSAGE value="Fixed inconsistent naming" />
     <MESSAGE value="My Pets page now works" />
@@ -658,6 +675,7 @@
     <MESSAGE value="Switched from MyBatis to JPA" />
     <MESSAGE value="Added asynchronous capabilities" />
     <MESSAGE value="Added buttons to upload images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added buttons to upload images" />
+    <MESSAGE value="Added a function to replicate file processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a function to replicate file processing" />
   </component>
 </project>

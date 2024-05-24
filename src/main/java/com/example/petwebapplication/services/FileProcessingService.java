@@ -1,24 +1,11 @@
-package com.example.petwebapplication.Services;
+package com.example.petwebapplication.services;
 
 import com.example.petwebapplication.enums.VetVisitType;
-import jakarta.annotation.Resource;
-import jakarta.ejb.AsyncResult;
-import jakarta.ejb.Asynchronous;
-import jakarta.ejb.Local;
-import jakarta.ejb.SessionContext;
-import jakarta.enterprise.concurrent.ManagedExecutorService;
 import com.example.petwebapplication.entities.serviceRecords.VetVisit;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.awt.image.BufferedImage;
-import java.io.InputStream;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.concurrent.Future;
 
 @ApplicationScoped
 public class FileProcessingService {

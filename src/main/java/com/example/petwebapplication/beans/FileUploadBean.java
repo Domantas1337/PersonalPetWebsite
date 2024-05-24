@@ -1,8 +1,7 @@
 package com.example.petwebapplication.beans;
 
-import com.example.petwebapplication.Services.FileProcessingService;
+import com.example.petwebapplication.services.FileProcessingService;
 import com.example.petwebapplication.entities.serviceRecords.VetVisit;
-import jakarta.ejb.EJB;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.enterprise.context.RequestScoped;
@@ -47,7 +46,7 @@ public class FileUploadBean {
         return vetVisitProcessingTask != null && !vetVisitProcessingTask.isDone();
     }
 
-    public String getJerseyGenerationStatus() throws ExecutionException, InterruptedException {
+    public String getImageProcessingStatus() throws ExecutionException, InterruptedException {
         if (vetVisitProcessingTask == null) {
             return null;
         } else if (isTheImageProcessing()) {

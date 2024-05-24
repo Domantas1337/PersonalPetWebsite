@@ -3,6 +3,7 @@ package com.example.petwebapplication.beans;
 import com.example.petwebapplication.entities.Pet;
 import com.example.petwebapplication.entities.PetType;
 
+import com.example.petwebapplication.interceptors.LoggedInvocation;
 import com.example.petwebapplication.repositories.PetTypeRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
@@ -57,6 +58,7 @@ public class PetTypeBean implements Serializable {
         return "viewPetTypes"; // Navigate to petTypesPage.xhtml
     }
 
+    @LoggedInvocation
     public String navigateToPetTypeDetails(Long typeId) {
         selectedPetType = petTypeRepository.findById(typeId).orElse(null);
         return "petTypeDetails?faces-redirect=true&typeId=" + typeId ;

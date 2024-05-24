@@ -4,5 +4,9 @@
        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                            https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
        bean-discovery-mode="all">
-    <!-- No MyBatis specific configuration needed here -->
+
+
+    <interceptors>
+        <class>com.example.petwebapplication.interceptors.PetTypeVisitationLogger</class>
+    </interceptors>
 </beans>

@@ -2,6 +2,7 @@ package com.example.petwebapplication.beans;
 
 import com.example.petwebapplication.entities.Pet;
 import com.example.petwebapplication.entities.PetServiceRecord;
+import com.example.petwebapplication.interfaces.PetService;
 import com.example.petwebapplication.repositories.PetRepository;
 import com.example.petwebapplication.repositories.PetServiceRecordRepository;
 import jakarta.annotation.PostConstruct;
@@ -29,7 +30,7 @@ import static com.example.petwebapplication.constants.InputFields.VALUEISREQUIRE
 @Data
 @Named
 @ViewScoped
-public class PetServiceBean implements Serializable {
+public class PetServiceBean implements Serializable, PetService {
     private final Logger logger = LoggerFactory.getLogger(PetServiceBean.class);
     private String statusMessage = "";
 
@@ -53,6 +54,9 @@ public class PetServiceBean implements Serializable {
     private String details;
     private Double cost;
     private List<PetServiceRecord> petServiceRecordsForOnePet;
+    private Date next_scheduled_visit;
+    private String next_scheduled_visit_reason;
+    private String next_scheduled_visit_location;
 
     @PostConstruct
     public void init() {
@@ -133,7 +137,12 @@ public class PetServiceBean implements Serializable {
         petServiceRecord.setCost(this.cost);
         petServiceRecord.setDetails(this.details);
         petServiceRecord.setProviderName(this.providerName);
+        petServiceRecord.setNext_scheduled_visit(this.next_scheduled_visit);
+        petServiceRecord.setNext_scheduled_visit_reason(this.next_scheduled_visit_reason);
+        petServiceRecord.setNext_scheduled_visit_location(this.next_scheduled_visit_location);
+
         petServiceRecord.setVersion(1);
+
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
