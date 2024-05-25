@@ -9,14 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added an interface and fields to implement a decorator">
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Implemented a decorator">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/appearance/ChristmasTheme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/appearance/DefaultTheme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/controllers/ThemeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/Theme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/managers/ThemeManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/christmas.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/default.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/decorators/PetServiceDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/decorators/PetServiceDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/PetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/PetServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +345,8 @@
       <workItem from="1716441888641" duration="2327000" />
       <workItem from="1716550136814" duration="14615000" />
       <workItem from="1716624147204" duration="252000" />
-      <workItem from="1716652593542" duration="2763000" />
+      <workItem from="1716652593542" duration="4014000" />
+      <workItem from="1716662841114" duration="4201000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -640,7 +644,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716564018409</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Implemented a decorator">
+      <option name="closed" value="true" />
+      <created>1716657215945</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1716657215945</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -658,7 +670,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed inconsistent naming" />
     <MESSAGE value="My Pets page now works" />
     <MESSAGE value="Added navigation to the pet service page" />
     <MESSAGE value="Added PetServiceBean and a page for adding pet service records (not finished)" />
@@ -683,7 +694,8 @@
     <MESSAGE value="Added buttons to upload images" />
     <MESSAGE value="Added a function to replicate file processing" />
     <MESSAGE value="Added an interface and fields to implement a decorator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an interface and fields to implement a decorator" />
+    <MESSAGE value="Implemented a decorator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented a decorator" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

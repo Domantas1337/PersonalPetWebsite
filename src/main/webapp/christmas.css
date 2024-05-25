@@ -1,0 +1,31 @@
+body, h1, h2, h3, h4, h5, h6, p, form, input {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar {
+    background-color: #1c5401; /* Green background */
+    overflow: hidden;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Add some padding */
+}
+
+.menu-item {
+    background-color: #ec0000; /* A distinct green background */
+    color: #000000; /* White text for contrast */
+    margin-right: 10px;
+    padding: 10px 20px; /* Padding inside the buttons */
+    text-decoration: none; /* Remove underline from links */
+    border: 2px solid transparent; /* Transparent border which can change on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for several properties */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-weight: bold; /* Make the text bold */
+    text-transform: uppercase; /* Uppercase text for a button-like appearance */
+    letter-spacing: 1px; /* Add space between letters */
+}
+
+.menu-item:hover, .menu-item:active {
+    background-color: #a90000;
+}

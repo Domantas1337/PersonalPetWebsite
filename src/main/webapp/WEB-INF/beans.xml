@@ -4,12 +4,13 @@
        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                            https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
        bean-discovery-mode="all">
-
-
     <interceptors>
         <class>com.example.petwebapplication.interceptors.PetTypeVisitationLogger</class>
     </interceptors>
     <decorators>
         <class>com.example.petwebapplication.decorators.PetServiceDecorator</class>
     </decorators>
+    <alternatives>
+        <class>com.example.petwebapplication.appearance.ChristmasTheme</class>
+    </alternatives>
 </beans>
