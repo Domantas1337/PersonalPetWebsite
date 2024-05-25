@@ -1,5 +1,6 @@
 package com.example.petwebapplication.beans;
 
+import com.example.petwebapplication.converters.DateConverter;
 import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.interfaces.PetService;
 import jakarta.annotation.PostConstruct;
@@ -14,7 +15,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
+
+import static com.example.petwebapplication.converters.DateConverter.stringToDate;
 
 @Data
 @Named
@@ -31,6 +36,7 @@ public class PetServiceBean implements Serializable {
     private Long petId;
 
     private String serviceDate;
+    private String nextVisitDate;
 
     @PostConstruct
     public void init() {
@@ -41,9 +47,13 @@ public class PetServiceBean implements Serializable {
         }
         loadServiceRecordsById();
     }
-    public void addPetServiceRecord() {
+
+    public void addPetServiceRecord() throws ParseException {
+
+        petServiceRecord.setServiceDate(DateConverter.stringToDate(serviceDate, "yyyy-MM-dd"));
+
         try {
-            petService.addPetServiceRecord(petServiceRecord);
+            petService.addPetServiceRecord(petServiceRecord, petId);
         } catch (ValidationException e) {
             // Handle user feedback
         }

@@ -20,7 +20,8 @@ public class PetServiceImpl implements PetService, Serializable {
     private PetServiceRecordRepository petServiceRecordRepository;
 
     @Override
-    public void addPetServiceRecord(PetServiceRecord record) {
+    public void addPetServiceRecord(PetServiceRecord record, Long petId) {
+        record.setPet(petRepository.findById(petId).get());
         petServiceRecordRepository.create(record);
     }
 

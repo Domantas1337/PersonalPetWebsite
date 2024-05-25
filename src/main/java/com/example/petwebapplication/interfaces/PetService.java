@@ -5,7 +5,7 @@ import jakarta.ejb.Local;
 import com.example.petwebapplication.entities.PetServiceRecord;
 
 public interface PetService {
-    void addPetServiceRecord(PetServiceRecord record);
+    void addPetServiceRecord(PetServiceRecord record, Long petId);
     void updatePetServiceRecord(PetServiceRecord record);
     void deletePetServiceRecord(Long recordId);
     List<PetServiceRecord> getPetServiceRecordsByPetId(Long petId);

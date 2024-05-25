@@ -20,12 +20,15 @@ public abstract class PetServiceDecorator implements PetService {
     private PetService petService;
 
     @Override
-    public void addPetServiceRecord(PetServiceRecord record) {
+    public void addPetServiceRecord(PetServiceRecord record, Long petId) {
         additionalValidate(record);
-        petService.addPetServiceRecord(record);
+        petService.addPetServiceRecord(record, petId);
     }
 
     private void additionalValidate(PetServiceRecord record) {
+
+        System.out.println("Validation activated");
+
         if (record.getCost() != null && record.getCost() < 0) {
             throw new IllegalArgumentException("Cost cannot be negative.");
         }

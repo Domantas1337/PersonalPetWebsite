@@ -9,4 +9,7 @@
     <interceptors>
         <class>com.example.petwebapplication.interceptors.PetTypeVisitationLogger</class>
     </interceptors>
+    <decorators>
+        <class>com.example.petwebapplication.decorators.PetServiceDecorator</class>
+    </decorators>
 </beans>
