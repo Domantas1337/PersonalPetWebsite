@@ -25,6 +25,9 @@
                     <p><strong>Provider:</strong> #{serviceRecord.providerName}</p>
                     <p><strong>Details:</strong> #{serviceRecord.details}</p>
                     <p><strong>Cost:</strong> $#{serviceRecord.cost}</p>
+                    <h:commandButton value="Edit" styleClass="button edit-button-card" action="#{petServiceBean.navigateToUpdateServiceRecord(serviceRecord.id)}" >
+                        <f:ajax render=":j_idt7:serviceRecordsList" />
+                    </h:commandButton>
                     <h:commandButton value="Delete" styleClass="button delete-button-card" action="#{petServiceBean.deletePetServiceRecord(serviceRecord.id)}" >
                         <f:ajax render=":j_idt7:serviceRecordsList" />
                     </h:commandButton>

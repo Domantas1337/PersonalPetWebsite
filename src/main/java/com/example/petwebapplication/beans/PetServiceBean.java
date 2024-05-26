@@ -38,6 +38,8 @@ public class PetServiceBean implements Serializable {
     private String serviceDate;
     private String nextVisitDate;
 
+    private boolean editMode = false;
+
     @PostConstruct
     public void init() {
         petServiceRecord = new PetServiceRecord();
@@ -59,13 +61,7 @@ public class PetServiceBean implements Serializable {
         }
     }
 
-    public void updatePetServiceRecord() {
-        try {
-            petService.updatePetServiceRecord(petServiceRecord);
-        } catch (OptimisticLockException e) {
-            // Handle user feedback
-        }
-    }
+
     public void deletePetServiceRecord(Long id) {
         petService.deletePetServiceRecord(id);
     }
@@ -77,13 +73,15 @@ public class PetServiceBean implements Serializable {
     public void loadServiceRecordsById(){
         petServiceRecords = petService.getPetServiceRecordsByPetId(petId);
     }
+
     public String navigateToAddPetServiceRecord() {
         return "addPetServiceRecordPage?faces-redirect=true&petId=" + petId;
     }
 
-    public String navigateFromAddPetServiceRecordsToServiceRecords(Long id){
-        return "personalPetServicesPage?faces-redirect=true&petId=" + id;
+    public String navigateToUpdateServiceRecord(Long recordId) {
+        return "updatePetServiceRecordPage?faces-redirect=true&petServiceRecordId=" + recordId;
     }
+
     public String navigateToAddVetVisit(){
         System.out.println(petId);
         return "addVetVisitPage?faces-redirect=true&petId=" + petId;

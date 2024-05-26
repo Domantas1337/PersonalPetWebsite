@@ -54,7 +54,6 @@ public class PetBean {
     @PostConstruct
     public void init() {
         loadPets();
-
     }
 
     public String navigateToPersonalPetServiceRecords(Long petId) {
@@ -105,6 +104,58 @@ public class PetBean {
             return "Error - System error";
         }
     }
+
+    @Transactional
+    public String updatePet(Long id) {
+        Pet currentPet = petRepository.findById(id).orElse(null);
+
+        if (currentPet == null) {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Pet not found"));
+            return "Error - Pet not found";
+        }
+
+        boolean isUpdated = false;
+
+        if (name != null && !name.isEmpty() && !name.equals(currentPet.getPetName())) {
+            currentPet.setPetName(name);
+            isUpdated = true;
+        }
+
+        if (age != null && age >= 0 && !age.equals(currentPet.getAge())) {
+            currentPet.setAge(age);
+            isUpdated = true;
+        }
+
+        if (imageURL != null && !imageURL.equals(currentPet.getImageURL())) {
+            currentPet.setImageURL(imageURL);
+            isUpdated = true;
+        }
+
+        if (isUpdated) {
+            try {
+                validatePet(currentPet);
+                petRepository.update(currentPet);
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Success", "Pet updated successfully"));
+                loadPets();  // Refresh the list after update
+                return "Success";
+            } catch (ConstraintViolationException e) {
+                for (ConstraintViolation<?> violation : e.getConstraintViolations()) {
+                    String propertyPath = violation.getPropertyPath().toString();
+                    String message = violation.getMessage();
+                    FacesContext.getCurrentInstance().addMessage(propertyPath, new FacesMessage(FacesMessage.SEVERITY_ERROR, message, null));
+                }
+                return "Error - Validation failed";
+            } catch (Exception e) {
+                logger.error("Error updating pet: {}", e.getMessage());
+                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", e.getMessage()));
+                return "Error - System error";
+            }
+        } else {
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "No changes to update"));
+            return "Nothing updated"; // No changes were made
+        }
+    }
+
 
     public void loadPets() {
         pets = petRepository.findAll();

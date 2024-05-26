@@ -9,17 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Implemented a decorator">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/appearance/ChristmasTheme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/appearance/DefaultTheme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/controllers/ThemeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/Theme.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/managers/ThemeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/christmas.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/default.css" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added an @Alternative feature">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceUpdateBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/updatePetServiceRecordPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,38 +81,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PetServiceBeanTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PetServiceBeanTest.testOptimisticLockException.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp/index.xhtml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor": "Run",
+    "JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor": "Run",
+    "JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor": "Run",
+    "JUnit.PetServiceBeanTest.executor": "Run",
+    "JUnit.PetServiceBeanTest.testOptimisticLockException.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.petwebapplication.entities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\webapp" />
       <recent name="C:\Users\doman\OneDrive\Documents\6_semestras\PSK\petWebApplication\src\main\resources\META-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -346,7 +346,8 @@
       <workItem from="1716550136814" duration="14615000" />
       <workItem from="1716624147204" duration="252000" />
       <workItem from="1716652593542" duration="4014000" />
-      <workItem from="1716662841114" duration="4201000" />
+      <workItem from="1716662841114" duration="4976000" />
+      <workItem from="1716733368064" duration="5027000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -652,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716657215945</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added an @Alternative feature">
+      <option name="closed" value="true" />
+      <created>1716667439335</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1716667439335</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,7 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="My Pets page now works" />
     <MESSAGE value="Added navigation to the pet service page" />
     <MESSAGE value="Added PetServiceBean and a page for adding pet service records (not finished)" />
     <MESSAGE value="Pet service records can now be added" />
@@ -695,7 +703,8 @@
     <MESSAGE value="Added a function to replicate file processing" />
     <MESSAGE value="Added an interface and fields to implement a decorator" />
     <MESSAGE value="Implemented a decorator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented a decorator" />
+    <MESSAGE value="Added an @Alternative feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an @Alternative feature" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

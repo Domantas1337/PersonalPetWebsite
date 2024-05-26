@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <link rel="stylesheet" href="style.css"/>
+</h:head>
+<h:body>
+    <div class="center-container">
+
+        <div class="form-container">
+
+
+            <h:form>
+
+                <h:panelGrid columns="1">
+
+
+                    <div class="form-group">
+                        <h:outputLabel for="serviceName"  styleClass="output-label" value="Name of the service:" />
+                        <h:inputText id="serviceName" styleClass="input-box" value="#{petServiceUpdateBean.currentPetServiceRecord.serviceName}" required="true" />
+                        <h:message for="serviceName" styleClass="error-message"/>
+
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="providerName" styleClass="output-label" value="Name of the provider:" />
+                        <h:inputText id="providerName" styleClass="input-box" value="#{petServiceUpdateBean.currentPetServiceRecord.providerName}" required="true"/>
+                        <h:message for="providerName" styleClass="error-message"/>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="cost" styleClass="output-label" value="Service cost:" />
+                        <h:inputText id="cost" styleClass="input-box" value="#{petServiceUpdateBean.currentPetServiceRecord.cost}" required="false"/>
+                        <h:message for="cost" styleClass="error-message"/>
+
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="details" styleClass="output-label" value="Additional details:" />
+                        <h:inputText id="details" styleClass="input-box" value="#{petServiceUpdateBean.currentPetServiceRecord.details}" required="false"/>
+                        <h:message for="details" styleClass="error-message"/>
+                    </div>
+                </h:panelGrid>
+
+                <div class="button-container">
+                    <h:commandButton value="Update Record" styleClass="button update-button" action="#{petServiceUpdateBean.updatePetServiceRecord()}" />
+                </div>
+
+            </h:form>
+        </div>
+    </div>
+</h:body>
+</html>

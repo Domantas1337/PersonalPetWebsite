@@ -47,10 +47,11 @@
                         <h:outputText value="Pet service records: #{pet.petServiceRecords.size()}" />
                     </div>
                     <div class="button-container">
-
                         <h:commandButton value="View service records" styleClass="button add-button" action="#{petBean.navigateToPersonalPetServiceRecords(pet.id)}" />
-
-
+                        <h:commandButton value="Change pet name" action="#{petBean.deletePet(pet.id)}"
+                                         styleClass="button edit-button">
+                            <f:ajax render=":j_idt5:petList" />
+                        </h:commandButton>
                         <h:commandButton value="Remove pet" action="#{petBean.deletePet(pet.id)}"
                                          styleClass="button delete-button">
                             <f:ajax render=":j_idt5:petList" />

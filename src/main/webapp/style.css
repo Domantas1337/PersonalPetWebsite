@@ -98,6 +98,11 @@
     border: 1px solid #e64540;
 }
 
+.edit-button {
+    background-color: #4075e6;
+    border: 1px solid #4075e6;
+}
+
 .file-button {
     background-color: #058000;
     border: 1px solid #058000;
@@ -133,6 +138,14 @@
     bottom: 20px; /* Distance from the bottom edge of the service-item container */
     background-color: #e64540;  /* Your desired color */
     border: 1px solid #e64540;
+}
+.edit-button-card{
+
+    position: absolute;
+    right: 20px;/* Distance from the right edge of the service-item container */
+    bottom: 20px; /* Distance from the bottom edge of the service-item container */
+    background-color: #4075e6;  /* Your desired color */
+    border: 1px solid #4075e6;
 }
 
 
