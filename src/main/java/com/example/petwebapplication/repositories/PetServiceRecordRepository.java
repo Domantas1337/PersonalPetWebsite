@@ -6,7 +6,9 @@ import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.entities.PetType;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.OptimisticLockException;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 
 import java.io.Serializable;
 import java.util.List;
@@ -45,7 +47,19 @@ public class PetServiceRecordRepository implements Serializable {
         entityManager.remove(petServiceRecord);
     }
 
-    public PetServiceRecord update(PetServiceRecord petServiceRecord) {
-        return entityManager.merge(petServiceRecord);
+    public String update(PetServiceRecord petServiceRecord) {
+        try {
+            entityManager.merge(petServiceRecord);
+            return "Success";
+        } catch (OptimisticLockException ex) {
+            System.out.println("OptimisticLockException thrown in repository method");
+            return "Lock";
+        } catch (Exception ex) {
+            System.out.println("Other exception caught in repository method: " + ex.getMessage());
+            throw ex;  // rethrow other exceptions
+        }
     }
+
+
+
 }

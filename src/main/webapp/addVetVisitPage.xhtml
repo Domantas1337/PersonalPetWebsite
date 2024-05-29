@@ -10,6 +10,7 @@
     <div class="center-container">
 
         <div class="form-container">
+            <h:outputText id="statusOutput" value="#{fileUploadBean.imageProcessingStatus}" />
 
             <h:form enctype="multipart/form-data">
                 <div class="button-container">
@@ -20,6 +21,7 @@
                                      onclick="document.getElementById('j_idt6:fileUpload').click(); return false;" />
                     <!-- Use this button to submit the form -->
                     <h:commandButton value="Verify upload" type="submit" styleClass="button common-button" action="#{fileUploadBean.uploadFile}" />
+
                 </div>
             </h:form>
             <h:form>

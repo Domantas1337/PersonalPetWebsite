@@ -2,6 +2,8 @@ package com.example.petwebapplication.beans;
 
 import com.example.petwebapplication.services.FileProcessingService;
 import com.example.petwebapplication.entities.serviceRecords.VetVisit;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import jakarta.enterprise.context.RequestScoped;
@@ -10,15 +12,17 @@ import lombok.Data;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.Console;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 @Named
 @Data
-@RequestScoped
-public class FileUploadBean {
+@SessionScoped
+public class FileUploadBean implements Serializable {
 
     @Inject
     FileProcessingService fileProcessingService;
@@ -26,7 +30,7 @@ public class FileUploadBean {
     private CompletableFuture<VetVisit> vetVisitProcessingTask = null;
 
     private Part uploadedFile;
-    public void uploadFile() {
+    public String uploadFile() {
         try (InputStream input = uploadedFile.getInputStream()) {
             System.out.println("File uploaded!");
             BufferedImage bufferedImage = ImageIO.read(input);
@@ -40,6 +44,11 @@ public class FileUploadBean {
         } catch (IOException e) {
             System.out.println("Something with input/output");
         }
+
+        String petId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("petId");
+        Long petIdLong = Long.parseLong(petId);
+        System.out.println(petId);
+        return "addPetServiceRecordPage?faces-redirect=true&petId=" + petIdLong;
     }
 
     public boolean isTheImageProcessing() {
@@ -47,6 +56,8 @@ public class FileUploadBean {
     }
 
     public String getImageProcessingStatus() throws ExecutionException, InterruptedException {
+        System.out.println(vetVisitProcessingTask);
+
         if (vetVisitProcessingTask == null) {
             return null;
         } else if (isTheImageProcessing()) {
@@ -54,8 +65,9 @@ public class FileUploadBean {
         }
 
         VetVisit provessedVetVisit = vetVisitProcessingTask.get();
-
-        return "Your veterinary visit data has been uploaded";
+        return "Your image has been scanned";
     }
+
+
 }
 

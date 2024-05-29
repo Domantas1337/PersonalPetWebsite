@@ -1,5 +1,6 @@
 package com.example.petwebapplication.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class PetServiceRecord {
 
     @ManyToOne
     @JoinColumn(name = "pet_id", nullable = false)
+    @JsonbTransient
     private Pet pet;
 
     @Column(name = "service_name", nullable = false)

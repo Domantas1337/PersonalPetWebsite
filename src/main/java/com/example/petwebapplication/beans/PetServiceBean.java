@@ -79,7 +79,7 @@ public class PetServiceBean implements Serializable {
     }
 
     public String navigateToUpdateServiceRecord(Long recordId) {
-        return "updatePetServiceRecordPage?faces-redirect=true&petServiceRecordId=" + recordId;
+        return "updatePetServiceRecordPage?faces-redirect=true&petServiceRecordId=" + recordId + "&petId=" + petId;
     }
 
     public String navigateToAddVetVisit(){

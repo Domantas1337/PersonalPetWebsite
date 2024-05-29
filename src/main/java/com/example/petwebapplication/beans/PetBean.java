@@ -15,6 +15,11 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.WebTarget;
+import jakarta.ws.rs.core.GenericType;
+import jakarta.ws.rs.core.MediaType;
 import lombok.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,8 +56,14 @@ public class PetBean {
     private List<PetServiceRecord> petServiceRecords;
     private int petServiceRecordNumber;
 
+    private static final String BASE_URI = "http://localhost:8080/petWebApplication-1.0-SNAPSHOT/api/pets"; // Update with your actual endpoint
+    private Client client;
+    private WebTarget target;
+
     @PostConstruct
     public void init() {
+        client = ClientBuilder.newClient();
+        target = client.target(BASE_URI);
         loadPets();
     }
 
@@ -158,7 +169,16 @@ public class PetBean {
 
 
     public void loadPets() {
-        pets = petRepository.findAll();
+        try {
+            // Make a GET request to fetch pets
+            pets = target.request(MediaType.APPLICATION_JSON)
+                    .get(new GenericType<List<Pet>>() {});
+
+        } catch (Exception e) {
+            logger.error("Error loading pets: {}", e.getMessage());
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "Unable to load pets"));
+        }
+        //pets = petRepository.findAll();
     }
 
     public void deletePet(Long id) {

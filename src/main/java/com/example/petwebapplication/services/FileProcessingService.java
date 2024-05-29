@@ -5,10 +5,11 @@ import com.example.petwebapplication.entities.serviceRecords.VetVisit;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @ApplicationScoped
-public class FileProcessingService {
+public class FileProcessingService implements Serializable {
 
     public VetVisit processScannedDocument(BufferedImage bufferedImage){
 

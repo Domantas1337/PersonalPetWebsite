@@ -8,17 +8,28 @@
 
 <h:head>
     <link rel="stylesheet" href="style.css"/>
+
 </h:head>
 <h:body>
     <div class="center-container">
-        <h:form>
-            <div class="button-container">
-                <h:commandButton value="We visited the vet" styleClass="button common-button" action="#{petServiceBean.navigateToAddVetVisit()}" />
-            </div>
-        </h:form>
+
 
         <div class="form-container">
+            <h:form enctype="multipart/form-data">
+                <h:outputText value="#{fileUploadBean.imageProcessingStatus}" />
 
+                <div class="button-container">
+                    <!-- Remove onclick from h:inputFile -->
+                    <h:inputFile id="fileUpload" value="#{fileUploadBean.uploadedFile}" style="display: none" />
+                    <!-- Ensure this button does not submit the form -->
+                    <h:commandButton value="Upload File" type="button" styleClass="button file-button"
+                                     onclick="document.getElementById('j_idt6:fileUpload').click(); return false;" />
+                    <!-- Use this button to submit the form -->
+                    <h:commandButton value="Verify upload" type="submit" styleClass="button common-button" action="#{fileUploadBean.uploadFile}" >
+                        <f:param name="petId" value="#{petServiceBean.petId}" />
+                    </h:commandButton>
+                </div>
+            </h:form>
 
             <h:form>
 

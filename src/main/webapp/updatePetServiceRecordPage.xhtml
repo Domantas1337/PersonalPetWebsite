@@ -49,8 +49,11 @@
 
                 <div class="button-container">
                     <h:commandButton value="Update Record" styleClass="button update-button" action="#{petServiceUpdateBean.updatePetServiceRecord()}" />
+                    <h:commandButton value="Back" immediate="true" styleClass="button back-button" action="#{petServiceUpdateBean.goBackToTheServicePage()}" />
+
                 </div>
 
+                <h:outputText value="#{petServiceUpdateBean.message}" />
             </h:form>
         </div>
     </div>

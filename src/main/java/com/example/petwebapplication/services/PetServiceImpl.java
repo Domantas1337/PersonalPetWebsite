@@ -4,10 +4,14 @@ import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.interfaces.PetService;
 import com.example.petwebapplication.repositories.PetRepository;
 import com.example.petwebapplication.repositories.PetServiceRecordRepository;
+import jakarta.ejb.EJBTransactionRolledbackException;
+import jakarta.faces.view.facelets.FaceletException;
 import jakarta.inject.Inject;
+import jakarta.persistence.OptimisticLockException;
 import jakarta.transaction.Transactional;
 
 import javax.enterprise.context.ApplicationScoped;
+import java.io.Console;
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,13 +29,20 @@ public class PetServiceImpl implements PetService, Serializable {
         petServiceRecordRepository.create(record);
     }
 
-    @Override
-    public void updatePetServiceRecord(PetServiceRecord record) {
-        PetServiceRecord existingRecord = petServiceRecordRepository.findById(record.getId()).get();
+    @Transactional
+    public String updatePetServiceRecord(PetServiceRecord record) {
+        try {
+            PetServiceRecord existingRecord = petServiceRecordRepository.findById(record.getId()).get();
+            existingRecord.updateFrom(record);
+            String result = petServiceRecordRepository.update(record);
 
-        existingRecord.updateFrom(record);
-        petServiceRecordRepository.update(existingRecord);
+            return result;
+        } catch (Exception ex) {
+            System.out.println("General exceptions caught in service method: " + ex.getMessage());
+            return "Error";
+        }
     }
+
 
     @Transactional
     @Override
