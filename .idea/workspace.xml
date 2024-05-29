@@ -9,24 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Added a page for updating pet service records">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/rest/PetResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/rest/RestApplication.java" afterDir="false" />
+    <list default="true" id="26dc5b43-541b-45e6-8dcf-722b4f397897" name="Changes" comment="Updated OpyimisticLock handling and REST">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetUpdateBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/ImageProcessingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/updatePetPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/FileUploadBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceUpdateBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/beans/PetServiceUpdateBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/entities/PetServiceRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/interfaces/PetService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetServiceRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/repositories/PetServiceRecordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/rest/ProductResource.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/FileProcessingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/FileProcessingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/PetServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/petwebapplication/services/PetServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AddPetPage.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetServiceRecordPage.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addPetTypePage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addProductPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addVetVisitPage.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/christmas.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/christmas.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/personalPetServicesPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/petTypeDetails.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/petTypeDetails.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/updatePetServiceRecordPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/updatePetServiceRecordPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetTypes.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewPetsPage.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewProductDetails.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewProductDetails.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +41,8 @@
       <list>
         <option value="Jsp File" />
         <option value="Enum" />
-        <option value="jsf" />
         <option value="Interface" />
+        <option value="jsf" />
         <option value="Class" />
       </list>
     </option>
@@ -89,37 +92,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.All in generated-requests.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PetServiceBeanTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PetServiceBeanTest.testOptimisticLockException.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.All in generated-requests.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "JBoss/WildFly Server.JBoss/WildFly 31.0.0.Final.executor": "Run",
+    "JUnit.AddProductPageBeanTest.testSaveProductErrorMessage.executor": "Run",
+    "JUnit.AddProductPageBeanTest.testSaveProductExceptionLogging.executor": "Run",
+    "JUnit.PetServiceBeanTest.executor": "Run",
+    "JUnit.PetServiceBeanTest.testOptimisticLockException.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/doman/OneDrive/Documents/6_semestras/PSK/petWebApplication/src/main/webapp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.petwebapplication.entities" />
@@ -329,7 +332,7 @@
       <workItem from="1716733368064" duration="10246000" />
       <workItem from="1716909902629" duration="25319000" />
       <workItem from="1716936323922" duration="4686000" />
-      <workItem from="1716966165824" duration="792000" />
+      <workItem from="1716966165824" duration="13273000" />
     </task>
     <task id="LOCAL-00001" summary="Created project">
       <option name="closed" value="true" />
@@ -651,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716738439227</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Updated OpyimisticLock handling and REST">
+      <option name="closed" value="true" />
+      <created>1716967167406</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1716967167406</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added PetServiceBean and a page for adding pet service records (not finished)" />
     <MESSAGE value="Pet service records can now be added" />
     <MESSAGE value="Added ability to find all pet service records for a pet by id" />
     <MESSAGE value="Navigating from My Pets to view Pet service recods now shows the records" />
@@ -694,7 +704,8 @@
     <MESSAGE value="Implemented a decorator" />
     <MESSAGE value="Added an @Alternative feature" />
     <MESSAGE value="Added a page for updating pet service records" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a page for updating pet service records" />
+    <MESSAGE value="Updated OpyimisticLock handling and REST" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated OpyimisticLock handling and REST" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -8,9 +8,31 @@
 
 <h:head>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="#{themeController.activeStyleSheet}" />
 
 </h:head>
 <h:body>
+
+    <h:form>
+
+        <div class="menu-bar">
+            <h:form>
+                <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}" styleClass="menu-item" />
+
+                <h:button value="Add Product" outcome="/addProductPage.xhtml" styleClass="menu-item"/>
+
+                <h:commandButton value="My Pets" action="viewPetsPage" styleClass="menu-item"/>
+
+                <h:commandButton value="Add Pets" action="AddPetPage" styleClass="menu-item"/>
+
+                <h:button value="Add pet type" outcome="addPetTypePage" styleClass="menu-item"/>
+                <!-- Add more buttons here for additional menu items -->
+            </h:form>
+        </div>
+
+
+    </h:form>
+
     <div class="center-container">
 
 
@@ -23,7 +45,7 @@
                     <h:inputFile id="fileUpload" value="#{fileUploadBean.uploadedFile}" style="display: none" />
                     <!-- Ensure this button does not submit the form -->
                     <h:commandButton value="Upload File" type="button" styleClass="button file-button"
-                                     onclick="document.getElementById('j_idt6:fileUpload').click(); return false;" />
+                                     onclick="document.getElementById('j_idt16:fileUpload').click(); return false;" />
                     <!-- Use this button to submit the form -->
                     <h:commandButton value="Verify upload" type="submit" styleClass="button common-button" action="#{fileUploadBean.uploadFile}" >
                         <f:param name="petId" value="#{petServiceBean.petId}" />
@@ -74,7 +96,7 @@
 
                 <div class="button-container">
                     <h:commandButton value="Add Record" styleClass="button add-button" action="#{petServiceBean.addPetServiceRecord()}" />
-                    <h:commandButton value="Back" immediate="true" styleClass="button back-button" action="#{petServiceBean.navigateFromAddPetServiceRecordsToServiceRecords(petServiceBean.petId)}" />
+                    <h:commandButton value="Back" immediate="true" styleClass="button back-button" action="#{petServiceBean.navigateToPersonalPetServiceRecords()}" />
                 </div>
 
             </h:form>

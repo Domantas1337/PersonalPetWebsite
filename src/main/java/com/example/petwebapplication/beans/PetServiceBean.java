@@ -50,15 +50,19 @@ public class PetServiceBean implements Serializable {
         loadServiceRecordsById();
     }
 
+    public String navigateToPersonalPetServiceRecords() {
+        return "personalPetServicesPage?faces-redirect=true&petId=" + petId;
+    }
     public void addPetServiceRecord() throws ParseException {
 
         petServiceRecord.setServiceDate(DateConverter.stringToDate(serviceDate, "yyyy-MM-dd"));
 
         try {
             petService.addPetServiceRecord(petServiceRecord, petId);
-        } catch (ValidationException e) {
-            // Handle user feedback
+        }catch (IllegalArgumentException ex){
+            System.out.println(ex.getMessage());
         }
+
     }
 
 
@@ -81,11 +85,4 @@ public class PetServiceBean implements Serializable {
     public String navigateToUpdateServiceRecord(Long recordId) {
         return "updatePetServiceRecordPage?faces-redirect=true&petServiceRecordId=" + recordId + "&petId=" + petId;
     }
-
-    public String navigateToAddVetVisit(){
-        System.out.println(petId);
-        return "addVetVisitPage?faces-redirect=true&petId=" + petId;
-    }
-
-
 }

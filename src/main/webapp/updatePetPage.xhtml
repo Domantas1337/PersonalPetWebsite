@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-    <title>Pet Form</title>
-    <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="#{themeController.activeStyleSheet}" />
 
 </h:head>
 <h:body>
+
     <h:form>
 
         <div class="menu-bar">
@@ -35,19 +38,19 @@
             <div class="form-container">
                 <h:panelGrid columns="3" >
                     <h:outputLabel for="petName" styleClass="output-label" value="Pet name:" />
-                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.name}" />
+                    <h:inputText id="petName" styleClass="input-box" value="#{petBean.petForUpdate.petName}" />
                     <h:message for="petName" styleClass="error-message"/>
 
                     <h:outputLabel for="age" styleClass="output-label" value="Age:" />
-                    <h:inputText id="age" styleClass="input-box" value="#{petBean.age}" />
+                    <h:inputText id="age" styleClass="input-box" value="#{petBean.petForUpdate.age}" />
                     <h:message for="age" styleClass="error-message" />
 
                     <h:outputLabel for="imageURL" styleClass="output-label"  value="Image url:" />
-                    <h:inputText id="imageURL" styleClass="input-box" value="#{petBean.imageURL}" />
+                    <h:inputText id="imageURL" styleClass="input-box" value="#{petBean.petForUpdate.imageURL}" />
                 </h:panelGrid>
 
                 <div class="button-container">
-                    <h:commandButton value="Submit" styleClass="button add-button" action="#{petBean.addPet()}" />
+                    <h:commandButton value="Update" styleClass="button add-button" action="#{petBean.updatePet(petBean.petForUpdate.id)}" />
                     <h:button value="Back" styleClass="button back-button" outcome="index" />
                 </div>
 
@@ -56,7 +59,5 @@
         </div>
 
     </h:form>
-
 </h:body>
 </html>
-

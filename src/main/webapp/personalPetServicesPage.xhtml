@@ -6,10 +6,30 @@
 <h:head>
     <title>Pet Service Records</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="#{themeController.activeStyleSheet}" />
 
 </h:head>
 <h:body>
 
+    <h:form>
+
+        <div class="menu-bar">
+            <h:form>
+                <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}" style="margin-bottom: 10px;" styleClass="menu-item" />
+
+                <h:button value="Add Product" outcome="/addProductPage.xhtml" styleClass="menu-item"/>
+
+                <h:commandButton value="My Pets" action="viewPetsPage" styleClass="menu-item"/>
+
+                <h:commandButton value="Add Pets" action="AddPetPage" styleClass="menu-item"/>
+
+                <h:button value="Add pet type" outcome="addPetTypePage" styleClass="menu-item"/>
+                <!-- Add more buttons here for additional menu items -->
+            </h:form>
+        </div>
+
+
+    </h:form>
 
     <h:form>
         <h:commandButton value="Add a service" outcome="index" styleClass="button add-button" action="#{petServiceBean.navigateToAddPetServiceRecord()}"/>

@@ -1,44 +1,43 @@
 package com.example.petwebapplication.services;
 
-import com.example.petwebapplication.enums.VetVisitType;
-import com.example.petwebapplication.entities.serviceRecords.VetVisit;
+import com.example.petwebapplication.entities.Pet;
+import com.example.petwebapplication.entities.PetServiceRecord;
+import jakarta.enterprise.inject.Specializes;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 @ApplicationScoped
-public class FileProcessingService implements Serializable {
+@Specializes
+public class FileProcessingService extends ImageProcessingService implements Serializable {
 
-    public VetVisit processScannedDocument(BufferedImage bufferedImage){
+    @Override
+    public Object processDocument(BufferedImage bufferedImage){
 
-        System.out.println("Processing");
+        System.out.println("Record Processing");
         try{
             Thread.sleep(5000);
         }catch(InterruptedException e){
 
         }
-        System.out.println("Finished processing");
+        System.out.println("Finished processing record");
 
         LocalDate todaysDate = LocalDate.now();
-        VetVisit scannedVetVisit = new VetVisit(){
+        PetServiceRecord serviceRecord = new PetServiceRecord(){
 
             {
-                setReasonForVisit("Processed reason");
-                setVisitDate(todaysDate);
-                setVisitType(VetVisitType.CHECKUP);
-                setVeterinarianName("Processed name");
-                setDiagnosis("Processed diagnosis");
-                setNotesOnDiagnosis("Processed notes");
-                setCareRecommendations("Processed care recommendations");
+                setPet(new Pet());
                 setCost(3.14);
-                setNextScheduledVisit(todaysDate.plusDays(10));
-                setNextScheduledVisitType(VetVisitType.VACCINATION);
+                setServiceDate(new Date());
+                setServiceName("Name");
+                setDetails("Details");
             }
         };
 
-        return scannedVetVisit;
+        return serviceRecord;
     }
 
 

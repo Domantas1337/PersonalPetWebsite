@@ -9,6 +9,7 @@ body, h1, h2, h3, h4, h5, h6, p, form, input {
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
     padding: 10px 20px; /* Add some padding */
+    margin-bottom: 10px;
 }
 
 .menu-item {

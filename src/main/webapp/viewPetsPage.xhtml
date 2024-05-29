@@ -7,11 +7,33 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 <f:view>
+
+    <h:form>
+
+        <div class="menu-bar">
+            <h:form>
+                <h:commandButton value="Find Pets" action="#{petTypeBean.navigateToPetTypes}" styleClass="menu-item" />
+
+                <h:button value="Add Product" outcome="/addProductPage.xhtml" styleClass="menu-item"/>
+
+                <h:commandButton value="My Pets" action="viewPetsPage" styleClass="menu-item"/>
+
+                <h:commandButton value="Add Pets" action="AddPetPage" styleClass="menu-item"/>
+
+                <h:button value="Add pet type" outcome="addPetTypePage" styleClass="menu-item"/>
+                <!-- Add more buttons here for additional menu items -->
+            </h:form>
+        </div>
+
+
+    </h:form>
+
     <h:head>
         <title>Pet Form</title>
 
         <link rel="stylesheet" href="style.css"/>
 
+        <link rel="stylesheet" href="#{themeController.activeStyleSheet}" />
 
         <style type="text/css">
             .pet-card {
@@ -48,7 +70,7 @@
                     </div>
                     <div class="button-container">
                         <h:commandButton value="View service records" styleClass="button add-button" action="#{petBean.navigateToPersonalPetServiceRecords(pet.id)}" />
-                        <h:commandButton value="Change pet name" action="#{petBean.deletePet(pet.id)}"
+                        <h:commandButton value="Change pet name" action="#{petBean.navigateToUpdatePet(pet.id)}"
                                          styleClass="button edit-button">
                             <f:ajax render=":j_idt5:petList" />
                         </h:commandButton>

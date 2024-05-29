@@ -1,7 +1,10 @@
 package com.example.petwebapplication.beans;
 
-import com.example.petwebapplication.services.FileProcessingService;
+import com.example.petwebapplication.entities.Pet;
+import com.example.petwebapplication.entities.PetServiceRecord;
 import com.example.petwebapplication.entities.serviceRecords.VetVisit;
+import com.example.petwebapplication.services.FileProcessingService;
+import com.example.petwebapplication.services.ImageProcessingService;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.FacesContext;
 import jakarta.inject.Inject;
@@ -19,15 +22,16 @@ import java.io.Serializable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+
+@SessionScoped
 @Named
 @Data
-@SessionScoped
 public class FileUploadBean implements Serializable {
 
     @Inject
-    FileProcessingService fileProcessingService;
+    ImageProcessingService imageProcessingService;
 
-    private CompletableFuture<VetVisit> vetVisitProcessingTask = null;
+    private CompletableFuture<Object> recordProcessingTask = null;
 
     private Part uploadedFile;
     public String uploadFile() {
@@ -35,7 +39,7 @@ public class FileUploadBean implements Serializable {
             System.out.println("File uploaded!");
             BufferedImage bufferedImage = ImageIO.read(input);
             if (bufferedImage != null) {
-                vetVisitProcessingTask = CompletableFuture.supplyAsync(() -> fileProcessingService.processScannedDocument(bufferedImage));
+                recordProcessingTask = CompletableFuture.supplyAsync(() -> imageProcessingService.processDocument(bufferedImage));
             } else {
                 throw new RuntimeException("Failed to decode the uploaded image");
             }
@@ -52,19 +56,22 @@ public class FileUploadBean implements Serializable {
     }
 
     public boolean isTheImageProcessing() {
-        return vetVisitProcessingTask != null && !vetVisitProcessingTask.isDone();
+        return recordProcessingTask != null && !recordProcessingTask.isDone();
     }
 
     public String getImageProcessingStatus() throws ExecutionException, InterruptedException {
-        System.out.println(vetVisitProcessingTask);
+        System.out.println(recordProcessingTask);
 
-        if (vetVisitProcessingTask == null) {
+        if (recordProcessingTask == null) {
             return null;
         } else if (isTheImageProcessing()) {
             return "The file is still processing";
         }
 
-        VetVisit provessedVetVisit = vetVisitProcessingTask.get();
+        if(recordProcessingTask.get() instanceof PetServiceRecord) {
+            PetServiceRecord processedRecord = (PetServiceRecord) recordProcessingTask.get();
+        }
+
         return "Your image has been scanned";
     }
 
